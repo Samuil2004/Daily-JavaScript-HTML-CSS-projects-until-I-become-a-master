@@ -1,0 +1,51 @@
+body {
+  background-color: rgb(38, 144, 201);
+}
+
+.panel {
+  background-color: rgb(255, 255, 255);
+  height: 12.2cm;
+  margin: 1cm;
+}
+
+.infoPanel {
+  text-align: center;
+  margin-top: 1.6cm;
+
+  .image {
+    height: 3.5cm;
+    border-radius: 30%;
+  }
+
+  .birthdate {
+    color: rgb(38, 144, 201);
+    font-size: 20px;
+    margin-top: 0.1cm;
+  }
+  .studentInfo {
+    margin-top: 0.7cm;
+    margin-right: 2cm;
+    margin-left: 2cm;
+    color: rgb(103, 137, 156);
+  }
+}
+
+.controlPanel {
+  text-align: center;
+  margin-bottom: 5cm;
+
+  .next {
+    height: 0.7cm;
+    width: 1cm;
+    border-radius: 10px;
+    background-color: rgb(38, 144, 201);
+    font-size: 0.5cm;
+  }
+  .previous {
+    height: 0.7cm;
+    width: 1cm;
+    border-radius: 10px;
+    background-color: rgb(38, 144, 201);
+    font-size: 0.5cm;
+  }
+}

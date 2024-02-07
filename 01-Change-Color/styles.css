@@ -1,0 +1,16 @@
+body {
+  min-height: calc(100vh - 3rem);
+  display: grid;
+  place-items: center;
+  background-color: red;
+  font-size: 1cm;
+  .button {
+    width: 10cm;
+    height: 2cm;
+    font-size: 1cm;
+    background-color: rgb(104, 104, 239);
+    border-width: 0.2cm;
+    border-color: white;
+    border-style: solid;
+  }
+}
