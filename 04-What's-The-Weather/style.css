@@ -12,11 +12,13 @@ body {
 .card {
   max-width: 470px; /*setting the max width of the window*/
   width: 90%; /*setting what amount of the max-width the window to occupy*/
+
   background: linear-gradient(
     135deg,
     #00feba,
     #5b548a
-  ); /*setting the background color */
+  ); /* setting the background color */
+
   color: #fff; /*setting the color of the elements*/
   margin: 100px auto 0; /*setting the margin- the first (100px) is the distance from the top, the (auto) is for the distance from the margin on the left and the right side and the last one is the bottom margin*/
   border-radius: 20px; /*how shart the angles to be*/
@@ -69,6 +71,12 @@ body {
   font-size: 45px;
   font-weight: 400;
   margin-top: -10px; /*margin from the margin of the above element */
+}
+.HLTemp {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 153px;
+  margin-top: 10px;
 }
 
 .details {
