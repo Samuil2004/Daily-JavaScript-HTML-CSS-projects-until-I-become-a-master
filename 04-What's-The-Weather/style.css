@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "sans-serif";
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+}
+
+.card {
+  max-width: 470px; /*setting the max width of the window*/
+  width: 90%; /*setting what amount of the max-width the window to occupy*/
+  background: linear-gradient(
+    135deg,
+    #00feba,
+    #5b548a
+  ); /*setting the background color */
+  color: #fff; /*setting the color of the elements*/
+  margin: 100px auto 0; /*setting the margin- the first (100px) is the distance from the top, the (auto) is for the distance from the margin on the left and the right side and the last one is the bottom margin*/
+  border-radius: 20px; /*how shart the angles to be*/
+  padding: 40px 35px; /*the space between the elements and the border*/
+  text-align: center; /*center the elements*/
+}
+
+.search {
+  width: 100%; /*how much of the whole space the search div to occupy*/
+  display: flex;
+  align-items: center; /*located in the center*/
+  justify-content: space-between; /*equally distanced from the closest borders*/
+}
+.search input {
+  border: 0; /*0 - no border or 1 - with border*/
+  outline: 0;
+  background: #ebfffc; /*background color*/
+  color: #555; /*color of the letters that will be inputed*/
+  padding: 10px 25px; /*first value is the space from the top and bottom border and the second value is the space from the left border*/
+  height: 60px; /*height of the panel*/
+  border-radius: 30px; /*how shart the angles to be*/
+  flex: 1;
+  margin-right: 16px; /*right margin*/
+  font-size: 18px; /*size of the letters that will be inputed*/
+}
+
+.search button {
+  border: 0; /*0 - no border or 1 - with border*/
+  outline: 0;
+  background: #ebfffc; /*background color*/
+  border-radius: 50%; /*how sharp the angles to be (in this case - circle)*/
+  width: 60px;
+  height: 60px;
+  cursor: pointer; /*what the cursor should look like when the mouse is dragged above it*/
+}
+
+.search button img {
+  width: 16px; /*size of the image*/
+}
+
+.weather-icon {
+  width: 179px; /*size of the image*/
+  margin-top: 30px; /*margin from the margin of the above element */
+}
+.weather h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+.weather h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px; /*margin from the margin of the above element */
+}
+
+.details {
+  display: flex; /*because we need two columns*/
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /*how far from the closes border the items to be*/
+  margin-top: 50px;
+}
+
+.col {
+  display: flex;
+  align-items: center; /*align the items at the center of the flex panel*/
+  text-align: left;
+}
+
+.col img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.humidity,
+.wind {
+  font-size: 28px;
+  margin-top: -6px;
+}
+
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+
+  svg {
+    height: 6rem;
+    width: 6rem;
+    fill: #fff;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
