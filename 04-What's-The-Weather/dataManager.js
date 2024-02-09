@@ -28,7 +28,7 @@ class WeatherData {
       this.transformDegrees(data.main.feels_like) + "°C";
   }
 
-  changeBackground(result, data) {
+  changeBackground(data) {
     const currentTimeAtLocation = this.getCurrentTimeForTimeZone(data.timezone);
     const hours = currentTimeAtLocation.getHours();
     let path;

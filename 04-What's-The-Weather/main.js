@@ -8,4 +8,9 @@ constants.btnSearch.addEventListener("click", function (e) {
   getJson(constants.input.value);
 });
 
+constants.btnLocate.addEventListener("click", function (e) {
+  e.preventDefault();
+  currentLocation();
+});
+
 currentLocation();

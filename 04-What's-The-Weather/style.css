@@ -50,15 +50,18 @@ body {
   outline: 0;
   background: #ebfffc; /*background color*/
   border-radius: 50%; /*how sharp the angles to be (in this case - circle)*/
+  margin-right: 16px;
   width: 60px;
   height: 60px;
   cursor: pointer; /*what the cursor should look like when the mouse is dragged above it*/
 }
 
-.search button img {
+.btn-search img {
   width: 16px; /*size of the image*/
 }
-
+.btn-currentLocation img {
+  width: 30px;
+}
 .weather-icon {
   width: 179px; /*size of the image*/
   margin-top: 30px; /*margin from the margin of the above element */

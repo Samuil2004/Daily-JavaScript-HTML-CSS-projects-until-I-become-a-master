@@ -14,3 +14,4 @@ export const sunsetLabel = document.querySelector(".sunset");
 export const sunPhases = document.querySelector(".sunPhases");
 export const feelsLikeLabel = document.querySelector(".feelsLikeTemp");
 export const feelsLikeBox = document.querySelector(".feels");
+export const btnLocate = document.querySelector(".btn-currentLocation");

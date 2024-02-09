@@ -51,5 +51,5 @@ export const sunSetRise = async function (country) {
   console.log(result);
   WeatherData.updateInfo(country, result);
   WeatherData.loadMap(country, lat, lng);
-  WeatherData.changeBackground(result, country);
+  WeatherData.changeBackground(country);
 };
