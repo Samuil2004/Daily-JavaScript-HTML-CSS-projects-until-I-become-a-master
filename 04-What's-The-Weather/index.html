@@ -3,6 +3,19 @@
   <head>
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- MAP LIBRARY -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
   </head>
   <body onLoad="currentLocation()">
     <div class="card">
@@ -41,8 +54,29 @@
             </div>
           </div>
         </div>
+        <div class="details2">
+          <div class="sunPhases">
+            <div class="col2">
+              <img src="images/sunRise.png" />
+              <div>
+                <p class="sunrise"></p>
+                <!-- <p>Sunrise</p> -->
+              </div>
+            </div>
+            <div class="col2">
+              <img src="images/sunSet.png" />
+              <div>
+                <p class="sunset"></p>
+                <!-- <p>Sunset</p> -->
+              </div>
+            </div>
+          </div>
+          <div id="map">
+            <!-- <img src="images/nightSky.jpg" /> -->
+          </div>
+        </div>
       </div>
     </div>
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
   </body>
 </html>

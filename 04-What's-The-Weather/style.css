@@ -103,6 +103,58 @@ body {
   font-size: 28px;
   margin-top: -6px;
 }
+.details2 {
+  display: flex;
+  /*Content*/
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* padding: 0 30px; */
+  margin-top: 40px;
+  /*BOX*/
+  /* background-color: rgba(127, 188, 224, 255);
+  width: 4cm;
+  height: 3.3cm;
+  border-radius: 13%; */
+}
+.sunPhases {
+  /*BOX*/
+  background-color: rgba(127, 188, 224, 255);
+  width: 4cm;
+  height: 3.3cm;
+  border-radius: 13%;
+}
+
+.col2 {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-top: -3px;
+}
+.col2 img {
+  width: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-left: 12px;
+}
+.sunrise,
+.sunset {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+#map {
+  /* flex:1 */
+  width: 260px;
+  height: 220px;
+  margin-left: 40px;
+  margin-right: 0px;
+}
+.map img {
+  width: 250px;
+  margin-left: 40px;
+  margin-right: 0px;
+}
 
 .spinner {
   margin: 5rem auto;

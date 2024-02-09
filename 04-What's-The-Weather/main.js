@@ -13,6 +13,9 @@ const image = document.querySelector(".weather-icon");
 const highestTempLabel = document.querySelector(".highest");
 const lowestTempLabel = document.querySelector(".lowest");
 const card = document.querySelector(".card");
+const sunriseLabel = document.querySelector(".sunrise");
+const sunsetLabel = document.querySelector(".sunset");
+
 const getJson = async function (city) {
   try {
     const data = await fetch(
@@ -24,7 +27,6 @@ const getJson = async function (city) {
       return response.json();
     });
     console.log(data);
-    updateInfo(data);
     sunSetRise(data);
   } catch (err) {
     alert(err);
@@ -39,7 +41,7 @@ const transformDegrees = function (degrees) {
   return Math.round(+degrees - 273.15);
 };
 
-const updateInfo = function (data) {
+const updateInfo = function (data, sunData) {
   input.value = "";
   cityLabel.textContent = data.name;
   degreesLabel.textContent = transformDegrees(data.main.temp) + "°C";
@@ -50,6 +52,8 @@ const updateInfo = function (data) {
     "H:" + transformDegrees(data.main.temp_max) + "°C";
   lowestTempLabel.textContent =
     "L:" + transformDegrees(data.main.temp_min) + "°C";
+  sunriseLabel.textContent = sunData.results.sunrise.slice(0, -6) + "AM";
+  sunsetLabel.textContent = sunData.results.sunset.slice(0, -6) + "PM";
 };
 
 const renderSpinner = function () {
@@ -78,13 +82,9 @@ async function currentLocation() {
 }
 
 const changeBackground = function (result, data) {
-  // const sunrise = result.results.sunrise;
-  // const sunset = result.results.sunset;
-  // console.log(sunrise, sunset);
-
   const currentTimeAtLocation = getCurrentTimeForTimeZone(data.timezone);
   const hours = currentTimeAtLocation.getHours();
-  //console.log(currentTimeAtLocation.getHours());
+
   let path;
   console.log(hours);
   if (hours > 6 && hours < 18) {
@@ -94,14 +94,6 @@ const changeBackground = function (result, data) {
   }
   card.style.backgroundImage = `url(${path})`;
   console.log(`ready`);
-
-  // const [hour, minute, second] = timeString.split(":").map(Number);
-  // const isPM = timeString.includes("PM");
-  // let totalSeconds = (hour % 12) * 3600 + minute * 60 + second;
-  // if (isPM) {
-  //   totalSeconds += 12 * 3600; // Add 12 hours for PM times
-  // }
-  // console.log(currentTimeAtLocation);
 };
 
 const getCurrentTimeForTimeZone = function (offsetSeconds) {
@@ -124,14 +116,27 @@ const sunSetRise = async function (country) {
   );
   const result = await data.json();
   console.log(result);
+  updateInfo(country, result);
+  loadMap(country, lat, lng);
   changeBackground(result, country);
-  // console.log(result.results.sunrise);
 };
+let mapInitialized = false;
+let map;
+const loadMap = function (data, lat, lng) {
+  if (!mapInitialized) {
+    map = L.map("map").setView([lat, lng], 13);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+    mapInitialized = true;
+  } else {
+    map.setView([lat, lng], 13);
+  }
+  L.marker([lat, lng])
+    .addTo(map)
+    .bindPopup("Temp: " + transformDegrees(data.main.temp) + "°C")
+    .openPopup();
 
-// sunSetRise();
-// const test = async function () {
-//   const data = await fetch(`https://www.timeanddate.com/worldclock/`);
-//   const resule = await data.json();
-//   console.log(resule);
-// };
-// test();
+  console.log(`ready`);
+};
