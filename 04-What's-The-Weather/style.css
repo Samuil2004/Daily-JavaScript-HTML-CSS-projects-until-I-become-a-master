@@ -12,7 +12,7 @@ body {
 .card {
   max-width: 470px; /*setting the max width of the window*/
   width: 90%; /*setting what amount of the max-width the window to occupy*/
-
+  /* opacity: 0.5; */
   background: linear-gradient(
     135deg,
     #00feba,
@@ -75,7 +75,7 @@ body {
 .HLTemp {
   display: flex;
   justify-content: space-between;
-  padding: 0 153px;
+  padding: 0 145px;
   margin-top: 10px;
 }
 
@@ -118,7 +118,10 @@ body {
 }
 .sunPhases {
   /*BOX*/
-  background-color: rgba(127, 188, 224, 255);
+  /* background-color: rgba(127, 188, 224, 255); */
+  background-color: rgba(140, 192, 231, 255);
+  /* background-color: rgba(74, 93, 115, 255); */
+
   width: 4cm;
   height: 3.3cm;
   border-radius: 13%;
@@ -141,6 +144,39 @@ body {
   font-size: 18px;
   text-align: center;
   margin-top: 5px;
+}
+
+.feels {
+  background-color: rgba(140, 192, 231, 255);
+  /* align-items: center; */
+  margin-top: 20px;
+  width: 4cm;
+  height: 2.5cm;
+  border-radius: 13%;
+}
+.feelsLike {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  /* margin-top: 20px; */
+}
+.feelsLike img {
+  height: 50px;
+  /* margin-right: 1px; */
+  margin-top: 20px;
+  margin-left: 13px;
+}
+.label {
+  font-size: 18px;
+  text-align: left;
+  margin-top: 12px;
+}
+.feelsLikeTemp {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 12px;
+  margin-left: -15px;
 }
 
 #map {

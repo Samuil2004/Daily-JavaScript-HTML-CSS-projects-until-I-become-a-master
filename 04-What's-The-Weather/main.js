@@ -15,7 +15,8 @@ const lowestTempLabel = document.querySelector(".lowest");
 const card = document.querySelector(".card");
 const sunriseLabel = document.querySelector(".sunrise");
 const sunsetLabel = document.querySelector(".sunset");
-
+const sunPhases = document.querySelector(".sunPhases");
+const feelsLikeLabel = document.querySelector(".feelsLikeTemp");
 const getJson = async function (city) {
   try {
     const data = await fetch(
@@ -54,6 +55,7 @@ const updateInfo = function (data, sunData) {
     "L:" + transformDegrees(data.main.temp_min) + "°C";
   sunriseLabel.textContent = sunData.results.sunrise.slice(0, -6) + "AM";
   sunsetLabel.textContent = sunData.results.sunset.slice(0, -6) + "PM";
+  feelsLikeLabel.textContent = transformDegrees(data.main.feels_like) + "°C";
 };
 
 const renderSpinner = function () {
@@ -88,9 +90,13 @@ const changeBackground = function (result, data) {
   let path;
   console.log(hours);
   if (hours > 6 && hours < 18) {
-    path = "images/dailySky.jpeg";
+    path = `images/${data.weather[0].main.toLowerCase()}.jpeg`;
+    console.log(data.weather[0].main);
+    sunPhases.style.backgroundColor = `rgba(140, 192, 231, 255)`;
+    // path = "images/clouds.jpeg";
   } else {
     path = "images/nightSky.jpg";
+    sunPhases.style.backgroundColor = `rgba(74, 93, 115, 255)`;
   }
   card.style.backgroundImage = `url(${path})`;
   console.log(`ready`);
@@ -140,3 +146,8 @@ const loadMap = function (data, lat, lng) {
 
   console.log(`ready`);
 };
+
+// lat: 37.7021;
+// lon: -121.9358;
+
+// 070017001;
