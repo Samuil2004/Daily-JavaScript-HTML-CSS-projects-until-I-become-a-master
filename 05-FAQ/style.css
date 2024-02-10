@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(0, 145, 148);
+}
+.headingTitle,
+.subheading {
+  text-align: center;
+}
+.questionPanel {
+  justify-content: center; /*center the panels below*/
+  display: grid; /*create a row grid*/
+}
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin-top: 30px;
+  background-color: aquamarine;
+  width: 15cm;
+}
+.btn {
+  height: 1cm;
+  width: 1cm;
+  background: transparent;
+  font-size: 25px;
+}
+.answerBox {
+  height: 222px;
+  width: 17.1cm;
+  background-color: rgb(245, 236, 118);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.answer {
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
