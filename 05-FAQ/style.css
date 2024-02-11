@@ -40,3 +40,79 @@ body {
 .hidden {
   display: none;
 }
+
+.addQuestionPanel {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.btnAddQuestion {
+  height: 1cm;
+  width: 1cm;
+  background-color: aquamarine;
+  font-size: 25px;
+}
+
+.addNewQuestionPanel {
+  position: absolute;
+  width: 15cm;
+  height: 16cm;
+  background-color: azure;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 127, 170);
+}
+.closeButton {
+  display: flex;
+  justify-content: right;
+}
+.btnClose {
+  height: 1cm;
+  width: 1cm;
+  margin-right: 3px;
+  margin-top: 3px;
+  background-color: transparent;
+  font-size: 25px;
+  border: none;
+}
+.title {
+  text-align: center;
+  margin-top: 10px;
+}
+.newQuestionInfo {
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.questionBox {
+  width: 13cm;
+  height: 1cm;
+  margin-bottom: 15px;
+  font-size: 18px;
+  background-color: rgb(218, 218, 218);
+}
+
+.BoxForAnswer {
+  width: 13.2cm;
+  height: 6cm;
+  resize: none;
+  font-size: 18px;
+  background-color: rgb(218, 218, 218);
+  white-space: pre-wrap;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit {
+  margin-top: 20px;
+  height: 1.3cm;
+  width: 2.7cm;
+  font-size: 17px;
+  background-color: aquamarine;
+}
