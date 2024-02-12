@@ -27,7 +27,7 @@ const addValidator = function (path) {
   return `images/${path}.png`;
 };
 
-const changeValidationSymbol = function (item, validator, symbol) {
+const changeValidationSymbol = function (item, validator, symbol = true) {
   let validatorImg = "check";
   let color = `#39b54a`;
   if (!symbol) {
@@ -51,5 +51,14 @@ email.addEventListener("input", function () {
     validateInput(email);
   } else {
     changeValidationSymbol(email, findValidator(email), false);
+  }
+});
+
+phone.addEventListener("input", function () {
+  const phonePattern = /^\+\d{9,15}$/;
+  if (phone.value.match(phonePattern)) {
+    validateInput(phone);
+  } else {
+    changeValidationSymbol(phone, findValidator(phone), false);
   }
 });
