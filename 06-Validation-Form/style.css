@@ -1,0 +1,96 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+}
+
+body {
+  background-color: rgb(188, 188, 188);
+}
+.bigPanel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 17cm;
+  width: 21cm;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+
+.pageContent {
+  display: flex;
+  height: 17cm;
+  width: 21cm;
+}
+
+.panel {
+  flex: 1;
+}
+.imagePanel {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.image {
+  position: absolute;
+  height: 15.5cm;
+  width: 9cm;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+}
+
+.form {
+  margin-top: 30px;
+}
+
+.heading {
+  margin-top: -5px;
+  text-align: center;
+  font-size: 33px;
+}
+
+.name {
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+.inputBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.validator {
+  height: 25px;
+  margin-right: 3px;
+}
+
+.input {
+  width: 9.5cm;
+  height: 1cm;
+  border-radius: 10px;
+  /* border-color: rgb(216, 216, 216); */
+  border-width: 2px;
+}
+
+.buttonHolder {
+  margin-top: 40px;
+}
+
+.submitBtn {
+  width: 9.7cm;
+  height: 1cm;
+  border-radius: 10px;
+  background-color: rgba(30, 5, 85, 255);
+  color: floralwhite;
+}
+
+.hidden {
+  display: none;
+}
+
+::placeholder {
+  font-size: 18px;
+}
