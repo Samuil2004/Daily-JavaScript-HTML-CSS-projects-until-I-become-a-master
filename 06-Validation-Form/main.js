@@ -7,15 +7,12 @@ const phone = document.querySelector(".inputPhone");
 const password = document.querySelector(".inputPassword");
 const btnSubmit = document.querySelector(".submitBtn");
 
-// btnSubmit.addEventListener("click", function (e) {
-//   e.preventDefault();
-// });
 const findValidator = function (item) {
   return item.closest(".inputBox").querySelector(".validator");
 };
 const validateInput = function (item) {
   const validator = findValidator(item);
-  validator.classList.remove("hidden");
+  // validator.classList.add("available");
   let symbol = true;
   if (item.value === "") {
     symbol = false;
@@ -99,3 +96,17 @@ const validatePassword = function (inputedPassword) {
       return "true";
   }
 };
+
+btnSubmit.addEventListener("click", function (e) {
+  e.preventDefault();
+  const allValidators = document.querySelectorAll(".validator");
+  const isTrue = (item) => item.src.includes("check");
+  if (Array.from(allValidators).every(isTrue)) {
+    alert("Your credentials have been successfully validated");
+    fName.value = lName.value = email.value = phone.value = password.value = "";
+    allValidators.forEach((item) => (item.src = ""));
+    [fName, lName, email, phone, password].forEach(
+      (item) => (item.style.border = `2px solid #444444`)
+    );
+  }
+});
