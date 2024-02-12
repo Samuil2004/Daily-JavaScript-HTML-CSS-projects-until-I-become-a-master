@@ -76,12 +76,12 @@ body {
   align-items: center;
 }
 .inputPhone {
-  width: 6.2cm;
+  width: 6cm;
   height: 1cm;
   border-radius: 10px;
   border-color: rgb(68, 68, 68);
   border-width: 2px;
-  margin-left: -5px;
+  margin-left: -10px;
 }
 
 .validator {
@@ -106,7 +106,7 @@ body {
   width: 3.3cm;
   height: 1cm;
   border-radius: 10px;
-  margin-right: -20px;
+  /* margin-right: -15px; */
   z-index: 1;
   font-size: 16px;
 }
@@ -161,4 +161,10 @@ body {
 
 ::placeholder {
   font-size: 18px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

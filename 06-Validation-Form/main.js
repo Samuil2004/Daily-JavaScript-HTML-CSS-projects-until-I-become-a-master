@@ -56,8 +56,8 @@ email.addEventListener("input", function () {
 });
 
 phone.addEventListener("input", function () {
-  const phonePattern = /^\+\d{9,15}$/;
-  if (phone.value.match(phonePattern)) {
+  // const phonePattern = /^\+\d{9,15}$/;
+  if (phone.value.toString().lenght > 7 && phone.value.toString().lenght < 12) {
     validateInput(phone);
   } else {
     changeValidationSymbol(phone, findValidator(phone), false);
