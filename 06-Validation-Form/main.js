@@ -9,9 +9,8 @@ const password = document.querySelector(".inputPassword");
 const btnSubmit = document.querySelector(".submitBtn");
 const allValidators = document.querySelectorAll(".validator");
 const panel = document.querySelector(".fields");
-// const dropDownMenuContent = document.querySelector(".dropdown-content");
 const selectedCountry = document.querySelector(".selectedCountryCode");
-// const btnCountryCodes = document.querySelector(".dropDown-btn");
+
 const findValidator = function (item) {
   return item.closest(".inputBox").querySelector(".validator");
 };
@@ -56,7 +55,6 @@ email.addEventListener("input", function () {
 });
 
 phone.addEventListener("input", function () {
-  // const phonePattern = /^\+\d{9,15}$/;
   if (phone.value.toString().length > 7 && phone.value.toString().length < 12) {
     validateInput(phone);
   } else {
@@ -137,20 +135,6 @@ const uploadCountryCodes = function () {
   };
 
   data.forEach((item) => addCountryInfo(item.flag, item.code, item.dial_code));
-
-  // selectedCountry.value = `${data[0].flag} ${data[0].dial_code}`;
-  // console.log(data[0].dial_code);
 };
 
 uploadCountryCodes();
-
-// btnCountryCodes.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   let condition = dropDownMenuContent.style.display;
-//   if (condition === "none") {
-//     condition = "block";
-//   } else {
-//     condition = "none";
-//   }
-//   dropDownMenuContent.style.display = condition;
-// });
