@@ -115,36 +115,14 @@ panel.addEventListener("mouseover", function (e) {
   const val = e.target.closest(".validator");
   if (val) {
     if (val.src.includes("cross")) {
-      // val.addEventListener("mouseover", function () {
       const span = val
         .closest(".inputBox")
         .previousElementSibling.querySelector(".error-message");
 
       span.style.display = "inline";
-      // });
       val.addEventListener("mouseout", function () {
         span.style.display = "none";
       });
-      // val.addEventListener("mouseout", function () {
-      //   const span2 = val
-      //     .closest(".inputBox")
-      //     .previousElementSibling.querySelector(".error-message");
-
-      //   // const span = val
-      //   //   .closest(".inputBox")
-      //   //   .closest(".top")
-      //   //   .querySelector(".error-message");
-      //   span2.style.display = "none";
-      // });
     }
   }
 });
-
-// allValidators.forEach((item) => {
-//   if (item.src.includes("cross")) {
-//     item.addEventListener("mouseover", function () {
-//       const span = item.closest(".top").querySelector(".error-message");
-//       span.style.display = "inline";
-//     });
-//   }
-// });

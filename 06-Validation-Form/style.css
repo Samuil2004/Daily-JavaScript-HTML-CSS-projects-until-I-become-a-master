@@ -56,8 +56,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-top: 20px; */
-  /* margin-bottom: 7px; */
   text-align: center;
 }
 .name {
@@ -71,35 +69,6 @@ body {
   margin-right: 33px;
   color: red;
 }
-
-/* .error-message { */
-/* display: none;
-  color: red;
-  font-size: 12px;
-  position: absolute;
-  top: 40px;
-  left: 0; */
-/* display: none;
-  padding: 10px;
-  border: 2px solid #444444;  
-  background-color: #f8f8f8;  
-  border-radius: 5px;
-}
-.inputBox:hover .error-message {
-  display: inline-block;
-} */
-/* .btnDropDown {
-  width: 2.3cm;
-  height: 1cm;
-} */
-/* .inputPhone {
-  width: 6.9cm;
-  height: 1cm;
-  border-radius: 10px;
-  border-width: 2px;
-  margin-left: -15px;
-  justify-content: right;
-} */
 
 .inputBox {
   display: flex;
