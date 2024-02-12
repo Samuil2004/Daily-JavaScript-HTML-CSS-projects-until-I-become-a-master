@@ -12,7 +12,6 @@ const findValidator = function (item) {
 };
 const validateInput = function (item) {
   const validator = findValidator(item);
-  // validator.classList.add("available");
   let symbol = true;
   if (item.value === "") {
     symbol = false;
