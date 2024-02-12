@@ -6,6 +6,8 @@ const email = document.querySelector(".inputEmail");
 const phone = document.querySelector(".inputPhone");
 const password = document.querySelector(".inputPassword");
 const btnSubmit = document.querySelector(".submitBtn");
+const allValidators = document.querySelectorAll(".validator");
+const panel = document.querySelector(".fields");
 
 const findValidator = function (item) {
   return item.closest(".inputBox").querySelector(".validator");
@@ -98,7 +100,6 @@ const validatePassword = function (inputedPassword) {
 
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-  const allValidators = document.querySelectorAll(".validator");
   const isTrue = (item) => item.src.includes("check");
   if (Array.from(allValidators).every(isTrue)) {
     alert("Your credentials have been successfully validated");
@@ -109,3 +110,41 @@ btnSubmit.addEventListener("click", function (e) {
     );
   }
 });
+
+panel.addEventListener("mouseover", function (e) {
+  const val = e.target.closest(".validator");
+  if (val) {
+    if (val.src.includes("cross")) {
+      // val.addEventListener("mouseover", function () {
+      const span = val
+        .closest(".inputBox")
+        .previousElementSibling.querySelector(".error-message");
+
+      span.style.display = "inline";
+      // });
+      val.addEventListener("mouseout", function () {
+        span.style.display = "none";
+      });
+      // val.addEventListener("mouseout", function () {
+      //   const span2 = val
+      //     .closest(".inputBox")
+      //     .previousElementSibling.querySelector(".error-message");
+
+      //   // const span = val
+      //   //   .closest(".inputBox")
+      //   //   .closest(".top")
+      //   //   .querySelector(".error-message");
+      //   span2.style.display = "none";
+      // });
+    }
+  }
+});
+
+// allValidators.forEach((item) => {
+//   if (item.src.includes("cross")) {
+//     item.addEventListener("mouseover", function () {
+//       const span = item.closest(".top").querySelector(".error-message");
+//       span.style.display = "inline";
+//     });
+//   }
+// });
