@@ -57,7 +57,7 @@ email.addEventListener("input", function () {
 
 phone.addEventListener("input", function () {
   // const phonePattern = /^\+\d{9,15}$/;
-  if (phone.value.toString().lenght > 7 && phone.value.toString().lenght < 12) {
+  if (phone.value.toString().length > 7 && phone.value.toString().length < 12) {
     validateInput(phone);
   } else {
     changeValidationSymbol(phone, findValidator(phone), false);
@@ -138,10 +138,9 @@ const uploadCountryCodes = function () {
 
   data.forEach((item) => addCountryInfo(item.flag, item.code, item.dial_code));
 
-  selectedCountry.value = `${data[0].flag} ${data[0].dial_code}`;
-  console.log(data[0].dial_code);
+  // selectedCountry.value = `${data[0].flag} ${data[0].dial_code}`;
+  // console.log(data[0].dial_code);
 };
-// console.log(data);
 
 uploadCountryCodes();
 
