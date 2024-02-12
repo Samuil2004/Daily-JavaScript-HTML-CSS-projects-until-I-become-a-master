@@ -1,4 +1,5 @@
-"use strict";
+import data from "./countries.js";
+("use strict");
 
 const fName = document.querySelector(".inputFirstName");
 const lName = document.querySelector(".inputLastName");
@@ -8,7 +9,9 @@ const password = document.querySelector(".inputPassword");
 const btnSubmit = document.querySelector(".submitBtn");
 const allValidators = document.querySelectorAll(".validator");
 const panel = document.querySelector(".fields");
-
+// const dropDownMenuContent = document.querySelector(".dropdown-content");
+const selectedCountry = document.querySelector(".selectedCountryCode");
+// const btnCountryCodes = document.querySelector(".dropDown-btn");
 const findValidator = function (item) {
   return item.closest(".inputBox").querySelector(".validator");
 };
@@ -126,3 +129,29 @@ panel.addEventListener("mouseover", function (e) {
     }
   }
 });
+
+const uploadCountryCodes = function () {
+  const addCountryInfo = function (flag, code, dial_code) {
+    const html = `<option>${flag}${code} (${dial_code})</option>`;
+    selectedCountry.insertAdjacentHTML("beforeend", html);
+  };
+
+  data.forEach((item) => addCountryInfo(item.flag, item.code, item.dial_code));
+
+  selectedCountry.value = `${data[0].flag} ${data[0].dial_code}`;
+  console.log(data[0].dial_code);
+};
+// console.log(data);
+
+uploadCountryCodes();
+
+// btnCountryCodes.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   let condition = dropDownMenuContent.style.display;
+//   if (condition === "none") {
+//     condition = "block";
+//   } else {
+//     condition = "none";
+//   }
+//   dropDownMenuContent.style.display = condition;
+// });

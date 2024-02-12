@@ -75,6 +75,15 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.inputPhone {
+  width: 6.2cm;
+  height: 1cm;
+  border-radius: 10px;
+  border-color: rgb(68, 68, 68);
+  border-width: 2px;
+  margin-left: -5px;
+}
+
 .validator {
   height: 25px;
   margin-right: 3px;
@@ -87,10 +96,53 @@ body {
   border-color: rgb(68, 68, 68);
   border-width: 2px;
 }
-
-.buttonHolder {
-  margin-top: 40px;
+/* .dropDownMenu {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-right: -17px;
+} */
+.selectedCountryCode {
+  width: 3.3cm;
+  height: 1cm;
+  border-radius: 10px;
+  margin-right: -20px;
+  z-index: 1;
+  font-size: 16px;
 }
+/* .dropDown-btn {
+  display: flex;
+  width: 0.5cm;
+  justify-content: center;
+  align-items: center;
+} */
+/* .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: hsl(0, 0%, 98%);
+  width: auto;
+  max-height: 160px;
+  overflow-y: auto;
+  z-index: 1;
+} */
+
+/* .dropdown-content option {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+} */
+
+/* .dropdown-content a:hover {
+  background-color: #f1f1f1;
+} */
+
+/* .dropdown-btn:hover + .dropdown-content {
+  display: inline;
+} */
 
 .submitBtn {
   width: 9.7cm;
@@ -100,6 +152,9 @@ body {
   color: floralwhite;
 }
 
+.buttonHolder {
+  margin-top: 40px;
+}
 .hidden {
   display: none;
 }
