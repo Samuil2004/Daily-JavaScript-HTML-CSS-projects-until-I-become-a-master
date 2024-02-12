@@ -62,3 +62,40 @@ phone.addEventListener("input", function () {
     changeValidationSymbol(phone, findValidator(phone), false);
   }
 });
+
+password.addEventListener("blur", function () {
+  validateInput(fName);
+  const validation = validatePassword(password.value);
+  if (validation === "true") {
+    validateInput(password);
+  } else {
+    changeValidationSymbol(password, findValidator(password), false);
+    alert(validation);
+  }
+});
+
+const validatePassword = function (inputedPassword) {
+  let num;
+  if (inputedPassword.lenght < 5) {
+    num = 0;
+  } else if (!/[A-Z]/.test(inputedPassword)) {
+    num = 1;
+  } else if (!/[0-9]/.test(inputedPassword)) {
+    num = 2;
+  } else if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(inputedPassword)) {
+    num = 3;
+  }
+
+  switch (num) {
+    case 0:
+      return "The password should be at least 5 digits long";
+    case 1:
+      return "The password should contain at least one capital letter";
+    case 2:
+      return "The password should contain at least one small letter";
+    case 3:
+      return "The password should contain at least one special character";
+    default:
+      return "true";
+  }
+};
