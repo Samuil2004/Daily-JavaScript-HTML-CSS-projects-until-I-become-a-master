@@ -26,22 +26,23 @@ const searchForButton = function (btn) {
 };
 
 const number = function (btn) {
-  const value = btn.textContent;
-  let result2;
-  // if (activeBtn === undefined) {
-  //   display.value = "";
-  // }
-  if (display.value !== "") {
-    if (value === ".") {
-      const sss = display.value;
-      result2 = sss + ".";
+  try {
+    const value = btn.textContent;
+    let result2;
+    if (display.value !== "") {
+      if (value === "." && !display.value.includes(".")) {
+        const sss = display.value;
+        result2 = sss + ".";
+      } else {
+        const prevInput = display.value;
+        result2 = +(prevInput + btn.textContent);
+      }
+      display.value = result2;
     } else {
-      const prevInput = display.value;
-      result2 = +(prevInput + btn.textContent);
+      display.value = value;
     }
-    display.value = result2;
-  } else {
-    display.value = value;
+  } catch (err) {
+    alert(err);
   }
 };
 
@@ -50,7 +51,8 @@ const greyBtn = function (btn) {
   const input = +display.value;
   let result;
   if (value === "AC") {
-    result = "";
+    result = 0;
+    valueHolder = 0;
     activeBtn = undefined;
   } else if (display.value !== "" && display.value !== 0) {
     if (value === "+/-") {
@@ -72,22 +74,28 @@ const greyBtn = function (btn) {
 };
 
 const signBtn = function (btn) {
-  const value = btn.textContent;
-  const input = +display.value;
-  if (display.value !== " ") {
-    if (value !== "=") {
-      result = "";
-      valueHolder = input;
-      activeBtn = btn;
-      btn.classList.add("active");
-    } else if (value === "=") {
-      result = numOfDigits(equalbtn(activeBtn, valueHolder, input), 2);
-      activeBtn.classList.remove("active");
-      activeBtn = undefined;
+  try {
+    const value = btn.textContent;
+    const input = +display.value;
+    result = 0;
+    if (display.value !== " ") {
+      if (value !== "=") {
+        result = "";
+        valueHolder = input;
+        activeBtn = btn;
+        btn.classList.add("active");
+      } else if (value === "=" && activeBtn !== undefined) {
+        result = numOfDigits(equalbtn(activeBtn, valueHolder, input), 2);
+        activeBtn.classList.remove("active");
+        activeBtn = undefined;
+      }
     }
+    display.value = result;
+  } catch (err) {
+    alert(err);
   }
-  display.value = result;
 };
+
 const numOfDigits = function (num, digits) {
   if (num > Math.floor(num) && num < Math.ceil(num)) {
     return num.toFixed(digits);
