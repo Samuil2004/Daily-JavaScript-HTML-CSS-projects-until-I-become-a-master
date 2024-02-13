@@ -30,11 +30,9 @@ const number = function (btn) {
   try {
     const value = btn.textContent;
     let result2;
-    console.log(clear);
     if (clear) {
       display.value = "";
     }
-    //
     if (display.value !== "") {
       if (value === "." && !display.value.includes(".")) {
         const sss = display.value;
