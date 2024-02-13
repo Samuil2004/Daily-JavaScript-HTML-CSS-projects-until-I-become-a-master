@@ -92,9 +92,10 @@ const signBtn = function (btn) {
       result = "";
       valueHolder = input;
       activeBtn = btn;
+      btn.classList.add("active");
     } else if (value === "=") {
-      // display.value = equalbtn(activeBtn, valueHolder, input);
       result = equalbtn(activeBtn, valueHolder, input);
+      activeBtn.classList.remove("active");
       activeBtn = undefined;
     }
   }

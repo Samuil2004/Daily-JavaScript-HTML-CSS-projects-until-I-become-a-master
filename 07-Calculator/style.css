@@ -116,3 +116,8 @@ body {
   height: 10cm;
   width: 2.185cm;
 }
+
+.active {
+  background-color: rgb(109, 77, 19);
+  border: 3px solid rgb(239, 156, 0);
+}
