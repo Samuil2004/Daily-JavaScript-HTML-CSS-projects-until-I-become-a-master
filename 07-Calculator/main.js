@@ -37,9 +37,9 @@ const number = function (btn) {
   // console.log(typeof value);
   // display.value = "";
   let result2;
-  if (activeBtn !== undefined) {
-    display.value = "";
-  }
+  // if (activeBtn !== undefined) {
+  //   display.value = "";
+  // }
   if (display.value !== "") {
     if (value === ".") {
       const sss = display.value;
@@ -84,20 +84,23 @@ const greyBtn = function (btn) {
   display.value = result;
 };
 
-// let fresult;
 const signBtn = function (btn) {
   const value = btn.textContent;
   const input = +display.value;
   if (display.value !== " ") {
     if (value !== "=") {
+      result = "";
       valueHolder = input;
       activeBtn = btn;
     } else if (value === "=") {
-      display.value = equalbtn(activeBtn, valueHolder, input);
+      // display.value = equalbtn(activeBtn, valueHolder, input);
+      result = equalbtn(activeBtn, valueHolder, input);
       activeBtn = undefined;
     }
   }
+  display.value = result;
 };
+
 const equalbtn = function (btn, valueHolder, curInput) {
   if (valueHolder !== null) {
     if (activeBtn !== undefined) {
