@@ -11,22 +11,15 @@ body {
   height: 18cm;
   width: 9cm;
   border-radius: 50px;
-  /* display: grid; */
-  /* align-items: center; */
-  /* justify-content: center; */
 }
 
 .displayPanel {
-  /* background-color: white; */
   width: 9cm;
   height: 5.5cm;
   margin-top: 50px;
   position: relative;
-  /* margin-bottom: 15px; */
-  /* border-radius: 50px; */
-  /* justify-content: end;
-  justify-items: end; */
 }
+
 .display {
   position: absolute;
   background-color: black;
@@ -38,12 +31,10 @@ body {
   color: white;
   text-align: right;
   border: none;
-  /* margin-right: 20px; */
   padding: 0 30px;
 }
 
 .controlsPanel {
-  /* background-color: bisque; */
   width: 8.74cm;
   height: 10cm;
   display: flex;
@@ -52,24 +43,16 @@ body {
 }
 
 .leftSide {
-  /* background-color: aquamarine; */
   height: 10cm;
   width: 6.55cm;
   display: grid;
-  /* justify-content: center; */
-  /* align-content: center; */
   text-align: center;
 }
 
 .greyButtons {
-  /* background-color: brown; */
   height: 2cm;
   width: 6.55cm;
 }
-/* .greyButtons button {
-  background-color: rgb(152, 152, 152);
-  border: 0px solid rgb(152, 152, 152);
-} */
 
 .gr {
   background-color: rgb(152, 152, 152);
@@ -106,13 +89,11 @@ body {
 }
 
 .numberButtons {
-  /* background-color: chocolate; */
   height: 8cm;
   width: 6.55cm;
 }
 
 .rightButtons {
-  /* background-color: blue; */
   height: 10cm;
   width: 2.185cm;
 }
