@@ -31,7 +31,7 @@ body {
   color: white;
   text-align: right;
   border: none;
-  padding: 0 30px;
+  padding-right: 30px;
 }
 
 .controlsPanel {
