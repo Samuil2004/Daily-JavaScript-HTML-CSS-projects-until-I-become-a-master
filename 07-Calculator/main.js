@@ -36,13 +36,23 @@ const number = function (btn) {
   const value = btn.textContent;
   // console.log(typeof value);
   // display.value = "";
+  let result2;
   if (activeBtn !== undefined) {
     display.value = "";
   }
   if (display.value !== "") {
-    const prevInput = display.value;
-    const result = +(prevInput + btn.textContent);
-    display.value = result;
+    if (value === ".") {
+      const sss = display.value;
+      result2 = sss + ".";
+      display.value = result2;
+      console.log(sss);
+      console.log(result2);
+      console.log(typeof result2);
+    } else {
+      const prevInput = display.value;
+      result2 = +(prevInput + btn.textContent);
+      display.value = result2;
+    }
   } else {
     display.value = value;
   }
@@ -64,7 +74,7 @@ const greyBtn = function (btn) {
       }
     } else if (value === "%") {
       if (input > 0) {
-        result = (input / 100).toFixed(6).replace(/0+$/, "");
+        result = (input / 100).toFixed(3).replace(/0+$/, "");
       } else {
         result = 0;
         activeBtn = undefined;
@@ -84,21 +94,25 @@ const signBtn = function (btn) {
       activeBtn = btn;
     } else if (value === "=") {
       display.value = equalbtn(activeBtn, valueHolder, input);
+      activeBtn = undefined;
     }
   }
 };
 const equalbtn = function (btn, valueHolder, curInput) {
-  const value = btn.textContent;
   if (valueHolder !== null) {
-    if (value === "/") {
-      console.log(valueHolder / curInput);
-      return valueHolder / curInput;
-    } else if (value === "X") {
-      return valueHolder * curInput;
-    } else if (value === "-") {
-      return valueHolder - curInput;
-    } else if (value === "+") {
-      return valueHolder + curInput;
+    if (activeBtn !== undefined) {
+      const value = btn.textContent;
+
+      if (value === "/") {
+        console.log(valueHolder / curInput);
+        return valueHolder / curInput;
+      } else if (value === "X") {
+        return valueHolder * curInput;
+      } else if (value === "-") {
+        return valueHolder - curInput;
+      } else if (value === "+") {
+        return valueHolder + curInput;
+      }
     }
   }
 };
