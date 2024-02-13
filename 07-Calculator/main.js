@@ -5,6 +5,7 @@ const display = document.querySelector(".display");
 let result;
 let activeBtn;
 let valueHolder;
+let clear = false;
 
 btns.forEach((btn) =>
   btn.addEventListener("click", function (e) {
@@ -29,6 +30,11 @@ const number = function (btn) {
   try {
     const value = btn.textContent;
     let result2;
+    console.log(clear);
+    if (clear) {
+      display.value = "";
+    }
+    //
     if (display.value !== "") {
       if (value === "." && !display.value.includes(".")) {
         const sss = display.value;
@@ -41,6 +47,7 @@ const number = function (btn) {
     } else {
       display.value = value;
     }
+    clear = false;
   } catch (err) {
     alert(err);
   }
@@ -80,7 +87,7 @@ const signBtn = function (btn) {
     result = 0;
     if (display.value !== " ") {
       if (value !== "=") {
-        result = "";
+        result = input;
         valueHolder = input;
         activeBtn = btn;
         btn.classList.add("active");
@@ -91,6 +98,7 @@ const signBtn = function (btn) {
       }
     }
     display.value = result;
+    clear = true;
   } catch (err) {
     alert(err);
   }
