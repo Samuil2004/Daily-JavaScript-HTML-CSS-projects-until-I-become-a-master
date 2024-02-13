@@ -28,6 +28,9 @@ const searchForButton = function (btn) {
 const number = function (btn) {
   const value = btn.textContent;
   let result2;
+  // if (activeBtn === undefined) {
+  //   display.value = "";
+  // }
   if (display.value !== "") {
     if (value === ".") {
       const sss = display.value;
@@ -58,7 +61,7 @@ const greyBtn = function (btn) {
       }
     } else if (value === "%") {
       if (input > 0) {
-        result = input / 100;
+        result = numOfDigits(input / 100, 6);
       } else {
         result = 0;
         activeBtn = undefined;
@@ -78,12 +81,19 @@ const signBtn = function (btn) {
       activeBtn = btn;
       btn.classList.add("active");
     } else if (value === "=") {
-      result = equalbtn(activeBtn, valueHolder, input).toFixed(2);
+      result = numOfDigits(equalbtn(activeBtn, valueHolder, input), 2);
       activeBtn.classList.remove("active");
       activeBtn = undefined;
     }
   }
   display.value = result;
+};
+const numOfDigits = function (num, digits) {
+  if (num > Math.floor(num) && num < Math.ceil(num)) {
+    return num.toFixed(digits);
+  } else {
+    return num;
+  }
 };
 
 const equalbtn = function (btn, valueHolder, curInput) {
