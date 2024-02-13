@@ -85,6 +85,7 @@ const signBtn = function (btn) {
     const value = btn.textContent;
     const input = +display.value;
     result = 0;
+    activeBtnHandler();
     if (display.value !== " ") {
       if (value !== "=") {
         result = input;
@@ -93,7 +94,6 @@ const signBtn = function (btn) {
         btn.classList.add("active");
       } else if (value === "=" && activeBtn !== undefined) {
         result = numOfDigits(equalbtn(activeBtn, valueHolder, input), 2);
-        activeBtn.classList.remove("active");
         activeBtn = undefined;
       }
     }
@@ -102,6 +102,10 @@ const signBtn = function (btn) {
   } catch (err) {
     alert(err);
   }
+};
+
+const activeBtnHandler = function () {
+  btns.forEach((btn) => btn.classList.remove("active"));
 };
 
 const numOfDigits = function (num, digits) {
