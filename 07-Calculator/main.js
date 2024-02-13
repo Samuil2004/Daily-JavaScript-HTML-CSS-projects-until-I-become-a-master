@@ -3,6 +3,9 @@
 const btns = document.querySelectorAll(".btn");
 console.log(btns);
 const display = document.querySelector(".display");
+let result;
+let activeBtn;
+let valueHolder;
 
 btns.forEach((btn) =>
   btn.addEventListener("click", function (e) {
@@ -13,18 +16,18 @@ btns.forEach((btn) =>
 
 const searchForButton = function (btn) {
   const findClass = btn.closest(".panel");
-  console.log(findClass);
+  // console.log(findClass);
   const type = findClass.classList[1].slice(0, -7);
-  console.log(type);
+  // console.log(type);
   if (type === "number") {
-    console.log(`number`);
+    // console.log(`number`);
     number(btn);
     console.log(btn.textContent);
   } else if (type === "grey") {
-    console.log(`grey`);
+    // console.log(`grey`);
     greyBtn(btn);
   } else if (type === "right") {
-    console.log(`right`);
+    // console.log(`right`);
     signBtn(btn);
   }
 };
@@ -32,6 +35,10 @@ const searchForButton = function (btn) {
 const number = function (btn) {
   const value = btn.textContent;
   // console.log(typeof value);
+  // display.value = "";
+  if (activeBtn !== undefined) {
+    display.value = "";
+  }
   if (display.value !== "") {
     const prevInput = display.value;
     const result = +(prevInput + btn.textContent);
@@ -47,6 +54,7 @@ const greyBtn = function (btn) {
   let result;
   if (value === "AC") {
     result = "";
+    activeBtn = undefined;
   } else if (display.value !== "" && display.value !== 0) {
     if (value === "+/-") {
       if (input > 0) {
@@ -57,40 +65,40 @@ const greyBtn = function (btn) {
     } else if (value === "%") {
       if (input > 0) {
         result = (input / 100).toFixed(6).replace(/0+$/, "");
+      } else {
+        result = 0;
+        activeBtn = undefined;
       }
     }
   }
   display.value = result;
 };
 
-let activeBtn;
-let valueHolder;
+// let fresult;
 const signBtn = function (btn) {
   const value = btn.textContent;
   const input = +display.value;
-  let result;
   if (display.value !== " ") {
     if (value !== "=") {
-      activeBtn = btn;
       valueHolder = input;
-      result = "";
+      activeBtn = btn;
     } else if (value === "=") {
-      result = equalbtn(input);
-      // result = valueHolder
+      display.value = equalbtn(activeBtn, valueHolder, input);
     }
   }
-  display.value = result;
 };
-
-const equalbtn = function (input) {
-  // const input = +display.value;
-
+const equalbtn = function (btn, valueHolder, curInput) {
+  const value = btn.textContent;
   if (valueHolder !== null) {
-    // const result2 = 6;
-    // display.value = result2;
-    return valueHolder + input;
-    console.log(typeof valueHolder, valueHolder);
-    console.log(typeof input, input);
-    console.log(typeof (valueHolder + input));
+    if (value === "/") {
+      console.log(valueHolder / curInput);
+      return valueHolder / curInput;
+    } else if (value === "X") {
+      return valueHolder * curInput;
+    } else if (value === "-") {
+      return valueHolder - curInput;
+    } else if (value === "+") {
+      return valueHolder + curInput;
+    }
   }
 };
