@@ -29,11 +29,17 @@ body {
 }
 .display {
   position: absolute;
-  background-color: aquamarine;
+  background-color: black;
   height: 2cm;
-  width: 8.5cm;
+  width: 7cm;
   bottom: 0;
   right: 0;
+  font-size: 55px;
+  color: white;
+  text-align: right;
+  border: none;
+  /* margin-right: 20px; */
+  padding: 0 30px;
 }
 
 .controlsPanel {
@@ -60,12 +66,14 @@ body {
   height: 2cm;
   width: 6.55cm;
 }
-.greyButtons button {
-  /* width: 1.9cm;
-  height: 1.9cm; */
+/* .greyButtons button {
   background-color: rgb(152, 152, 152);
   border: 0px solid rgb(152, 152, 152);
-  /* border-radius: 50%; */
+} */
+
+.gr {
+  background-color: rgb(152, 152, 152);
+  border: 0px solid rgb(152, 152, 152);
 }
 
 .btn {
@@ -103,7 +111,7 @@ body {
   width: 6.55cm;
 }
 
-.rightSide {
+.rightButtons {
   /* background-color: blue; */
   height: 10cm;
   width: 2.185cm;

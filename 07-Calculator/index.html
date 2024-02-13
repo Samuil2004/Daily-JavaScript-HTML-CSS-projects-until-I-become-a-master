@@ -3,21 +3,21 @@
   <head>
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css" />
-    <scripts src="main.js"></scripts>
+    <script defer src="main.js"></script>
   </head>
   <body>
     <div class="bigPanel">
       <div class="displayPanel">
-        <input class="display" type="text" readonly />
+        <input class="display" type="number" readonly />
       </div>
       <div class="controlsPanel">
         <div class="leftSide">
-          <div class="greyButtons">
-            <button class="clear btn">AC</button>
-            <button class="plusMinus btn">+/-</button>
-            <button class="precentage btn">%</button>
+          <div class="panel greyButtons">
+            <button class="clear gr btn">AC</button>
+            <button class="plusMinus gr btn">+/-</button>
+            <button class="precentage gr btn">%</button>
           </div>
-          <div class="numberButtons">
+          <div class="panel numberButtons">
             <button class="num btn">7</button>
             <button class="num btn">8</button>
             <button class="num btn">9</button>
@@ -31,8 +31,7 @@
             <button class="num dot btn">.</button>
           </div>
         </div>
-
-        <div class="rightSide">
+        <div class="panel rightButtons">
           <button class="sign btn">/</button>
           <button class="sign btn">X</button>
           <button class="sign btn">-</button>
