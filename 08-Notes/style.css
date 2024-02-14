@@ -1,0 +1,54 @@
+body {
+  background-color: slategray;
+}
+
+.bigPanel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  height: 18cm;
+  width: 9cm;
+  border-radius: 50px;
+}
+
+.frontPage {
+  background-color: bisque;
+  height: 15.7cm;
+  margin-top: 45px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.topPanel {
+  display: grid;
+  background-color: aqua;
+  height: 2.5cm;
+  justify-content: left;
+  padding: 0 10px;
+  grid-template-rows: 50% 50%;
+  /* align-items: center; */
+}
+.heading {
+  /* padding: 0 10px; */
+  font-size: 27px;
+}
+.searchBar {
+  width: 7cm;
+  /* margin-left: 10px; */
+  height: 0.7cm;
+  margin-top: 15px;
+  /* margin-top: -16px; */
+  /* margin-bottom: 20px; */
+  /* padding: 10px 10px; */
+}
+
+.allNotesPanel {
+  background-color: aquamarine;
+  height: 11.7cm;
+}
+.bottomNavPanel {
+  background-color: black;
+  height: 1.5cm;
+}
