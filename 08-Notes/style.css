@@ -11,51 +11,72 @@ body {
   height: 18cm;
   width: 9cm;
   border-radius: 50px;
+  background-color: darkgoldenrod;
+  border: 3px solid black;
 }
 
 .frontPage {
-  background-color: bisque;
+  background-color: whitesmoke;
   height: 15.7cm;
   margin-top: 45px;
   margin-left: 10px;
   margin-right: 10px;
+  border-radius: 10px;
+  /* display: grid; */
 }
 
 .topPanel {
   display: grid;
-  background-color: aqua;
+  /* background-color: aqua; */
   height: 2.5cm;
   justify-content: left;
   padding: 0 10px;
   grid-template-rows: 50% 50%;
-  /* align-items: center; */
 }
 .heading {
-  /* padding: 0 10px; */
   font-size: 15px;
 }
 .searchBar {
   width: 7.8cm;
-  /* margin-left: 10px; */
   height: 0.7cm;
   margin-top: 8px;
   background-color: rgb(188, 188, 188);
   border: none;
   border-radius: 10px;
-  /* margin-top: -16px; */
-  /* margin-bottom: 20px; */
-  /* padding: 10px 10px; */
+  text-align: 10px;
 }
+
 .searchBar::placeholder {
   padding: 5px;
   color: rgb(48, 48, 48);
 }
 
 .allNotesPanel {
-  background-color: aquamarine;
+  background-color: rgb(188, 188, 188);
   height: 11.7cm;
+  /* height: auto; */
+  display: grid;
+  grid-gap: 2px;
+  /* grid-template-rows: repeat(auto-fill, minmax(1cm, 1fr)); */
+  /* gap: 1.7cm; */
+  overflow: auto;
 }
+.note {
+  background-color: whitesmoke;
+  height: 2cm;
+  /* height: auto; */
+  display: grid;
+  grid-template-rows: 50% 50%;
+  padding: 10px;
+  align-items: center;
+  margin: 0;
+  /* margin-top: 40px; */
+}
+.title {
+  font-size: 25px;
+}
+
 .bottomNavPanel {
-  background-color: black;
-  height: 1.5cm;
+  background-color: rgb(255, 0, 0);
+  height: 1.3cm;
 }
