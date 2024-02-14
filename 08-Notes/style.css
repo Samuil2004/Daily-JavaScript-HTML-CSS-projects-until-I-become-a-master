@@ -15,7 +15,8 @@ body {
   border: 3px solid black;
 }
 
-.frontPage {
+.frontPage,
+.notePage {
   background-color: whitesmoke;
   height: 15.7cm;
   margin-top: 45px;
@@ -105,4 +106,66 @@ body {
   transform: translate(-50%);
   font-size: 18px;
   text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.topNavigationBar {
+  display: flex;
+  height: 2cm;
+  background-color: aqua;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+.backToFrontPage,
+.doneButton {
+  height: 1cm;
+  width: 2.2cm;
+  font-size: 18px;
+  color: darkgoldenrod;
+  background-color: transparent;
+  border: none;
+}
+
+.noteContentPanel {
+  /* background-color: aquamarine; */
+  height: 13.7cm;
+  display: grid;
+}
+.titleOfNotePanel {
+  display: flex;
+  height: 2.5cm;
+  background-color: blue;
+  text-align: center;
+  align-items: center;
+  padding: 0 10px;
+  /* justify-content: center; */
+}
+.headingOfNote {
+  height: 1.7cm;
+  font-size: 30px;
+  color: grey;
+  width: 7.7cm;
+}
+.headingOfNote::placeholder {
+  color: grey;
+  font-size: 30px;
+  padding: 10px;
+}
+.contentOfNotePanel {
+  /* background-color: darkgrey; */
+  height: 11.2cm;
+  /* padding: 0 10px; */
+}
+
+.contentOfNote {
+  height: 10.5cm;
+  width: 7.8cm;
+  resize: none;
+  overflow: auto;
+  font-size: 18px;
+  padding: 10px;
 }
