@@ -1,7 +1,7 @@
 "use strict";
 
 const countOfNotes = document.querySelector(".countOfNotes");
-const navBtns = document.querySelectorAll(".btn");
+const navBtnsNotesPage = document.querySelectorAll(".btn");
 const frontPage = document.querySelector(".frontPage");
 const pages = document.querySelectorAll(".page");
 const allNotesPanel = document.querySelector(".allNotesPanel");
@@ -12,7 +12,7 @@ const searchBar = document.querySelector(".searchBar");
 let isNoteOpened = true;
 let currentNote;
 
-navBtns.forEach((btn) =>
+navBtnsNotesPage.forEach((btn) =>
   btn.addEventListener("click", function (e) {
     e.preventDefault();
 
@@ -49,7 +49,8 @@ class Note {
     this.title = newTitle;
   }
 }
-const addNote = function (note = undefined) {
+
+const addNote = function () {
   const newNote = new Note(noteTitle.value);
   if (noteTitle.value !== "") {
     if (contentOfNote.value !== "") {
@@ -59,12 +60,6 @@ const addNote = function (note = undefined) {
     allNotes.push(newNote);
     storeNotes();
   }
-};
-const attachEventListener = function (note) {
-  note.addEventListener("click", function (e) {
-    e.preventDefault();
-    openNote(note);
-  });
 };
 
 const addNoteToFrontPage = function (note) {
@@ -110,10 +105,13 @@ const openNote = function (note) {
   const title = note.querySelector(".title").textContent;
   noteTitle.value = title;
   const description = note.querySelector(".description").textContent;
-  const selectedNote = allNotes.find(
-    (lookForNote) =>
-      lookForNote.title === title && lookForNote.heading == description
-  );
+  const selectedNote = allNotes.find((lookForNote) => {
+    if (lookForNote.heading) {
+      return lookForNote.title === title && lookForNote.heading == description;
+    } else {
+      return lookForNote.title === title;
+    }
+  });
   if (description !== "null") contentOfNote.value = description;
   pages.forEach((page) => page.classList.toggle("hidden"));
   isNoteOpened = false;
