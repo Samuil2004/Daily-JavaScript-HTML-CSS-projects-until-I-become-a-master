@@ -24,6 +24,7 @@ navBtns.forEach((btn) =>
     }
     extractNotes();
     isNoteOpened = true;
+    searchBar.value = "";
   })
 );
 
@@ -127,29 +128,25 @@ const updateNote = function (selectedNote) {
   storeNotes();
 };
 
-//edit of notes
-//search bar
-//attach event listener to the div, not the the object
-searchBar.addEventListener("click", function () {
+searchBar.addEventListener("input", searchNotes);
+
+// searchBar.addEventListener("blur", function () {
+//   if (searchBar.value === "") {
+//     const notes = document.querySelectorAll(".note");
+//     notes.forEach((note) => note.classList.remove("hidden"));
+//   }
+// });
+
+function searchNotes() {
+  const input = searchBar.value.toLowerCase();
   const notes = document.querySelectorAll(".note");
-  notes.forEach((note) => note.classList.add("hidden"));
-});
-frontPage.addEventListener("click", function (e) {
-  if (!searchBar.contains(e.target)) {
-    const notes = document.querySelectorAll(".note");
-    notes.forEach((note) => note.classList.remove("hidden"));
-    searchBar.value = "";
-  }
-});
 
-searchBar.addEventListener("input", function (e) {
-  const notes = [...document.querySelectorAll(".note")];
-  e.preventDefault();
-  const input = searchBar.value;
-
-  const classes = notes.filter((note) =>
-    note.querySelector(".title").textContent.includes(input)
-  );
-
-  classes.forEach((item) => item.classList.remove("hidden"));
-});
+  notes.forEach((note) => {
+    const title = note.querySelector(".title").textContent.toLowerCase();
+    if (title.startsWith(input)) {
+      note.classList.remove("hidden");
+    } else {
+      note.classList.add("hidden");
+    }
+  });
+}
