@@ -8,6 +8,7 @@ const allNotesPanel = document.querySelector(".allNotesPanel");
 const noteTitle = document.querySelector(".headingOfNote");
 const contentOfNote = document.querySelector(".contentOfNote");
 const btnNewNote = document.querySelector(".BtnNewLetter");
+const searchBar = document.querySelector(".searchBar");
 let isNoteOpened = true;
 let currentNote;
 
@@ -129,3 +130,26 @@ const updateNote = function (selectedNote) {
 //edit of notes
 //search bar
 //attach event listener to the div, not the the object
+searchBar.addEventListener("click", function () {
+  const notes = document.querySelectorAll(".note");
+  notes.forEach((note) => note.classList.add("hidden"));
+});
+frontPage.addEventListener("click", function (e) {
+  if (!searchBar.contains(e.target)) {
+    const notes = document.querySelectorAll(".note");
+    notes.forEach((note) => note.classList.remove("hidden"));
+    searchBar.value = "";
+  }
+});
+
+searchBar.addEventListener("input", function (e) {
+  const notes = [...document.querySelectorAll(".note")];
+  e.preventDefault();
+  const input = searchBar.value;
+
+  const classes = notes.filter((note) =>
+    note.querySelector(".title").textContent.includes(input)
+  );
+
+  classes.forEach((item) => item.classList.remove("hidden"));
+});
