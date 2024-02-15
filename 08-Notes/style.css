@@ -122,6 +122,11 @@ body {
   background-color: transparent;
   border: none;
 }
+.deleteNote {
+  font-size: 25px;
+  border: none;
+  background-color: transparent;
+}
 
 .noteContentPanel {
   height: 13.7cm;

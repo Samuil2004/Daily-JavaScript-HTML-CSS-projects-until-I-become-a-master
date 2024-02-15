@@ -9,6 +9,7 @@ import {
   setIsNoteOpenedToTrue,
   statusOfNoteOpened,
   getCurrentNote,
+  deleteNote,
 } from "./dataManager.js";
 
 configurator.navBtnsNotesPage.forEach((btn) =>
@@ -35,6 +36,8 @@ configurator.btnNewNote.addEventListener("click", function (e) {
 extractNotes();
 
 configurator.searchBar.addEventListener("input", searchNotes);
+
+configurator.btnDeleteNote.addEventListener("click", deleteNote);
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // //config

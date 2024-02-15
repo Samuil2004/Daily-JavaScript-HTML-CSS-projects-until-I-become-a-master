@@ -93,6 +93,14 @@ export function searchNotes() {
     }
   });
 }
+export function deleteNote() {
+  const newArr = allNotes.filter((item) => item !== currentNote);
+  allNotes = newArr;
+  console.log(allNotes);
+  storeNotes();
+  configurator.pages.forEach((page) => page.classList.toggle("hidden"));
+  extractNotes();
+}
 
 export function setIsNoteOpenedToTrue() {
   isNoteOpened = true;
