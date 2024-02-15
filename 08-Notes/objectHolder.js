@@ -11,5 +11,3 @@ export class Note {
     this.title = newTitle;
   }
 }
-
-// export default new Note();
