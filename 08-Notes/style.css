@@ -23,7 +23,6 @@ body {
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 10px;
-  /* display: grid; */
 }
 .frontPage {
   display: grid;
@@ -31,7 +30,6 @@ body {
 
 .topPanel {
   display: grid;
-  /* background-color: aqua; */
   height: 2.5cm;
   justify-content: left;
   padding: 0 10px;
@@ -60,48 +58,28 @@ body {
 }
 .allNotesPanel {
   background-color: rgb(188, 188, 188);
-  /* height: 11.7cm; */
   max-height: 11.7cm;
-  /* height: auto; */
   display: grid;
-  /* flex-direction: column; */
-  /* grid-template-rows: repeat(auto-fill, minmax(2.3cm, 1fr)); */
-  /* grid-template-rows: repeat(auto-fill, minmax(2.3cm, 2.3cm)); */
-  /* gap: 3cm; */
-  /* grid-auto-flow: row; */
   grid-gap: 2px;
-  /* grid-gap: 10px; */
-
   overflow: auto;
 }
 .note {
   background-color: whitesmoke;
   height: 2cm;
-  /* height: auto; */
   display: grid;
   grid-template-rows: 50% 50%;
   padding: 10px;
   align-items: center;
   margin: 0;
-
-  /* margin-bottom: 10px; */
-  /* margin-top: 40px; */
 }
 .title {
   font-size: 25px;
 }
 
 .bottomNavPanel {
-  /* background-color: rgb(255, 0, 0); */
   background-color: whitesmoke;
   height: 1.3cm;
   display: flex;
-  /* position: absolute;
-  bottom: 0;
-  left: 50%; */
-  /* justify-content: space-between;
-  text-align: center; 
-  position: relative; */
   text-align: center;
 }
 
@@ -117,8 +95,6 @@ body {
 }
 .countOfNotes {
   position: absolute;
-  /* left: 50%;
-  transform: translateX(-50%);  */
   left: 50%;
   transform: translate(-50%);
   font-size: 18px;
@@ -132,7 +108,6 @@ body {
 .topNavigationBar {
   display: flex;
   height: 2cm;
-  /* background-color: aqua; */
   align-items: center;
   justify-content: space-between;
   padding: 0 5px;
@@ -148,18 +123,15 @@ body {
 }
 
 .noteContentPanel {
-  /* background-color: aquamarine; */
   height: 13.7cm;
   display: grid;
 }
 .titleOfNotePanel {
   display: flex;
   height: 2.5cm;
-  /* background-color: blue; */
   text-align: center;
   align-items: center;
   padding: 0 10px;
-  /* justify-content: center; */
 }
 .headingOfNote {
   height: 1.7cm;
@@ -172,12 +144,9 @@ body {
 .headingOfNote::placeholder {
   color: grey;
   font-size: 30px;
-  /* padding: 5px; */
 }
 .contentOfNotePanel {
-  /* background-color: darkgrey; */
   height: 11.2cm;
-  /* padding: 0 10px; */
 }
 
 .contentOfNote {
