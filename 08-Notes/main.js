@@ -1,6 +1,5 @@
 "use strict";
 
-// const btnNewNote = document.querySelector(".BtnNewLetter");
 const countOfNotes = document.querySelector(".countOfNotes");
 const navBtns = document.querySelectorAll(".btn");
 const frontPage = document.querySelector(".frontPage");
@@ -17,9 +16,10 @@ navBtns.forEach((btn) =>
     e.preventDefault();
     pages.forEach((page) => page.classList.toggle("hidden"));
     addNote();
-    addFunctionalityToNotes();
+    extractNotes();
   })
 );
+
 btnNewNote.addEventListener("click", function (e) {
   e.preventDefault();
   pages.forEach((page) => page.classList.toggle("hidden"));
@@ -51,10 +51,15 @@ const addNote = function (note = undefined) {
       storeNotes();
     }
   } else {
-    // currentNote._updateTitle(contentOfNote.value);
-    // currentNote.title = noteTitle.value;
-    // note._updateTitle(noteTitle.value);
+    //add update note functionality
   }
+  addFunctionalityToNotes();
+};
+const attachEventListener = function (note) {
+  note.addEventListener("click", function (e) {
+    e.preventDefault();
+    openNote(note);
+  });
 };
 
 const addNoteToFrontPage = function (note) {
@@ -66,14 +71,34 @@ const addNoteToFrontPage = function (note) {
   allNotesPanel.insertAdjacentHTML("beforeend", html);
 };
 
+const addFunctionalityToNotes = function () {
+  let notes;
+  if (notes) {
+    console.log(notes);
+
+    notes.forEach((note) =>
+      note.removeEventListener("click", function () {
+        openNote(note);
+      })
+    );
+  }
+  notes = document.querySelectorAll(".note");
+  notes.forEach((note) => {
+    note.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log(`1`);
+      openNote(note);
+    });
+  });
+};
+
 const extractNotes = function () {
+  allNotesPanel.innerHTML = "";
   const storage = localStorage.getItem("notes");
   if (storage) {
     allNotes = JSON.parse(storage);
     allNotes.forEach((note) => addNoteToFrontPage(note));
-    // const notes = document.querySelectorAll(".note");
-    // addFunctionalityToNotes(notes);
-    // addFunctionalityToNotes();
+    addFunctionalityToNotes();
   }
 };
 extractNotes();
@@ -89,17 +114,21 @@ const openNote = function (note) {
   pages.forEach((page) => page.classList.toggle("hidden"));
   isNoteOpened = false;
   addNote(note);
-  // currentNote = note;
 };
-const notes = document.querySelectorAll(".note");
-const addFunctionalityToNotes = function () {
-  // const notes = document.querySelectorAll(".note");
-  notes.forEach((note) => {
-    note.addEventListener("click", function (e) {
-      e.preventDefault();
-      console.log(`1`);
-      openNote(note);
-    });
-  });
-};
-addFunctionalityToNotes();
+
+// const notes = document.querySelectorAll(".note");
+// const addFunctionalityToNotes = function () {
+//   // const notes = document.querySelectorAll(".note");
+//   notes.forEach((note) => {
+//     note.addEventListener("click", function (e) {
+//       e.preventDefault();
+//       console.log(`1`);
+//       openNote(note);
+//     });
+//   });
+// };
+// addFunctionalityToNotes();
+
+//edit of notes
+//search bar
+//attach event listener to the div, not the the object
