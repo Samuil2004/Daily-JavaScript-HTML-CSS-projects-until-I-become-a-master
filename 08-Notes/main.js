@@ -20,7 +20,6 @@ navBtns.forEach((btn) =>
       addNote();
     } else {
       updateNote(currentNote);
-      console.log(currentNote);
     }
     extractNotes();
     isNoteOpened = true;
@@ -49,20 +48,15 @@ class Note {
   }
 }
 const addNote = function (note = undefined) {
-  if (isNoteOpened) {
-    const newNote = new Note(noteTitle.value);
-    if (noteTitle.value !== "") {
-      if (contentOfNote.value !== "") {
-        newNote._addContent(contentOfNote.value);
-      }
-      addNoteToFrontPage(newNote);
-      allNotes.push(newNote);
-      storeNotes();
+  const newNote = new Note(noteTitle.value);
+  if (noteTitle.value !== "") {
+    if (contentOfNote.value !== "") {
+      newNote._addContent(contentOfNote.value);
     }
-  } else {
-    //add update note functionality
+    addNoteToFrontPage(newNote);
+    allNotes.push(newNote);
+    storeNotes();
   }
-  addFunctionalityToNotes();
 };
 const attachEventListener = function (note) {
   note.addEventListener("click", function (e) {
@@ -90,6 +84,10 @@ const addFunctionalityToNotes = function () {
   });
 };
 
+const updateCounter = function () {
+  countOfNotes.textContent = `Notes: ${allNotes.length}`;
+};
+
 const extractNotes = function () {
   allNotesPanel.innerHTML = "";
   const storage = localStorage.getItem("notes");
@@ -98,6 +96,7 @@ const extractNotes = function () {
     allNotes.forEach((note) => addNoteToFrontPage(note));
     addFunctionalityToNotes();
   }
+  updateCounter();
 };
 extractNotes();
 
@@ -113,18 +112,12 @@ const openNote = function (note) {
     (lookForNote) =>
       lookForNote.title === title && lookForNote.heading == description
   );
-  // allNotes.forEach((note) => console.log(note.content));
-  // console.log(title);
-  // console.log(description);
-  console.log(selectedNote);
   if (description !== "null") contentOfNote.value = description;
   pages.forEach((page) => page.classList.toggle("hidden"));
   isNoteOpened = false;
   currentNote = selectedNote;
   noteTitle.value = selectedNote.title;
   contentOfNote.value = selectedNote.content;
-
-  // updateNote(selectedNote);
 };
 
 const updateNote = function (selectedNote) {
@@ -132,19 +125,6 @@ const updateNote = function (selectedNote) {
   selectedNote.content = contentOfNote.value;
   storeNotes();
 };
-
-// const notes = document.querySelectorAll(".note");
-// const addFunctionalityToNotes = function () {
-//   // const notes = document.querySelectorAll(".note");
-//   notes.forEach((note) => {
-//     note.addEventListener("click", function (e) {
-//       e.preventDefault();
-//       console.log(`1`);
-//       openNote(note);
-//     });
-//   });
-// };
-// addFunctionalityToNotes();
 
 //edit of notes
 //search bar
