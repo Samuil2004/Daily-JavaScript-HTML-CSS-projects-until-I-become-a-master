@@ -14,8 +14,14 @@ let currentNote;
 navBtns.forEach((btn) =>
   btn.addEventListener("click", function (e) {
     e.preventDefault();
+
     pages.forEach((page) => page.classList.toggle("hidden"));
-    addNote();
+    if (isNoteOpened) {
+      addNote();
+    } else {
+      updateNote(currentNote);
+      console.log(currentNote);
+    }
     extractNotes();
     isNoteOpened = true;
   })
@@ -35,6 +41,8 @@ class Note {
   }
   _addContent(content) {
     this.content = content;
+    const heading = content.split(" ").slice(0, 8).join(" ");
+    this.heading = heading;
   }
   _updateTitle(newTitle) {
     this.title = newTitle;
@@ -67,7 +75,7 @@ const addNoteToFrontPage = function (note) {
   const html = `
   <div class="note">
     <p class="title">${note.title}</p>
-    <p class="description">${note.content ? note.content : null}</p>
+    <p class="description">${note.content ? note.heading : null}</p>
   </div>`;
   allNotesPanel.insertAdjacentHTML("beforeend", html);
 };
@@ -98,12 +106,31 @@ const storeNotes = function () {
 };
 
 const openNote = function (note) {
-  noteTitle.value = note.querySelector(".title").textContent;
-  let description = note.querySelector(".description").textContent;
+  const title = note.querySelector(".title").textContent;
+  noteTitle.value = title;
+  const description = note.querySelector(".description").textContent;
+  const selectedNote = allNotes.find(
+    (lookForNote) =>
+      lookForNote.title === title && lookForNote.heading == description
+  );
+  // allNotes.forEach((note) => console.log(note.content));
+  // console.log(title);
+  // console.log(description);
+  console.log(selectedNote);
   if (description !== "null") contentOfNote.value = description;
   pages.forEach((page) => page.classList.toggle("hidden"));
   isNoteOpened = false;
-  addNote(note);
+  currentNote = selectedNote;
+  noteTitle.value = selectedNote.title;
+  contentOfNote.value = selectedNote.content;
+
+  // updateNote(selectedNote);
+};
+
+const updateNote = function (selectedNote) {
+  selectedNote.title = noteTitle.value;
+  selectedNote.content = contentOfNote.value;
+  storeNotes();
 };
 
 // const notes = document.querySelectorAll(".note");
