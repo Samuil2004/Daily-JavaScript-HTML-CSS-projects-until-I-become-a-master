@@ -17,6 +17,7 @@ navBtns.forEach((btn) =>
     pages.forEach((page) => page.classList.toggle("hidden"));
     addNote();
     extractNotes();
+    isNoteOpened = true;
   })
 );
 
@@ -72,21 +73,10 @@ const addNoteToFrontPage = function (note) {
 };
 
 const addFunctionalityToNotes = function () {
-  let notes;
-  if (notes) {
-    console.log(notes);
-
-    notes.forEach((note) =>
-      note.removeEventListener("click", function () {
-        openNote(note);
-      })
-    );
-  }
-  notes = document.querySelectorAll(".note");
+  const notes = document.querySelectorAll(".note");
   notes.forEach((note) => {
     note.addEventListener("click", function (e) {
       e.preventDefault();
-      console.log(`1`);
       openNote(note);
     });
   });
