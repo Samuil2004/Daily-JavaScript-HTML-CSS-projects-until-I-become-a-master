@@ -3,7 +3,7 @@
   <head>
     <title>Notes</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="main.js"></script>
+    <script type="module" src="main.js"></script>
   </head>
   <body>
     <div class="bigPanel">
@@ -29,7 +29,12 @@
         </div>
         <div class="noteContentPanel">
           <div class="titleOfNotePanel">
-            <input class="headingOfNote" type="text" placeholder="Title" />
+            <input
+              class="headingOfNote"
+              type="text"
+              placeholder="Title"
+              maxlength="13"
+            />
           </div>
           <div class="contentOfNotePanel">
             <textarea class="contentOfNote" placeholder="Content"></textarea>
