@@ -11,6 +11,25 @@ body {
   width: 17cm;
   border-radius: 50px;
 }
+.topPanel {
+  /* background-color: aquamarine; */
+  height: 1.7cm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 120px;
+}
+.restartGame {
+  height: 1cm;
+  width: 2cm;
+  background-color: cornflowerblue;
+  border: 1px solid black;
+  font-size: 18px;
+}
+.timeLeft {
+  font-size: 25px;
+  color: white;
+}
 .gameGrid {
   background-color: rgb(51, 70, 70);
   position: absolute;
