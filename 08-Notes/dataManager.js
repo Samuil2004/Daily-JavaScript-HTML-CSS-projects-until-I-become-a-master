@@ -102,8 +102,9 @@ export function deleteNote() {
 
 export function checkTitle(title) {
   return allNotes.some((note) => {
-    if (title === currentNote.title) return false;
-    else return note.title === title;
+    if (currentNote) {
+      if (title === currentNote.title) return false;
+    } else return note.title === title;
   });
 }
 
