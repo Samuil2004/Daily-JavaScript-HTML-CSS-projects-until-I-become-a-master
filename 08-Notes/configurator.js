@@ -6,5 +6,4 @@ export const noteTitle = document.querySelector(".headingOfNote");
 export const contentOfNote = document.querySelector(".contentOfNote");
 export const btnNewNote = document.querySelector(".BtnNewLetter");
 export const searchBar = document.querySelector(".searchBar");
-// export let isNoteOpened;
 export const btnDeleteNote = document.querySelector(".deleteNote");
