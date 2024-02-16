@@ -39,7 +39,6 @@ export function updateCounter() {
   configurator.countOfNotes.textContent = `Notes: ${allNotes.length}`;
 }
 
-//dm
 export function extractNotes() {
   configurator.allNotesPanel.innerHTML = "";
   const storage = localStorage.getItem("notes");
@@ -74,6 +73,7 @@ export function openNote(note) {
 export function updateNote(selectedNote) {
   selectedNote.title = configurator.noteTitle.value;
   selectedNote.content = configurator.contentOfNote.value;
+  selectedNote.heading = selectedNote.content.split(" ").slice(0, 8).join(" ");
   storeNotes();
 }
 
@@ -98,6 +98,13 @@ export function deleteNote() {
   configurator.pages.forEach((page) => page.classList.toggle("hidden"));
   extractNotes();
   setIsNoteOpenedToTrue();
+}
+
+export function checkTitle(title) {
+  return allNotes.some((note) => {
+    if (title === currentNote.title) return false;
+    else return note.title === title;
+  });
 }
 
 export function setIsNoteOpenedToTrue() {
