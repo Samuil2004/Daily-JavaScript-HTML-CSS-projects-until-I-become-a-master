@@ -59,14 +59,11 @@ export function openNote(note) {
   const title = note.querySelector(".title").textContent;
   configurator.noteTitle.value = title;
   const description = note.querySelector(".description").textContent;
-  const selectedNote = allNotes.find((lookForNote) => {
-    if (lookForNote.heading) {
-      return lookForNote.title === title && lookForNote.heading == description;
-    } else {
-      return lookForNote.title === title;
-    }
-  });
-  if (description !== "null") configurator.contentOfNote.value = description;
+  const selectedNote = allNotes.find(
+    (lookForNote) => lookForNote.title === title
+  );
+  if (description !== "null" || description !== "undefined")
+    configurator.contentOfNote.value = description;
   configurator.pages.forEach((page) => page.classList.toggle("hidden"));
   isNoteOpened = false;
   currentNote = selectedNote;
@@ -100,6 +97,7 @@ export function deleteNote() {
   storeNotes();
   configurator.pages.forEach((page) => page.classList.toggle("hidden"));
   extractNotes();
+  setIsNoteOpenedToTrue();
 }
 
 export function setIsNoteOpenedToTrue() {
