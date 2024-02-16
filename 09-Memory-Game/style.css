@@ -47,6 +47,17 @@ body {
   margin-bottom: 5px;
   margin-left: 5px;
   margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.imgg {
+  width: auto;
+  height: 100%;
+  position: absolute;
 }
 
 .hidden {
