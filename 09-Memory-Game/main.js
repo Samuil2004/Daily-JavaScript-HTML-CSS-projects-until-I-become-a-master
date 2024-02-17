@@ -1,7 +1,8 @@
 "use strict";
 
 const allImages = document.querySelectorAll(".img");
-const test = document.querySelector(".first");
+const gameGrid = document.querySelector(".gameGrid");
+const allPanels = gameGrid.querySelectorAll("div");
 
 const shapes = [
   "circle",
@@ -39,11 +40,12 @@ allImages.forEach((img) => {
   img.src = `./images/${shapes[num]}.png`;
 });
 
-test.addEventListener("click", function () {
-  test.classList.toggle("hidden");
-  const smallDivs = test.querySelectorAll(".img,.backSide");
-  smallDivs.forEach((div) => {
-    div.classList.toggle("hidden");
-    console.log(div.classList);
+allPanels.forEach((panel) => {
+  panel.addEventListener("click", function () {
+    const smallDivs = panel.querySelectorAll(".img,.backSide");
+    smallDivs.forEach((div) => {
+      div.classList.toggle("hidden");
+      console.log(div.classList);
+    });
   });
 });
