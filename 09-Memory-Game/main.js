@@ -5,6 +5,9 @@ const gameGrid = document.querySelector(".gameGrid");
 const allPanels = gameGrid.querySelectorAll(".cell");
 const btnRestart = document.querySelector(".restartGame");
 const timeLeft = document.querySelector(".timeLeft");
+const messagePanel = document.querySelector(".messagePanel");
+const messageForMessagePanel = document.querySelector(".message");
+const playAgainBtn = document.querySelector(".playAgain");
 let window1;
 let window2;
 let timerSeconds = 240;
@@ -75,16 +78,20 @@ allPanels.forEach((panel) => {
 
 const checkOpenedPanles = function () {
   if (window1.querySelector(".img").src === window2.querySelector(".img").src) {
-    console.log("TRUE");
     undefineWindows();
+    if (
+      [...allPanels].every(
+        (cell) => !cell.querySelector(".img").classList.contains("hidden")
+      )
+    ) {
+      messagePanelShow("You win!");
+    }
   } else {
     setTimeout(() => {
       flipCell(window1);
       flipCell(window2);
       undefineWindows();
-      console.log(`ready`);
     }, 1000);
-    console.log(`FALSE`);
   }
 };
 
@@ -97,11 +104,24 @@ const startTimer = function () {
 };
 
 function timerChange() {
-  timerSeconds = timerSeconds - 1;
-  let minStamp = Math.floor(timerSeconds / 60);
-  let secondsStamp = timerSeconds % 60;
-  timeLeft.textContent = `Time Left ${minStamp}:${
-    secondsStamp > 9 ? secondsStamp : "0" + secondsStamp
-  }`;
-  console.log(timeLeft.textContent);
+  if (timerSeconds > 0) {
+    timerSeconds = timerSeconds - 1;
+    let minStamp = Math.floor(timerSeconds / 60);
+    let secondsStamp = timerSeconds % 60;
+    timeLeft.textContent = `Time Left ${minStamp}:${
+      secondsStamp > 9 ? secondsStamp : "0" + secondsStamp
+    }`;
+  } else {
+    messagePanelShow("You lost :(");
+  }
 }
+
+const messagePanelShow = function (text) {
+  messagePanel.classList.remove("hiddenPanel");
+  messageForMessagePanel.textContent = text;
+  gameGrid.style.opacity = 0.3;
+};
+
+playAgainBtn.addEventListener("click", function () {
+  window.location.reload();
+});
