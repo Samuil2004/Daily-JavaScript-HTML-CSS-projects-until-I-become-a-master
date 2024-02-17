@@ -44,24 +44,20 @@ const reloadBoard = function () {
 };
 let window1;
 let window2;
-console.log(window1, window2);
+
+const flipCell = function (cell) {
+  cell.querySelector(".img").classList.toggle("hidden");
+  cell.querySelector(".backSide").classList.toggle("hidden");
+};
 
 allPanels.forEach((panel) => {
   panel.addEventListener("click", function () {
-    // console.log(panel);
-    const image = panel.querySelector(".img");
-    // console.log(image);
-    const backSide = panel.querySelector(".backSide");
-    // console.log(backSide);
     if (window1 === undefined || window2 == undefined) {
-      image.classList.toggle("hidden");
-      backSide.classList.toggle("hidden");
+      flipCell(panel);
       if (window1 === undefined) {
         window1 = panel;
-        console.log(window1);
       } else {
         window2 = panel;
-        console.log(window2);
         checkOpenedPanles();
       }
     }
@@ -73,12 +69,8 @@ const checkOpenedPanles = function () {
     console.log("TRUE");
   } else {
     setTimeout(() => {
-      window1.querySelector(".img").classList.toggle("hidden");
-      window2.querySelector(".img").classList.toggle("hidden");
-      window1.querySelector(".backSide").classList.toggle("hidden");
-      window2.querySelector(".backSide").classList.toggle("hidden");
-      console.log(window1);
-      console.log(window2);
+      flipCell(window1);
+      flipCell(window2);
       window1 = undefined;
       window2 = undefined;
       console.log(`ready`);
