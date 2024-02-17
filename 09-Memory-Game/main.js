@@ -4,7 +4,8 @@ const allImages = document.querySelectorAll(".img");
 const gameGrid = document.querySelector(".gameGrid");
 const allPanels = gameGrid.querySelectorAll(".cell");
 const btnRestart = document.querySelector(".restartGame");
-
+let window1;
+let window2;
 const shapes = [
   "circle",
   "hexagon",
@@ -42,17 +43,20 @@ const reloadBoard = function () {
     img.src = `./images/${shapes[num]}.png`;
   });
 };
-let window1;
-let window2;
 
 const flipCell = function (cell) {
   cell.querySelector(".img").classList.toggle("hidden");
   cell.querySelector(".backSide").classList.toggle("hidden");
 };
 
+const undefineWindows = function () {
+  window1 = undefined;
+  window2 = undefined;
+};
+
 allPanels.forEach((panel) => {
   panel.addEventListener("click", function () {
-    if (window1 === undefined || window2 == undefined) {
+    if (window1 === undefined || (window2 == undefined && panel !== window1)) {
       flipCell(panel);
       if (window1 === undefined) {
         window1 = panel;
@@ -67,12 +71,12 @@ allPanels.forEach((panel) => {
 const checkOpenedPanles = function () {
   if (window1.querySelector(".img").src === window2.querySelector(".img").src) {
     console.log("TRUE");
+    undefineWindows();
   } else {
     setTimeout(() => {
       flipCell(window1);
       flipCell(window2);
-      window1 = undefined;
-      window2 = undefined;
+      undefineWindows();
       console.log(`ready`);
     }, 1000);
     console.log(`FALSE`);
@@ -82,3 +86,5 @@ const checkOpenedPanles = function () {
 btnRestart.addEventListener("click", function () {
   window.location.reload();
 });
+
+//make it impossible to flip the same cell at the same time as it will throw true
