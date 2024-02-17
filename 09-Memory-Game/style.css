@@ -41,7 +41,7 @@ body {
   display: grid;
   grid: auto / auto auto auto auto;
 }
-.gameGrid > div {
+.cell {
   background-color: azure;
   margin-top: 5px;
   margin-bottom: 5px;
