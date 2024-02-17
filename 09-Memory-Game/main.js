@@ -3,6 +3,7 @@
 const allImages = document.querySelectorAll(".img");
 const gameGrid = document.querySelector(".gameGrid");
 const allPanels = gameGrid.querySelectorAll("div");
+const btnRestart = document.querySelector(".restartGame");
 
 const shapes = [
   "circle",
@@ -28,17 +29,19 @@ const randomImage = function () {
   }
 };
 
-allImages.forEach((img) => {
-  let foundNumber = false;
-  let num;
-  while (!foundNumber) {
-    num = randomImage();
-    if (num !== null) {
-      foundNumber = true;
+const reloadBoard = function () {
+  allImages.forEach((img) => {
+    let foundNumber = false;
+    let num;
+    while (!foundNumber) {
+      num = randomImage();
+      if (num !== null) {
+        foundNumber = true;
+      }
     }
-  }
-  img.src = `./images/${shapes[num]}.png`;
-});
+    img.src = `./images/${shapes[num]}.png`;
+  });
+};
 
 allPanels.forEach((panel) => {
   panel.addEventListener("click", function () {
@@ -48,4 +51,8 @@ allPanels.forEach((panel) => {
       console.log(div.classList);
     });
   });
+});
+
+btnRestart.addEventListener("click", function () {
+  window.location.reload();
 });

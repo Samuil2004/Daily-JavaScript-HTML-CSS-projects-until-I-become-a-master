@@ -98,7 +98,7 @@ body {
 
 .backSide {
   background-color: red;
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
 }
 
 .hidden {
