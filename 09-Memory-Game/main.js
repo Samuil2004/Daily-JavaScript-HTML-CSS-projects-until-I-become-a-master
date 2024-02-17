@@ -4,8 +4,10 @@ const allImages = document.querySelectorAll(".img");
 const gameGrid = document.querySelector(".gameGrid");
 const allPanels = gameGrid.querySelectorAll(".cell");
 const btnRestart = document.querySelector(".restartGame");
+const timeLeft = document.querySelector(".timeLeft");
 let window1;
 let window2;
+let timerSeconds = 240;
 const shapes = [
   "circle",
   "hexagon",
@@ -56,6 +58,9 @@ const undefineWindows = function () {
 
 allPanels.forEach((panel) => {
   panel.addEventListener("click", function () {
+    if (timerSeconds === 240) {
+      startTimer();
+    }
     if (window1 === undefined || (window2 == undefined && panel !== window1)) {
       flipCell(panel);
       if (window1 === undefined) {
@@ -87,4 +92,16 @@ btnRestart.addEventListener("click", function () {
   window.location.reload();
 });
 
-//make it impossible to flip the same cell at the same time as it will throw true
+const startTimer = function () {
+  setInterval(timerChange, 1000);
+};
+
+function timerChange() {
+  timerSeconds = timerSeconds - 1;
+  let minStamp = Math.floor(timerSeconds / 60);
+  let secondsStamp = timerSeconds % 60;
+  timeLeft.textContent = `Time Left ${minStamp}:${
+    secondsStamp > 9 ? secondsStamp : "0" + secondsStamp
+  }`;
+  console.log(timeLeft.textContent);
+}
