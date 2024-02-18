@@ -12,20 +12,24 @@ body {
   background-color: rgb(70, 70, 70);
   border-radius: 10px;
 }
+.gamePanel {
+  height: 15cm;
+}
 
 .topPanel {
-  background-color: aliceblue;
+  background-color: rgb(37, 37, 37);
   height: 2.5cm;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
   align-items: center;
   font-size: 25px;
+  color: white;
 }
 
 .questionPanel {
   /* background-color: gold; */
-  height: 7cm;
+  height: 5.4cm;
   display: flex;
   text-align: center;
   align-items: center;
@@ -34,7 +38,7 @@ body {
   padding: 30px;
 }
 .answersPanel {
-  background-color: aqua;
+  /* background-color: aqua; */
   height: 5.5cm;
   display: flex;
   align-content: center;
@@ -52,7 +56,10 @@ body {
   width: 5cm;
   margin-left: 6px;
   margin-right: 6px;
+  border-radius: 10px;
+  border: 2px solid black;
 }
+
 .hidden {
   display: none;
 }
