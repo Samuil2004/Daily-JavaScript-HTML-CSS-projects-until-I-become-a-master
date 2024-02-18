@@ -5,9 +5,10 @@ const difficulty = document.querySelector(".difficulty");
 const question = document.querySelector(".questionPanel");
 const multipleChoiseQuestion = document.querySelector(".multipleChoise");
 const booleanQuestion = document.querySelector(".boolean");
+const answerBtns = document.querySelectorAll(".btn");
 
 let data = [];
-let questionNum = 3;
+let questionNum = 0;
 const fetchQuestions = async function () {
   try {
     const fetchedData = await fetch(
@@ -16,7 +17,8 @@ const fetchQuestions = async function () {
     data = await fetchedData.results;
     console.log(data);
     defineQuestion();
-    printQuestionAndAnswers();
+    printQuestionAndAnswers(data[questionNum]);
+    insertAnswers(data[questionNum]);
   } catch (err) {
     alert(err.message);
   }
@@ -24,12 +26,12 @@ const fetchQuestions = async function () {
 
 fetchQuestions();
 
-const printQuestionAndAnswers = async function () {
-  questionType.textContent = data[questionNum].category;
-  let questionDifficulty = data[questionNum].difficulty;
+const printQuestionAndAnswers = async function (data) {
+  questionType.textContent = data.category;
+  let questionDifficulty = data.difficulty;
   difficulty.textContent =
     questionDifficulty[0].toUpperCase() + questionDifficulty.slice(1);
-  question.textContent = data[questionNum].question;
+  question.textContent = data.question;
 };
 
 const defineQuestion = function () {
@@ -43,6 +45,22 @@ const defineQuestion = function () {
 const hideAndUnhideClasses = function (toUnhide, toHide) {
   toUnhide.classList.remove("hidden");
   toHide.classList.add("hidden");
+};
+
+const insertAnswers = function (data) {
+  let allAnswers = [];
+  data.incorrect_answers.forEach((answ) => allAnswers.push(answ));
+  allAnswers.push(data.correct_answer);
+  const shuffledAnswersArray = allAnswers.sort(() => Math.random() - 0.5);
+  console.log(shuffledAnswersArray);
+  let i = 0;
+  answerBtns.forEach((btn) => {
+    // console.log(btn.closest(".answ"));
+    // if (!btn.closest(".answ").contains("hidden")) {
+    btn.textContent = shuffledAnswersArray[i];
+    i++;
+    //}
+  });
 };
 
 //change the answer buttons according to to the type of question - boolean or multiple choise
