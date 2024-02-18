@@ -44,7 +44,8 @@ body {
   align-content: center;
   justify-content: center;
 }
-.multipleChoise {
+.multipleChoise,
+.boolean {
   display: grid;
   align-items: center;
   justify-content: center;
