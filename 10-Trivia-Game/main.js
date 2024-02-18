@@ -7,7 +7,7 @@ const multipleChoiseQuestion = document.querySelector(".multipleChoise");
 const booleanQuestion = document.querySelector(".boolean");
 
 let data = [];
-let questionNum = 0;
+let questionNum = 3;
 const fetchQuestions = async function () {
   try {
     const fetchedData = await fetch(
@@ -34,12 +34,15 @@ const printQuestionAndAnswers = async function () {
 
 const defineQuestion = function () {
   if (data[questionNum].type === "multiple") {
-    multipleChoiseQuestion.classList.remove("hidden");
-    booleanQuestion.classList.add("hidden");
+    hideAndUnhideClasses(multipleChoiseQuestion, booleanQuestion);
   } else {
-    multipleChoiseQuestion.classList.add("hidden");
-    booleanQuestion.classList.remove("hidden");
+    hideAndUnhideClasses(booleanQuestion, multipleChoiseQuestion);
   }
+};
+
+const hideAndUnhideClasses = function (toUnhide, toHide) {
+  toUnhide.classList.remove("hidden");
+  toHide.classList.add("hidden");
 };
 
 //change the answer buttons according to to the type of question - boolean or multiple choise
