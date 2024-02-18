@@ -2,6 +2,7 @@
 
 const questionType = document.querySelector(".questionType");
 const difficulty = document.querySelector(".difficulty");
+const question = document.querySelector(".questionPanel");
 
 let data = [];
 let questionNum = 0;
@@ -23,4 +24,5 @@ fetchQuestions();
 const printQuestion = async function () {
   questionType.textContent = data[questionNum].category;
   difficulty.textContent = data[questionNum].difficulty;
+  question.textContent = data[questionNum].question;
 };
