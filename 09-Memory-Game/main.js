@@ -1,34 +1,14 @@
 "use strict";
+import * as configurator from "./configurator.js";
 
-const allImages = document.querySelectorAll(".img");
-const gameGrid = document.querySelector(".gameGrid");
-const allPanels = gameGrid.querySelectorAll(".cell");
-const btnRestart = document.querySelector(".restartGame");
-const timeLeft = document.querySelector(".timeLeft");
-const messagePanel = document.querySelector(".messagePanel");
-const messageForMessagePanel = document.querySelector(".message");
-const playAgainBtn = document.querySelector(".playAgain");
 let window1;
 let window2;
 let timerSeconds = 240;
-const shapes = [
-  "circle",
-  "hexagon",
-  "octagon",
-  "oval",
-  "pentagon",
-  "rectangle",
-  "rhombus",
-  "square",
-  "trapezium",
-  "triangle",
-];
-const storage = [];
 
 const randomImage = function () {
-  const chosenNum = Math.floor(Math.random() * shapes.length);
-  if (storage.filter((num) => num === chosenNum).length < 2) {
-    storage.push(chosenNum);
+  const chosenNum = Math.floor(Math.random() * configurator.shapes.length);
+  if (configurator.storage.filter((num) => num === chosenNum).length < 2) {
+    configurator.storage.push(chosenNum);
     return chosenNum;
   } else {
     return null;
@@ -36,7 +16,8 @@ const randomImage = function () {
 };
 
 const reloadBoard = function () {
-  allImages.forEach((img) => {
+  // export function reloadBoard() {
+  configurator.allImages.forEach((img) => {
     let foundNumber = false;
     let num;
     while (!foundNumber) {
@@ -45,9 +26,10 @@ const reloadBoard = function () {
         foundNumber = true;
       }
     }
-    img.src = `./images/${shapes[num]}.png`;
+    img.src = `./images/${configurator.shapes[num]}.png`;
   });
 };
+reloadBoard();
 
 const flipCell = function (cell) {
   cell.querySelector(".img").classList.toggle("hidden");
@@ -59,7 +41,7 @@ const undefineWindows = function () {
   window2 = undefined;
 };
 
-allPanels.forEach((panel) => {
+configurator.allPanels.forEach((panel) => {
   panel.addEventListener("click", function () {
     if (timerSeconds === 240) {
       startTimer();
@@ -80,7 +62,7 @@ const checkOpenedPanles = function () {
   if (window1.querySelector(".img").src === window2.querySelector(".img").src) {
     undefineWindows();
     if (
-      [...allPanels].every(
+      [...configurator.allPanels].every(
         (cell) => !cell.querySelector(".img").classList.contains("hidden")
       )
     ) {
@@ -95,7 +77,7 @@ const checkOpenedPanles = function () {
   }
 };
 
-btnRestart.addEventListener("click", function () {
+configurator.btnRestart.addEventListener("click", function () {
   window.location.reload();
 });
 
@@ -106,22 +88,21 @@ const startTimer = function () {
 function timerChange() {
   if (timerSeconds > 0) {
     timerSeconds = timerSeconds - 1;
-    let minStamp = Math.floor(timerSeconds / 60);
     let secondsStamp = timerSeconds % 60;
-    timeLeft.textContent = `Time Left ${minStamp}:${
-      secondsStamp > 9 ? secondsStamp : "0" + secondsStamp
-    }`;
+    configurator.timeLeft.textContent = `Time Left ${Math.floor(
+      timerSeconds / 60
+    )}:${secondsStamp > 9 ? secondsStamp : "0" + secondsStamp}`;
   } else {
     messagePanelShow("You lost :(");
   }
 }
 
 const messagePanelShow = function (text) {
-  messagePanel.classList.remove("hiddenPanel");
-  messageForMessagePanel.textContent = text;
-  gameGrid.style.opacity = 0.3;
+  configurator.messagePanel.classList.remove("hiddenPanel");
+  configurator.messageForMessagePanel.textContent = text;
+  configurator.gameGrid.style.opacity = 0.3;
 };
 
-playAgainBtn.addEventListener("click", function () {
+configurator.playAgainBtn.addEventListener("click", function () {
   window.location.reload();
 });
