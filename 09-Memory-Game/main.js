@@ -16,7 +16,6 @@ const randomImage = function () {
 };
 
 const reloadBoard = function () {
-  // export function reloadBoard() {
   configurator.allImages.forEach((img) => {
     let foundNumber = false;
     let num;
@@ -101,6 +100,7 @@ const messagePanelShow = function (text) {
   configurator.messagePanel.classList.remove("hiddenPanel");
   configurator.messageForMessagePanel.textContent = text;
   configurator.gameGrid.style.opacity = 0.3;
+  configurator.timeLeft.classList.add("hiddenPanel");
 };
 
 configurator.playAgainBtn.addEventListener("click", function () {
