@@ -26,3 +26,6 @@ const printQuestion = async function () {
   difficulty.textContent = data[questionNum].difficulty;
   question.textContent = data[questionNum].question;
 };
+
+//change the answer buttons according to to the type of question - boolean or multiple choise
+//add functionality
