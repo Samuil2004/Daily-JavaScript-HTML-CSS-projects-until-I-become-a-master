@@ -80,8 +80,9 @@ const attachEventListeners = function (btn, data) {
     if (btn.textContent === data.correct_answer) {
       color = "green";
       isTheAnswerCorrect = true;
-      questionNum++;
-      printData();
+      nextQuestion(btn);
+      // questionNum++;
+      // printData();
     } else {
       color = "red";
       isTheAnswerCorrect = false;
@@ -101,6 +102,14 @@ const addHoverFunctionalityBtn = function (btn) {
       btn.style.backgroundColor = "white";
     }
   });
+};
+
+const nextQuestion = function (btn) {
+  setTimeout(function () {
+    questionNum++;
+    btn.style.backgroundColor = "white";
+    printData();
+  }, 2000);
 };
 
 //change the answer buttons according to to the type of question - boolean or multiple choise
