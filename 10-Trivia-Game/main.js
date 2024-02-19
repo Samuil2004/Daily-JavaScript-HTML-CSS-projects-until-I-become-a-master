@@ -52,14 +52,23 @@ const insertAnswers = function (data) {
   data.incorrect_answers.forEach((answ) => allAnswers.push(answ));
   allAnswers.push(data.correct_answer);
   const shuffledAnswersArray = allAnswers.sort(() => Math.random() - 0.5);
+
   console.log(shuffledAnswersArray);
+
   let i = 0;
+
   answerBtns.forEach((btn) => {
     const ans = btn.closest(".answ");
     if (!ans.classList.contains("hidden")) {
       btn.textContent = shuffledAnswersArray[i];
       i++;
     }
+    btn.addEventListener("mouseover", function () {
+      btn.style.backgroundColor = "rgb(171,171,171)";
+    });
+    btn.addEventListener("mouseout", function () {
+      btn.style.backgroundColor = "white";
+    });
   });
 };
 
