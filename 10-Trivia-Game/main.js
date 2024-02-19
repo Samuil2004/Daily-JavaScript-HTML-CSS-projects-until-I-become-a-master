@@ -17,9 +17,10 @@ const fetchQuestions = async function () {
     ).then((res) => res.json());
     data = await fetchedData.results;
     console.log(data);
-    defineQuestion();
-    printQuestionAndAnswers(data[questionNum]);
-    insertAnswers(data[questionNum]);
+    printData();
+    // defineQuestion();
+    // printQuestionAndAnswers(data[questionNum]);
+    // insertAnswers(data[questionNum]);
   } catch (err) {
     alert(err.message);
   }
@@ -27,6 +28,12 @@ const fetchQuestions = async function () {
 
 fetchQuestions();
 
+const printData = function () {
+  isTheAnswerCorrect = undefined;
+  defineQuestion();
+  printQuestionAndAnswers(data[questionNum]);
+  insertAnswers(data[questionNum]);
+};
 const printQuestionAndAnswers = async function (data) {
   questionType.textContent = data.category;
   let questionDifficulty = data.difficulty;
@@ -73,6 +80,8 @@ const attachEventListeners = function (btn, data) {
     if (btn.textContent === data.correct_answer) {
       color = "green";
       isTheAnswerCorrect = true;
+      questionNum++;
+      printData();
     } else {
       color = "red";
       isTheAnswerCorrect = false;
