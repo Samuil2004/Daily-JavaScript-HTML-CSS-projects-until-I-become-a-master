@@ -38,6 +38,7 @@ const printData = function () {
   defineQuestion();
   printQuestionAndAnswers(allQuestions[questionNum]);
   insertAnswers(allQuestions[questionNum]);
+  console.log(allQuestions[questionNum]);
 };
 const printQuestionAndAnswers = async function (data) {
   questionType.textContent = data.category;
@@ -92,7 +93,8 @@ const attachEventListeners = function (btn, data) {
     } else {
       color = "red";
       isTheAnswerCorrect = false;
-      setTimeout(showMessagePanel("You lost"), 1500);
+      // setTimeout(showMessagePanel("You lost"), 1500);
+      showMessagePanel("You lost");
     }
     btn.style.backgroundColor = color;
   });
