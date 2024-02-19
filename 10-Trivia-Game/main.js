@@ -11,6 +11,7 @@ const gamePanel = document.querySelector(".gamePanel");
 const score = document.querySelector(".score");
 const messageWinOtLose = document.querySelector(".message");
 const playAgainBtn = document.querySelector(".playAgain");
+const btnToHide = document.querySelectorAll(".bool");
 
 let allQuestions = [];
 let questionNum = 0;
@@ -50,54 +51,39 @@ const printQuestionAndAnswers = async function (data) {
 
 const defineQuestion = function () {
   if (allQuestions[questionNum].type === "multiple") {
-    hideAndUnhideClasses(multipleChoiseQuestion, booleanQuestion);
+    btnToHide.forEach((btn) => btn.classList.remove("hidden"));
+    // hideAndUnhideClasses(multipleChoiseQuestion, booleanQuestion);
   } else {
-    hideAndUnhideClasses(booleanQuestion, multipleChoiseQuestion);
+    btnToHide.forEach((btn) => btn.classList.add("hidden"));
+    // hideAndUnhideClasses(booleanQuestion, multipleChoiseQuestion);
   }
 };
 
-const hideAndUnhideClasses = function (toUnhide, toHide) {
-  toUnhide.classList.remove("hidden");
-  toHide.classList.add("hidden");
-};
+// const hideAndUnhideClasses = function (toUnhide, toHide) {
+//   toUnhide.classList.remove("hidden");
+//   toHide.classList.add("hidden");
+// };
 
 const insertAnswers = function (data) {
+  // console.log(data);
   const allAnswers = [...data.incorrect_answers, data.correct_answer];
   console.log(data.correct_answer);
   const shuffledAnswersArray = allAnswers.sort(() => Math.random() - 0.5);
-  console.log(shuffledAnswersArray);
-
+  // console.log(shuffledAnswersArray);
+  // console.log(`-----------`);
+  // console.log(data);
+  // console.log(`-----------`);
   let i = 0;
-  answerBtns.forEach((btn) => {
-    const ans = btn.closest(".answ");
-    if (!ans.classList.contains("hidden")) {
+  answerBtns.forEach(
+    (btn) => {
+      // const ans = btn.closest(".answ");
+      // if (!ans.classList.contains("hidden")) {
       btn.textContent = shuffledAnswersArray[i];
       i++;
     }
-    attachEventListeners(btn, data);
-    addHoverFunctionalityBtn(btn);
-  });
-};
-
-const attachEventListeners = function (btn, data) {
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    let color;
-    console.log(data);
-    if (btn.textContent === data.correct_answer) {
-      color = "green";
-      isTheAnswerCorrect = true;
-      nextQuestion(btn);
-      // questionNum++;
-      // printData();
-    } else {
-      color = "red";
-      isTheAnswerCorrect = false;
-      // setTimeout(showMessagePanel("You lost"), 1500);
-      showMessagePanel("You lost");
-    }
-    btn.style.backgroundColor = color;
-  });
+    // attachEventListeners(btn, data);
+    // addHoverFunctionalityBtn(btn)
+  );
 };
 
 const addHoverFunctionalityBtn = function (btn) {
@@ -113,13 +99,63 @@ const addHoverFunctionalityBtn = function (btn) {
   });
 };
 
+const attachEventListeners = function () {
+  answerBtns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      let color;
+      console.log(btn);
+      if (btn.textContent === allQuestions[questionNum].correct_answer) {
+        color = "green";
+        isTheAnswerCorrect = true;
+        checkLastQuestion(btn);
+      } else {
+        color = "red";
+        isTheAnswerCorrect = false;
+        setTimeout(showMessagePanel("You lost :("), 1500);
+      }
+      btn.style.backgroundColor = color;
+    });
+    addHoverFunctionalityBtn(btn);
+  });
+};
+attachEventListeners();
+
+// const addHoverFunctionalityBtn = function (btn) {
+//   btn.addEventListener("mouseover", function () {
+//     if (isTheAnswerCorrect === undefined) {
+//       btn.style.backgroundColor = "rgb(171,171,171)";
+//     }
+//   });
+//   btn.addEventListener("mouseout", function () {
+//     if (isTheAnswerCorrect === undefined) {
+//       btn.style.backgroundColor = "white";
+//     }
+//   });
+// };
+
 const nextQuestion = function (btn) {
   setTimeout(function () {
     questionNum++;
     btn.style.backgroundColor = "white";
     printData();
-  }, 2000);
+  }, 1500);
 };
+
+// const nextQuestion = function (btn) {
+//   setTimeout(function () {
+//     questionNum++;
+//     btn.style.backgroundColor = "white";
+//     printData();
+//     if (questionNum === allQuestions.length) {
+//       if (isTheAnswerCorrect) {
+//         showMessagePanel("You won!");
+//       } else {
+//         showMessagePanel("You lost");
+//       }
+//     }
+//   }, 2000);
+// };
 
 const showMessagePanel = function (message) {
   messagePanel.classList.remove("hidden");
@@ -134,3 +170,11 @@ const showMessagePanel = function (message) {
 
 //change the answer buttons according to to the type of question - boolean or multiple choise
 //add functionality
+
+const checkLastQuestion = function (btn) {
+  if (questionNum + 1 === allQuestions.length) {
+    showMessagePanel("You Win!");
+  } else {
+    nextQuestion(btn);
+  }
+};
