@@ -56,10 +56,13 @@ const insertAnswers = function (data) {
   let i = 0;
   answerBtns.forEach((btn) => {
     // console.log(btn.closest(".answ"));
-    // if (!btn.closest(".answ").contains("hidden")) {
-    btn.textContent = shuffledAnswersArray[i];
-    i++;
-    //}
+    const ans = btn.closest(".answ");
+    // console.log(ans);
+    if (!ans.classList.contains("hidden")) {
+      console.log(ans);
+      btn.textContent = shuffledAnswersArray[i];
+      i++;
+    }
   });
 };
 
