@@ -49,36 +49,35 @@ const hideAndUnhideClasses = function (toUnhide, toHide) {
 };
 
 const insertAnswers = function (data) {
-  let allAnswers = [];
-  data.incorrect_answers.forEach((answ) => allAnswers.push(answ));
-  allAnswers.push(data.correct_answer);
+  const allAnswers = [...data.incorrect_answers, data.correct_answer];
   console.log(data.correct_answer);
   const shuffledAnswersArray = allAnswers.sort(() => Math.random() - 0.5);
-
   console.log(shuffledAnswersArray);
 
   let i = 0;
-
   answerBtns.forEach((btn) => {
     const ans = btn.closest(".answ");
     if (!ans.classList.contains("hidden")) {
       btn.textContent = shuffledAnswersArray[i];
       i++;
     }
-
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (btn.textContent === data.correct_answer) {
-        btn.style.backgroundColor = "green";
-        isTheAnswerCorrect = true;
-      } else {
-        btn.style.backgroundColor = "red";
-        isTheAnswerCorrect = false;
-      }
-      // ? (btn.style.backgroundColor = "green")
-      // : (btn.style.backgroundColor = "red");
-    });
+    attachEventListeners(btn, data);
     addHoverFunctionalityBtn(btn);
+  });
+};
+
+const attachEventListeners = function (btn, data) {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    let color;
+    if (btn.textContent === data.correct_answer) {
+      color = "green";
+      isTheAnswerCorrect = true;
+    } else {
+      color = "red";
+      isTheAnswerCorrect = false;
+    }
+    btn.style.backgroundColor = color;
   });
 };
 
