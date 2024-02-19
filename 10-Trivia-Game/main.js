@@ -121,3 +121,5 @@ const checkLastQuestion = function (btn) {
     nextQuestion(btn);
   }
 };
+
+//add configurator
