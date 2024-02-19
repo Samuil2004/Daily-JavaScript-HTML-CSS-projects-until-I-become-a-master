@@ -28,7 +28,6 @@ body {
 }
 
 .questionPanel {
-  /* background-color: gold; */
   height: 5.4cm;
   display: flex;
   text-align: center;
@@ -38,14 +37,13 @@ body {
   padding: 30px;
 }
 .answersPanel {
-  /* background-color: aqua; */
   height: 5.5cm;
   display: flex;
   align-content: center;
   justify-content: center;
 }
-.multipleChoise,
-.boolean {
+
+.multipleChoise {
   display: grid;
   align-items: center;
   justify-content: center;
