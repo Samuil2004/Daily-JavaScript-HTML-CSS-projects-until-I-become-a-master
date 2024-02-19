@@ -17,16 +17,14 @@ let questionNum = 0;
 let isTheAnswerCorrect = undefined;
 const fetchQuestions = async function () {
   try {
-    const fetchedData = await fetch(
-      "https://opentdb.com/api.php?amount=10"
-    ).then((res) => res.json());
-    allQuestions = await fetchedData.results;
+    allQuestions = await fetch("https://opentdb.com/api.php?amount=10")
+      .then((res) => res.json())
+      .then((res) => res.results);
     printData();
   } catch (err) {
     alert(err.message);
   }
 };
-
 fetchQuestions();
 
 const printData = function () {
@@ -35,7 +33,8 @@ const printData = function () {
   printQuestionAndAnswers(allQuestions[questionNum]);
   insertAnswers(allQuestions[questionNum]);
 };
-const printQuestionAndAnswers = async function (data) {
+
+const printQuestionAndAnswers = function (data) {
   questionType.textContent = data.category;
   let questionDifficulty = data.difficulty;
   difficulty.textContent =
@@ -81,7 +80,6 @@ const attachEventListeners = function () {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       let color;
-      console.log(btn);
       if (btn.textContent === allQuestions[questionNum].correct_answer) {
         color = "green";
         isTheAnswerCorrect = true;
@@ -108,7 +106,6 @@ const nextQuestion = function (btn) {
 
 const showMessagePanel = function (message) {
   messagePanel.classList.remove("hidden");
-  gamePanel.style.opacity = 0.5;
   messageWinOtLose.textContent = message;
   score.textContent = `${questionNum + 1}/${allQuestions.length}`;
   messageWinOtLose.textContent = message;
