@@ -4,7 +4,6 @@ const questionType = document.querySelector(".questionType");
 const difficulty = document.querySelector(".difficulty");
 const question = document.querySelector(".questionPanel");
 const multipleChoiseQuestion = document.querySelector(".multipleChoise");
-const booleanQuestion = document.querySelector(".boolean");
 const answerBtns = document.querySelectorAll(".btn");
 const messagePanel = document.querySelector(".messagePanel");
 const gamePanel = document.querySelector(".gamePanel");
