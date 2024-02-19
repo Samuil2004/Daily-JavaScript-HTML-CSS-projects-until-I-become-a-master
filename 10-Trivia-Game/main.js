@@ -55,11 +55,8 @@ const insertAnswers = function (data) {
   console.log(shuffledAnswersArray);
   let i = 0;
   answerBtns.forEach((btn) => {
-    // console.log(btn.closest(".answ"));
     const ans = btn.closest(".answ");
-    // console.log(ans);
     if (!ans.classList.contains("hidden")) {
-      console.log(ans);
       btn.textContent = shuffledAnswersArray[i];
       i++;
     }
