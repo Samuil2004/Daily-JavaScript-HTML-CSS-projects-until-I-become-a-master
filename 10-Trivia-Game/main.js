@@ -9,6 +9,7 @@ const answerBtns = document.querySelectorAll(".btn");
 
 let data = [];
 let questionNum = 0;
+let isTheAnswerCorrect = undefined;
 const fetchQuestions = async function () {
   try {
     const fetchedData = await fetch(
@@ -51,6 +52,7 @@ const insertAnswers = function (data) {
   let allAnswers = [];
   data.incorrect_answers.forEach((answ) => allAnswers.push(answ));
   allAnswers.push(data.correct_answer);
+  console.log(data.correct_answer);
   const shuffledAnswersArray = allAnswers.sort(() => Math.random() - 0.5);
 
   console.log(shuffledAnswersArray);
@@ -63,12 +65,33 @@ const insertAnswers = function (data) {
       btn.textContent = shuffledAnswersArray[i];
       i++;
     }
-    btn.addEventListener("mouseover", function () {
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (btn.textContent === data.correct_answer) {
+        btn.style.backgroundColor = "green";
+        isTheAnswerCorrect = true;
+      } else {
+        btn.style.backgroundColor = "red";
+        isTheAnswerCorrect = false;
+      }
+      // ? (btn.style.backgroundColor = "green")
+      // : (btn.style.backgroundColor = "red");
+    });
+    addHoverFunctionalityBtn(btn);
+  });
+};
+
+const addHoverFunctionalityBtn = function (btn) {
+  btn.addEventListener("mouseover", function () {
+    if (isTheAnswerCorrect === undefined) {
       btn.style.backgroundColor = "rgb(171,171,171)";
-    });
-    btn.addEventListener("mouseout", function () {
+    }
+  });
+  btn.addEventListener("mouseout", function () {
+    if (isTheAnswerCorrect === undefined) {
       btn.style.backgroundColor = "white";
-    });
+    }
   });
 };
 
