@@ -1,20 +1,11 @@
 "use-strict";
 
-const questionType = document.querySelector(".questionType");
-const difficulty = document.querySelector(".difficulty");
-const question = document.querySelector(".questionPanel");
-const multipleChoiseQuestion = document.querySelector(".multipleChoise");
-const answerBtns = document.querySelectorAll(".btn");
-const messagePanel = document.querySelector(".messagePanel");
-const gamePanel = document.querySelector(".gamePanel");
-const score = document.querySelector(".score");
-const messageWinOtLose = document.querySelector(".message");
-const playAgainBtn = document.querySelector(".playAgain");
-const btnToHide = document.querySelectorAll(".bool");
+import * as configurator from "./configurator.js";
 
 let allQuestions = [];
 let questionNum = 0;
 let isTheAnswerCorrect = undefined;
+
 const fetchQuestions = async function () {
   try {
     allQuestions = await fetch("https://opentdb.com/api.php?amount=10")
@@ -35,18 +26,18 @@ const printData = function () {
 };
 
 const printQuestionAndAnswers = function (data) {
-  questionType.textContent = data.category;
+  configurator.questionType.textContent = data.category;
   let questionDifficulty = data.difficulty;
-  difficulty.textContent =
+  configurator.difficulty.textContent =
     questionDifficulty[0].toUpperCase() + questionDifficulty.slice(1);
-  question.textContent = data.question;
+  configurator.question.textContent = data.question;
 };
 
 const defineQuestion = function () {
   if (allQuestions[questionNum].type === "multiple") {
-    btnToHide.forEach((btn) => btn.classList.remove("hidden"));
+    configurator.btnToHide.forEach((btn) => btn.classList.remove("hidden"));
   } else {
-    btnToHide.forEach((btn) => btn.classList.add("hidden"));
+    configurator.btnToHide.forEach((btn) => btn.classList.add("hidden"));
   }
 };
 
@@ -56,7 +47,7 @@ const insertAnswers = function (data) {
   const shuffledAnswersArray = allAnswers.sort(() => Math.random() - 0.5);
 
   let i = 0;
-  answerBtns.forEach((btn) => {
+  configurator.answerBtns.forEach((btn) => {
     btn.textContent = shuffledAnswersArray[i];
     i++;
   });
@@ -76,7 +67,7 @@ const addHoverFunctionalityBtn = function (btn) {
 };
 
 const attachEventListeners = function () {
-  answerBtns.forEach((btn) => {
+  configurator.answerBtns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       let color;
@@ -105,11 +96,11 @@ const nextQuestion = function (btn) {
 };
 
 const showMessagePanel = function (message) {
-  messagePanel.classList.remove("hidden");
-  messageWinOtLose.textContent = message;
-  score.textContent = `${questionNum + 1}/${allQuestions.length}`;
-  messageWinOtLose.textContent = message;
-  playAgainBtn.addEventListener("click", function () {
+  configurator.messagePanel.classList.remove("hidden");
+  configurator.messageWinOtLose.textContent = message;
+  configurator.score.textContent = `${questionNum + 1}/${allQuestions.length}`;
+  configurator.messageWinOtLose.textContent = message;
+  configurator.playAgainBtn.addEventListener("click", function () {
     window.location.reload();
   });
 };
@@ -121,5 +112,3 @@ const checkLastQuestion = function (btn) {
     nextQuestion(btn);
   }
 };
-
-//add configurator
