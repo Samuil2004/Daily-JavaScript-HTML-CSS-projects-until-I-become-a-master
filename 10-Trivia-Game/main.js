@@ -24,31 +24,33 @@ const printData = function () {
   printQuestionAndAnswers(allQuestions[questionNum]);
   insertAnswers(allQuestions[questionNum]);
 };
-const correctString = function (text) {
-  if (text.includes("&#039;")) {
-    text = text.replace(/&#039;/g, "'");
-    console.log(text);
-  }
-  if (text.includes("&quot;")) {
-    text = text.replace(/&quot;/g, "'");
-    console.log(text);
-  }
-  if (text.includes("&eacute;")) {
-    text = text.replace(/&eacute;/g, "é");
-    console.log(text);
-  }
-  if (text.includes("&amp;")) {
-    text = text.replace(/&amp;/g, "&");
-    console.log(text);
-  }
-  return text;
-};
+// const correctString = function (text) {
+//   if (text.includes("&#039;")) {
+//     text = text.replace(/&#039;/g, "'");
+//     console.log(text);
+//   }
+//   if (text.includes("&quot;")) {
+//     text = text.replace(/&quot;/g, "'");
+//     console.log(text);
+//   }
+//   if (text.includes("&eacute;")) {
+//     text = text.replace(/&eacute;/g, "é");
+//     console.log(text);
+//   }
+//   if (text.includes("&amp;")) {
+//     text = text.replace(/&amp;/g, "&");
+//     console.log(text);
+//   }
+//   return text;
+// };
 const printQuestionAndAnswers = function (data) {
-  configurator.questionType.textContent = correctString(data.category);
+  configurator.questionType.textContent = configurator.correctString(
+    data.category
+  );
   let questionDifficulty = data.difficulty;
   configurator.difficulty.textContent =
     questionDifficulty[0].toUpperCase() + questionDifficulty.slice(1);
-  configurator.question.textContent = correctString(data.question);
+  configurator.question.textContent = configurator.correctString(data.question);
 };
 
 const defineQuestion = function () {
@@ -66,7 +68,7 @@ const insertAnswers = function (data) {
 
   let i = 0;
   configurator.answerBtns.forEach((btn) => {
-    btn.textContent = correctString(shuffledAnswersArray[i]);
+    btn.textContent = configurator.correctString(shuffledAnswersArray[i]);
     if (i < shuffledAnswersArray.length - 1) {
       i++;
     }
@@ -93,7 +95,7 @@ const attachEventListeners = function () {
       let color;
       if (
         btn.textContent ===
-        correctString(allQuestions[questionNum].correct_answer)
+        configurator.correctString(allQuestions[questionNum].correct_answer)
       ) {
         color = "green";
         isTheAnswerCorrect = true;

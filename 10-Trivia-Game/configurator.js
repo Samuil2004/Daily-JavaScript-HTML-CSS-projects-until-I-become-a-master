@@ -9,3 +9,17 @@ export const score = document.querySelector(".score");
 export const messageWinOtLose = document.querySelector(".message");
 export const playAgainBtn = document.querySelector(".playAgain");
 export const btnToHide = document.querySelectorAll(".bool");
+export function correctString(text) {
+  const replacements = {
+    "&#039;": "'",
+    "&quot;": '"',
+    "&eacute;": "é",
+    "&amp;": "&",
+  };
+  for (const entry in replacements) {
+    if (text.includes(entry)) {
+      text = text.replace(new RegExp(entry, "g"), replacements[entry]);
+    }
+  }
+  return text;
+}
