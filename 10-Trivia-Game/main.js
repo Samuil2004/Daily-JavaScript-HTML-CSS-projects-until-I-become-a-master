@@ -37,10 +37,14 @@ const correctString = function (text) {
     text = text.replace(/&eacute;/g, "é");
     console.log(text);
   }
+  if (text.includes("&amp;")) {
+    text = text.replace(/&amp;/g, "&");
+    console.log(text);
+  }
   return text;
 };
 const printQuestionAndAnswers = function (data) {
-  configurator.questionType.textContent = data.category;
+  configurator.questionType.textContent = correctString(data.category);
   let questionDifficulty = data.difficulty;
   configurator.difficulty.textContent =
     questionDifficulty[0].toUpperCase() + questionDifficulty.slice(1);
@@ -62,8 +66,10 @@ const insertAnswers = function (data) {
 
   let i = 0;
   configurator.answerBtns.forEach((btn) => {
-    btn.textContent = shuffledAnswersArray[i];
-    i++;
+    btn.textContent = correctString(shuffledAnswersArray[i]);
+    if (i < shuffledAnswersArray.length - 1) {
+      i++;
+    }
   });
 };
 
@@ -85,7 +91,10 @@ const attachEventListeners = function () {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       let color;
-      if (btn.textContent === allQuestions[questionNum].correct_answer) {
+      if (
+        btn.textContent ===
+        correctString(allQuestions[questionNum].correct_answer)
+      ) {
         color = "green";
         isTheAnswerCorrect = true;
         checkLastQuestion(btn);
