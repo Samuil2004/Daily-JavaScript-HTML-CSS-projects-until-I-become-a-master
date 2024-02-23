@@ -24,25 +24,7 @@ const printData = function () {
   printQuestionAndAnswers(allQuestions[questionNum]);
   insertAnswers(allQuestions[questionNum]);
 };
-// const correctString = function (text) {
-//   if (text.includes("&#039;")) {
-//     text = text.replace(/&#039;/g, "'");
-//     console.log(text);
-//   }
-//   if (text.includes("&quot;")) {
-//     text = text.replace(/&quot;/g, "'");
-//     console.log(text);
-//   }
-//   if (text.includes("&eacute;")) {
-//     text = text.replace(/&eacute;/g, "é");
-//     console.log(text);
-//   }
-//   if (text.includes("&amp;")) {
-//     text = text.replace(/&amp;/g, "&");
-//     console.log(text);
-//   }
-//   return text;
-// };
+
 const printQuestionAndAnswers = function (data) {
   configurator.questionType.textContent = configurator.correctString(
     data.category
