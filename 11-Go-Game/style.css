@@ -2,6 +2,19 @@ body {
   background-color: rgb(255, 237, 214);
 }
 
+.playerHolder {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  height: 1cm;
+  width: 7cm;
+  /* background-color: aliceblue; */
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.player {
+  font-size: 35px;
+}
 .gameBoard {
   position: absolute;
   top: 50%;

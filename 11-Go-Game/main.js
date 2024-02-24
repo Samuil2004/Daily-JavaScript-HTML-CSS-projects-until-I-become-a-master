@@ -1,6 +1,6 @@
 "use strict";
 const allSpots = document.querySelectorAll(".redGrid");
-
+const playerSign = document.querySelector(".player");
 let player = 0;
 
 allSpots.forEach((cell) =>
@@ -18,6 +18,7 @@ const checkPlayer = function (holder) {
   player == 0 ? (color = "white") : (color = "black");
   player == 0 ? (player = 1) : (player = 0);
   stone.style.backgroundColor = color;
+  playerSign.textContent = `Player's turn: ${player}`;
 };
 
 const insertStone = function (holder) {
