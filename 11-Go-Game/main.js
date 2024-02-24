@@ -6,6 +6,7 @@ let player = 0;
 allSpots.forEach((cell) =>
   cell.addEventListener("click", function () {
     if (!cell.classList.contains("occupied")) {
+      console.log(cell);
       insertStone(cell);
       checkPlayer(cell);
     }
@@ -28,3 +29,5 @@ const insertStone = function (holder) {
   holder.insertAdjacentHTML("afterbegin", html);
   holder.classList.add("occupied");
 };
+
+const checkNeighbours = function () {};
