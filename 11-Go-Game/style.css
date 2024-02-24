@@ -1,0 +1,47 @@
+body {
+  background-color: rgb(255, 237, 214);
+}
+
+.gameBoard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 15cm;
+  width: 15cm;
+  /* background-color: rgba(220, 179, 92, 255); */
+  background-color: #a48444;
+}
+.grid {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 12cm;
+  width: 12cm;
+  /* background-color: aqua; */
+  border: 2.5px solid black;
+  display: grid;
+  grid: auto / auto auto auto auto auto auto auto auto auto;
+  /* grid-template-columns: repeat(9, 100px); /* 9 columns each 100px wide */
+  /*grid-template-rows: repeat(9, 100px); */
+}
+.blackGrid {
+  /* background-color: aliceblue; */
+  border: 1.5px solid black;
+}
+.playGrid {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  /* transform: translate(-50%, -50%); */
+  /* background-color: antiquewhite; */
+  height: 13.5cm;
+  width: 13.5cm;
+  display: grid;
+  grid: auto / auto auto auto auto auto auto auto auto auto auto;
+  border: 2.5px solid red;
+}
+.redGrid {
+  border: 1.5px solid red;
+}
