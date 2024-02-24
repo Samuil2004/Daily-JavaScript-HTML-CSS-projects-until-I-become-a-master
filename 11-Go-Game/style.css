@@ -48,17 +48,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
+  position: relative;
   /* padding: 0; */
 }
-
-.blueStone {
-  /* position: absolute; */
-  background-color: blue;
-  /* margin: 0px 0px 0px 0px; */
-  /* width: 90%;
-  height: 90%; */
+.stone {
+  position: absolute;
+}
+.blueStone,
+.redStone {
   height: 1.1cm;
   width: 1.1cm;
   border-radius: 50%;
+}
+.blueStone {
+  background-color: blue;
+}
+.redStone {
+  background-color: red;
 }
