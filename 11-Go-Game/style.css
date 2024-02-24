@@ -51,18 +51,12 @@ body {
   position: relative;
   /* padding: 0; */
 }
-.stone {
+.stoneHolder {
   position: absolute;
 }
-.blueStone,
-.redStone {
+.stone {
+  background-color: white;
   height: 1.1cm;
   width: 1.1cm;
   border-radius: 50%;
-}
-.blueStone {
-  background-color: blue;
-}
-.redStone {
-  background-color: red;
 }
