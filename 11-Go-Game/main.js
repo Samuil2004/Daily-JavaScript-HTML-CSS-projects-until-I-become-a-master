@@ -6,11 +6,7 @@ let player = 0;
 allSpots.forEach((cell) =>
   cell.addEventListener("click", function () {
     if (!cell.classList.contains("occupied")) {
-      const html = `<div class="stoneHolder">
-    <div class="stone"></div>
-  </div>`;
-      cell.insertAdjacentHTML("afterbegin", html);
-      cell.classList.add("occupied");
+      insertStone(cell);
       checkPlayer(cell);
     }
   })
@@ -22,4 +18,12 @@ const checkPlayer = function (holder) {
   player == 0 ? (color = "white") : (color = "black");
   player == 0 ? (player = 1) : (player = 0);
   stone.style.backgroundColor = color;
+};
+
+const insertStone = function (holder) {
+  const html = `<div class="stoneHolder">
+  <div class="stone"></div>
+</div>`;
+  holder.insertAdjacentHTML("afterbegin", html);
+  holder.classList.add("occupied");
 };
