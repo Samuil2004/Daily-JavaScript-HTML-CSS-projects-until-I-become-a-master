@@ -55,7 +55,7 @@ body {
   position: absolute;
 }
 .stone {
-  background-color: white;
+  /* background-color: white; */
   height: 1.1cm;
   width: 1.1cm;
   border-radius: 50%;
