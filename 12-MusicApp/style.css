@@ -27,7 +27,6 @@ body {
 }
 
 .imagePanel {
-  /* background-color: antiquewhite; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +36,6 @@ body {
   border-radius: 5px;
 }
 .songInfoPanel {
-  /* background-color: aquamarine; */
   display: flex;
   justify-content: space-between;
   padding: 0 15px;
@@ -56,7 +54,6 @@ body {
 }
 
 .navPanel {
-  /* background-color: black; */
   display: flex;
   justify-content: space-between;
   padding: 10px 70px;

@@ -1,7 +1,7 @@
 export const img = document.querySelector(".songImage");
 export const songTitle = document.querySelector(".songTitle");
 export const songArtist = document.querySelector(".songArtist");
-export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=azis";
+export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
 export const options = {
   method: "GET",
   headers: {
