@@ -10,6 +10,7 @@
 // };
 
 // dataFetch();
+const img = document.querySelector(".songImage");
 
 const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=azis";
 const options = {
@@ -23,8 +24,11 @@ const options = {
 const tester = async function () {
   try {
     const response = await fetch(url, options);
-    const result = await response.json();
-    console.log(result);
+    const result = await response
+      .json()
+      .then((rest) => (img.src = rest.data[0].artist.picture_medium));
+    // console.log(result);
+    // img.src = result[0].md5_image;
   } catch (error) {
     console.error(error);
   }
