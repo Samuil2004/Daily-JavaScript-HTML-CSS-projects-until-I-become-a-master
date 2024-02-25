@@ -27,7 +27,7 @@ body {
 }
 
 .imagePanel {
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +37,22 @@ body {
   border-radius: 5px;
 }
 .songInfoPanel {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  align-items: center;
+  color: white;
+}
+.songTitle {
+  font-size: 35px;
+}
+.songArtist {
+  font-size: 25px;
+}
+.songAlbum {
+  font-size: 20px;
+  text-decoration: underline;
 }
 
 .navPanel {
