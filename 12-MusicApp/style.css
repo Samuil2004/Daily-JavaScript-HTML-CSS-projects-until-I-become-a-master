@@ -23,7 +23,19 @@ body {
   width: 10cm;
   border-radius: 20px;
   display: grid;
+  grid-template-rows: 9cm 2cm 3cm auto;
 }
 
 .imagePanel {
+  background-color: antiquewhite;
+}
+.songInfoPanel {
+  background-color: aquamarine;
+}
+
+.navPanel {
+  background-color: black;
+}
+.soundBar {
+  background-color: blue;
 }
