@@ -26,12 +26,3 @@ const fillInInfo = function (song) {
   configurator.songTitle.textContent = song.title;
   configurator.songArtist.textContent = song.artist;
 };
-
-// class Song {
-//   constructor(title, artist, duration, image) {
-//     this.title = title;
-//     this.artist = artist;
-//     this.duration = duration;
-//     this.image = image;
-//   }
-// }
