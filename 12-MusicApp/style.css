@@ -56,8 +56,15 @@ body {
 }
 
 .navPanel {
-  background-color: black;
+  /* background-color: black; */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 70px;
 }
+.navBtn {
+  height: 1.5cm;
+}
+
 .soundBar {
   background-color: blue;
 }
