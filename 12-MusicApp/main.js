@@ -14,8 +14,9 @@ const options = {
 
 const tester = async function () {
   try {
-    const response = await fetch(url, options);
-    const result = await response.json().then((rest) => fillInInfo(rest));
+    await fetch(url, options)
+      .then((res) => res.json())
+      .then((rest) => fillInInfo(rest));
   } catch (error) {
     console.error(error);
   }
