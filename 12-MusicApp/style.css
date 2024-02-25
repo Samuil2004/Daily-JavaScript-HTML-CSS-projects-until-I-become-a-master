@@ -28,6 +28,13 @@ body {
 
 .imagePanel {
   background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.songImage {
+  height: 8.5cm;
+  border-radius: 5px;
 }
 .songInfoPanel {
   background-color: aquamarine;
