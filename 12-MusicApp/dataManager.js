@@ -1,4 +1,5 @@
 import * as configurator from "./configurator.js";
+import { Song } from "./classHolder.js";
 
 export async function fetchData() {
   try {
@@ -26,11 +27,11 @@ const fillInInfo = function (song) {
   configurator.songArtist.textContent = song.artist;
 };
 
-class Song {
-  constructor(title, artist, duration, image) {
-    this.title = title;
-    this.artist = artist;
-    this.duration = duration;
-    this.image = image;
-  }
-}
+// class Song {
+//   constructor(title, artist, duration, image) {
+//     this.title = title;
+//     this.artist = artist;
+//     this.duration = duration;
+//     this.image = image;
+//   }
+// }
