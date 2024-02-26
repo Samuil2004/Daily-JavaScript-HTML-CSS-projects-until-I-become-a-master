@@ -23,7 +23,7 @@ body {
   width: 10cm;
   border-radius: 20px;
   display: grid;
-  grid-template-rows: 9cm 2cm 3cm auto;
+  grid-template-rows: 9cm 2cm 2.5cm 1cm auto;
 }
 
 .imagePanel {
