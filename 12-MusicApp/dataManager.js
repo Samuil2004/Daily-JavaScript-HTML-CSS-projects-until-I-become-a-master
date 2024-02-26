@@ -6,6 +6,7 @@ export async function fetchData() {
     await fetch(configurator.url, configurator.options)
       .then((res) => res.json())
       .then((rest) => createObject(rest));
+    // .then((rest) => console.log(rest));
   } catch (error) {
     console.error(error);
   }
@@ -25,4 +26,11 @@ const fillInInfo = function (song) {
   configurator.img.src = song.image;
   configurator.songTitle.textContent = song.title;
   configurator.songArtist.textContent = song.artist;
+  configurator.songTimeLeft.textContent = formatTime(song.duration);
+};
+
+const formatTime = function (time) {
+  return `-${Math.floor(time / 60)}:${
+    time % 60 > 9 ? time % 60 : "0" + (time % 60)
+  }`;
 };
