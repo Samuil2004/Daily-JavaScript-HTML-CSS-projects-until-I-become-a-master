@@ -2,6 +2,7 @@ export const img = document.querySelector(".songImage");
 export const songTitle = document.querySelector(".songTitle");
 export const songArtist = document.querySelector(".songArtist");
 export const songTimeLeft = document.querySelector(".timeLeft");
+export const pausePlaySongBtn = document.querySelector(".pausePlaySongBtn");
 
 export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
 export const options = {
