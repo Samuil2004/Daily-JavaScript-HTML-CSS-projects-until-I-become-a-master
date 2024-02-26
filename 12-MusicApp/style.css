@@ -61,7 +61,13 @@ body {
 .navBtn {
   height: 1.5cm;
 }
-
+.songTimers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 20px;
+}
 .soundBar {
   background-color: blue;
 }
