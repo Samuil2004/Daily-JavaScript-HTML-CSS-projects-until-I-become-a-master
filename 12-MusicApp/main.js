@@ -7,5 +7,6 @@ fetchData();
 configurator.pausePlaySongBtn.addEventListener("click", function () {
   playPauseBtnFunctionality(this);
 });
-//add duration of song bar
-//how much time has passed since beginning and the total duration
+//add a timer each second to decrease the itme left of the song unless the song is paused
+//add volume bar
+//add song progress bar

@@ -27,7 +27,6 @@ const fillInInfo = function (song) {
   configurator.songTitle.textContent = song.title;
   configurator.songArtist.textContent = song.artist;
   configurator.songTimeLeft.textContent = formatTime(song.duration);
-  // configurator.pausePlaySongBtn.src = "./images/pauseSongBtnImg.png";
 };
 
 const formatTime = function (time) {
