@@ -17,10 +17,10 @@ export async function fetchData() {
 const storeInfo = function (storedData) {
   // console.log(typeof storedData);
   configurator.data.push(storedData);
-  createObject(number);
+  createObject();
 };
 
-const createObject = function (number) {
+const createObject = function () {
   console.log(configurator.data[0].data);
   const newSong = new Song(
     configurator.data[0].data[number].title,
@@ -38,4 +38,11 @@ const fillInInfo = function (song) {
   configurator.songTimeLeft.textContent = formatTime(song.duration);
   configurator.songDurationBar.max = song.duration;
   console.log(configurator.songDurationBar.max);
+};
+export function loadNextSong() {
+  increaseNumeber();
+  createObject();
+}
+const increaseNumeber = function () {
+  number++;
 };
