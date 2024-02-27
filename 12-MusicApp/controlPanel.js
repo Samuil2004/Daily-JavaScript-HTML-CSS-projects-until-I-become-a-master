@@ -6,6 +6,11 @@ export function playPauseBtnFunctionality(e) {
     ? (configurator.pausePlaySongBtn.src = "./images/playSongBtnImg.png")
     : (configurator.pausePlaySongBtn.src = "./images/pauseSongBtnImg.png");
 }
+export function songTimeStampsChanger() {
+  configurator.timePassed.textContent = formatTime(
+    configurator.songDurationBar.value
+  );
+}
 
 export function formatTime(time) {
   return `${Math.floor(time / 60)}:${
