@@ -8,7 +8,10 @@ configurator.pausePlaySongBtn.addEventListener("click", function () {
   playPauseBtnFunctionality(this);
 });
 configurator.songDurationBar.addEventListener("input", function () {
-  textContent = formatTime(configurator.songDurationBar.value);
+  configurator.timePassed.textContent = formatTime(
+    configurator.songDurationBar.value
+  );
+  // console.log(configurator.songDurationBar.value);
 });
 //add a timer each second to decrease the itme left of the song unless the song is paused
 //add volume bar
