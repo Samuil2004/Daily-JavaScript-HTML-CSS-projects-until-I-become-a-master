@@ -2,7 +2,7 @@
 
 import * as configurator from "./configurator.js";
 import { fetchData } from "./dataManager.js";
-import { playPauseBtnFunctionality } from "./controlPanel.js";
+import { playPauseBtnFunctionality, formatTime } from "./controlPanel.js";
 fetchData();
 configurator.pausePlaySongBtn.addEventListener("click", function () {
   playPauseBtnFunctionality(this);
