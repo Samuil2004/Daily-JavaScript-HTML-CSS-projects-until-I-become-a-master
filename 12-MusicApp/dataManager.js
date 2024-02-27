@@ -30,9 +30,3 @@ const fillInInfo = function (song) {
   configurator.songDurationBar.max = song.duration;
   console.log(configurator.songDurationBar.max);
 };
-
-const formatTime = function (time) {
-  return `-${Math.floor(time / 60)}:${
-    time % 60 > 9 ? time % 60 : "0" + (time % 60)
-  }`;
-};
