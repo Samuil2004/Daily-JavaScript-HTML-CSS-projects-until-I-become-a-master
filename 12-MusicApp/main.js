@@ -10,6 +10,7 @@ import {
 fetchData();
 
 configurator.pausePlaySongBtn.addEventListener("click", function () {
+  console.log(`btn clicked`);
   playPauseBtnFunctionality(this);
 });
 
