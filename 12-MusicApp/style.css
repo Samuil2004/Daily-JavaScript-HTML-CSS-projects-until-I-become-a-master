@@ -75,5 +75,59 @@ body {
   font-size: 25px;
 }
 .soundBar {
-  background-color: blue;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.inputBar {
+  width: 8cm;
+  color: antiquewhite;
+  /* pointer-events: none; */
+}
+/* 
+.volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon-size {
+    font-size: 2rem;
+  }
+
+  .bar-hoverbox {
+    padding: 10px 15px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  .bar {
+    background: #2b2b2b;
+    height: 7px;
+    width: 8cm;
+    border-radius: 15px;
+    overflow: hidden;
+    pointer-events: none;
+
+    .bar-fill {
+      background: #fff6f6;
+      width: 0%;
+      height: 100%;
+      background-clip: border-box;
+      pointer-events: none;
+    }
+  }
+} */
+.bar {
+  background: #2b2b2b;
+
+  .bar-fill {
+    background: blueviolet;
+  }
 }
