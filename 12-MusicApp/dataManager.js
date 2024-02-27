@@ -1,6 +1,6 @@
 import * as configurator from "./configurator.js";
 import { Song } from "./classHolder.js";
-
+import { formatTime } from "./controlPanel.js";
 export async function fetchData() {
   try {
     await fetch(configurator.url, configurator.options)
