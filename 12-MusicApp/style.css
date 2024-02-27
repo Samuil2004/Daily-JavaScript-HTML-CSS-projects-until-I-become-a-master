@@ -75,36 +75,15 @@ body {
   font-size: 25px;
 }
 .soundBar {
-  /* background-color: blue; */
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
+
 .inputBar {
   width: 8cm;
-  background: rgb(121, 121, 187);
-  outline: none;
-  /* --fill-color: white; */
-  /* background: var(--fill-color, black); */
-  -webkit-text-fill-color: red;
-
-  /* fill: black; */
-  /* -webkit-appearance: none; */
-  /* 
-  background: linear-gradient(
-    to right,
-    #82cfd0 0%,
-    #82cfd0 50%,
-    #fff 50%,
-    #fff 100%
-  ); */
-  /* transition: background 450ms ease-in; */
-  /* -webkit-appearance: none; */
-  /* background-color: #9a905d; */
-
-  /* pointer-events: none; */
 }
-
-.inputBar--fill-color {
+input[type="range"]::-ms-fill-lower {
+  background: #ff0000;
 }
