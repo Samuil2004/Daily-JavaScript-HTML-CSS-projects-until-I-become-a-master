@@ -83,61 +83,28 @@ body {
 }
 .inputBar {
   width: 8cm;
-  background: blue;
+  background: rgb(121, 121, 187);
   outline: none;
+  /* --fill-color: white; */
+  /* background: var(--fill-color, black); */
+  -webkit-text-fill-color: red;
+
+  /* fill: black; */
+  /* -webkit-appearance: none; */
+  /* 
+  background: linear-gradient(
+    to right,
+    #82cfd0 0%,
+    #82cfd0 50%,
+    #fff 50%,
+    #fff 100%
+  ); */
+  /* transition: background 450ms ease-in; */
+  /* -webkit-appearance: none; */
+  /* background-color: #9a905d; */
+
   /* pointer-events: none; */
 }
 
-/* 
-.volume {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .icon-size {
-    font-size: 2rem;
-  }
-
-  .bar-hoverbox {
-    padding: 10px 15px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-
-    &:hover {
-      opacity: 1;
-      cursor: pointer;
-    }
-  }
-
-  .bar {
-    background: #2b2b2b;
-    height: 7px;
-    width: 8cm;
-    border-radius: 15px;
-    overflow: hidden;
-    pointer-events: none;
-
-    .bar-fill {
-      background: #fff6f6;
-      width: 0%;
-      height: 100%;
-      background-clip: border-box;
-      pointer-events: none;
-    }
-  }
-} */
-/* .bar {
-  background: #2b2b2b;
-  height: 7px;
-  width: 8cm;
-  border-radius: 15px;
-  overflow: hidden;
-  pointer-events: none;
+.inputBar--fill-color {
 }
-.bar-fill {
-  color: #ff0000;
-  width: 0%;
-  height: 100%;
-  background-clip: border-box;
-  pointer-events: none;
-} */
