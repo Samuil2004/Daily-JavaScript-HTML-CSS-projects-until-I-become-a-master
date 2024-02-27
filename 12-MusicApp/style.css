@@ -83,9 +83,11 @@ body {
 }
 .inputBar {
   width: 8cm;
-  color: antiquewhite;
+  background: blue;
+  outline: none;
   /* pointer-events: none; */
 }
+
 /* 
 .volume {
   display: flex;
@@ -124,10 +126,18 @@ body {
     }
   }
 } */
-.bar {
+/* .bar {
   background: #2b2b2b;
-
-  .bar-fill {
-    background: blueviolet;
-  }
+  height: 7px;
+  width: 8cm;
+  border-radius: 15px;
+  overflow: hidden;
+  pointer-events: none;
 }
+.bar-fill {
+  color: #ff0000;
+  width: 0%;
+  height: 100%;
+  background-clip: border-box;
+  pointer-events: none;
+} */
