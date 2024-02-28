@@ -36,12 +36,20 @@ body {
   border-radius: 5px;
 }
 .songInfoPanel {
-  display: flex;
+  display: grid;
   justify-content: space-between;
   padding: 0 15px;
   align-items: center;
   color: white;
 }
+.titlePanel {
+  width: 9cm;
+}
+.bottomPanel {
+  display: flex;
+  justify-content: space-between;
+}
+
 .songTitle {
   font-size: 35px;
 }
