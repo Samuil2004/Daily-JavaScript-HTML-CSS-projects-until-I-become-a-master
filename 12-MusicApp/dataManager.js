@@ -46,12 +46,17 @@ const fillInInfo = function (song) {
 };
 
 export function loadNextOrPrevSong(nextSong) {
-  if (number < configurator.data[0].data.length && number >= 0) {
-    if (nextSong) {
+  console.log(`---`);
+  if (nextSong) {
+    if (number < configurator.data[0].data.length - 1) {
       number++;
-    } else {
-      number--;
     }
-    createObject();
+  } else {
+    if (number > 0) {
+      {
+        number--;
+      }
+    }
   }
+  createObject();
 }
