@@ -32,13 +32,12 @@ const createObject = function () {
 
 const fillInInfo = function (song) {
   configurator.songDurationBar.value = 0;
+  configurator.timePassed.textContent = "0:00";
   configurator.img.src = song.image;
   configurator.songTitle.textContent = song.title;
   configurator.songArtist.textContent = song.artist;
   configurator.songTimeLeft.textContent = formatTime(song.duration);
   configurator.songDurationBar.max = song.duration;
-  // console.log(song.duration);
-  // startTimer();
 };
 
 export function loadNextOrPrevSong(nextSong) {
@@ -57,13 +56,7 @@ export function loadNextOrPrevSong(nextSong) {
 }
 
 export function startTimer() {
-  if (
-    configurator.timePassed.textContent == configurator.songTimeLeft.textContent
-  ) {
-    loadNextOrPrevSong(true);
-  } else {
-    timeIterval = setInterval(moveSongProgressBar, 1000);
-  }
+  timeIterval = setInterval(moveSongProgressBar, 1000);
 }
 
 export function stopTimer() {
