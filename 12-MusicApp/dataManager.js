@@ -24,16 +24,16 @@ const createObject = function () {
   console.log(configurator.data[0].data);
   console.log(configurator.data[0].data.length);
   console.log(number);
-  if (number < configurator.data[0].data.length - 1 && number > 0) {
-    console.log(123);
-    const newSong = new Song(
-      configurator.data[0].data[number].title,
-      configurator.data[0].data[number].artist.name,
-      configurator.data[0].data[number].duration,
-      configurator.data[0].data[number].artist.picture_medium
-    );
-    fillInInfo(newSong);
-  }
+  //if (number < configurator.data[0].data.length - 1 && number > 0) {
+  console.log(123);
+  const newSong = new Song(
+    configurator.data[0].data[number].title,
+    configurator.data[0].data[number].artist.name,
+    configurator.data[0].data[number].duration,
+    configurator.data[0].data[number].artist.picture_medium
+  );
+  fillInInfo(newSong);
+  //}
 };
 
 const fillInInfo = function (song) {
@@ -44,17 +44,27 @@ const fillInInfo = function (song) {
   configurator.songDurationBar.max = song.duration;
   console.log(configurator.songDurationBar.max);
 };
-export function loadNextSong() {
-  increaseNumeber();
-  createObject();
+// export function loadNextSong() {
+//   increaseNumeber();
+//   createObject();
+// }
+// export function loadPreviousSong() {
+//   decreaseNumber();
+//   createObject();
+// }
+// const increaseNumeber = function () {
+//   number++;
+// };
+// const decreaseNumber = function () {
+//   number--;
+// };
+export function loadNextOrPrevSong(nextSong) {
+  if (number < configurator.data[0].data.length - 1 && number > 0) {
+    if (nextSong) {
+      number++;
+    } else {
+      number--;
+    }
+    createObject();
+  }
 }
-export function loadPreviousSong() {
-  decreaseNumber();
-  createObject();
-}
-const increaseNumeber = function () {
-  number++;
-};
-const decreaseNumber = function () {
-  number--;
-};
