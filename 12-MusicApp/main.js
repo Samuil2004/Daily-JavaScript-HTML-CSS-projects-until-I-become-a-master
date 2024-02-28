@@ -1,7 +1,7 @@
 "use strict";
 
 import * as configurator from "./configurator.js";
-import { fetchData, loadNextSong } from "./dataManager.js";
+import { fetchData, loadNextSong, loadPreviousSong } from "./dataManager.js";
 import {
   playPauseBtnFunctionality,
   songTimeStampsChanger,
@@ -20,4 +20,7 @@ configurator.songDurationBar.addEventListener("input", function () {
 
 configurator.nextSongBtn.addEventListener("click", function () {
   loadNextSong();
+});
+configurator.prevSongBtn.addEventListener("click", function () {
+  loadPreviousSong();
 });
