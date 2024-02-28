@@ -21,11 +21,6 @@ const storeInfo = function (storedData) {
 };
 
 const createObject = function () {
-  console.log(configurator.data[0].data);
-  console.log(configurator.data[0].data.length);
-  console.log(number);
-  //if (number < configurator.data[0].data.length - 1 && number > 0) {
-  console.log(123);
   const newSong = new Song(
     configurator.data[0].data[number].title,
     configurator.data[0].data[number].artist.name,
@@ -33,7 +28,6 @@ const createObject = function () {
     configurator.data[0].data[number].artist.picture_medium
   );
   fillInInfo(newSong);
-  //}
 };
 
 const fillInInfo = function (song) {
@@ -42,11 +36,9 @@ const fillInInfo = function (song) {
   configurator.songArtist.textContent = song.artist;
   configurator.songTimeLeft.textContent = formatTime(song.duration);
   configurator.songDurationBar.max = song.duration;
-  console.log(configurator.songDurationBar.max);
 };
 
 export function loadNextOrPrevSong(nextSong) {
-  console.log(`---`);
   if (nextSong) {
     if (number < configurator.data[0].data.length - 1) {
       number++;
