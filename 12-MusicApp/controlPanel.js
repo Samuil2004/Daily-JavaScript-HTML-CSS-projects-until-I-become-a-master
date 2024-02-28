@@ -2,7 +2,7 @@ import * as configurator from "./configurator.js";
 // let isSongPaused = false;
 export function playPauseBtnFunctionality(e) {
   console.log(configurator.pausePlaySongBtn.src);
-  if (configurator.pausePlaySongBtn.src === "./images/pauseSongBtnImg.png") {
+  if (configurator.pausePlaySongBtn.src.includes("pause")) {
     configurator.pausePlaySongBtn.src = "./images/playSongBtnImg.png";
   } else {
     configurator.pausePlaySongBtn.src = "./images/pauseSongBtnImg.png";
