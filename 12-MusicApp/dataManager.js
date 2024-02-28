@@ -1,7 +1,7 @@
 import * as configurator from "./configurator.js";
 import { Song } from "./classHolder.js";
 import { formatTime } from "./controlPanel.js";
-let number = 1;
+let number = 0;
 export async function fetchData() {
   try {
     const fetchData = await fetch(configurator.url, configurator.options).then(
@@ -44,22 +44,9 @@ const fillInInfo = function (song) {
   configurator.songDurationBar.max = song.duration;
   console.log(configurator.songDurationBar.max);
 };
-// export function loadNextSong() {
-//   increaseNumeber();
-//   createObject();
-// }
-// export function loadPreviousSong() {
-//   decreaseNumber();
-//   createObject();
-// }
-// const increaseNumeber = function () {
-//   number++;
-// };
-// const decreaseNumber = function () {
-//   number--;
-// };
+
 export function loadNextOrPrevSong(nextSong) {
-  if (number < configurator.data[0].data.length - 1 && number > 0) {
+  if (number < configurator.data[0].data.length && number >= 0) {
     if (nextSong) {
       number++;
     } else {
