@@ -15,7 +15,6 @@ export async function fetchData() {
   }
 }
 const storeInfo = function (storedData) {
-  // console.log(typeof storedData);
   configurator.data.push(storedData);
   createObject();
 };
