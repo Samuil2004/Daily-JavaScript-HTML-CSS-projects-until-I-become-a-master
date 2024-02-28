@@ -85,11 +85,13 @@ body {
 }
 .soundBar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  padding: 0 10px;
 }
-
+.volumeImg {
+  height: 1cm;
+}
 .inputBar {
   width: 8cm;
 }
