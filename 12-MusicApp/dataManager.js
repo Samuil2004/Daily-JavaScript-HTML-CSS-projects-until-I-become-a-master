@@ -72,6 +72,16 @@ const testLoadAlbum = function () {
     configurator.data[0].data[number].album.title;
   configurator.albumArtist.textContent =
     configurator.data[0].data[number].artist.name;
+  llAlbum();
+};
+
+const llAlbum = async function () {
+  await fetch(
+    "https://api.deezer.com/album/595243/tracks",
+    configurator.options
+  )
+    .then((res) => res.json())
+    .then((res) => console.log(res));
 };
 
 //fetch info from the tracklist link from the data in order to load all songs that are in the album - they are not the same as the initial array that we get in the console. We want the songs from the album, not the songs of the artist (an album may cntain more than one artist)
