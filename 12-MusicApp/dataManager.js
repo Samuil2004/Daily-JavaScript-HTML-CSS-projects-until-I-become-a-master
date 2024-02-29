@@ -73,3 +73,5 @@ const testLoadAlbum = function () {
   configurator.albumArtist.textContent =
     configurator.data[0].data[number].artist.name;
 };
+
+//fetch info from the tracklist link from the data in order to load all songs that are in the album - they are not the same as the initial array that we get in the console. We want the songs from the album, not the songs of the artist (an album may cntain more than one artist)
