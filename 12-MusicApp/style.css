@@ -13,7 +13,8 @@ body {
   border-radius: 10px;
 }
 
-.songInfo {
+.songInfo,
+.albumInfo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,15 +24,23 @@ body {
   width: 10cm;
   border-radius: 20px;
   display: grid;
+}
+.songInfo {
   grid-template-rows: 9cm 2cm 2cm 1.5cm auto;
+}
+.albumInfo {
+  grid-template-rows: 5cm 2cm auto 2cm;
 }
 
 .imagePanel {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* background-color: aqua; */
 }
-.songImage {
+
+.songImage,
+.albumImage {
   height: 8.5cm;
   border-radius: 5px;
 }
@@ -102,6 +111,34 @@ body {
 .inputBar {
   width: 8cm;
 }
-input[type="range"]::-ms-fill-lower {
+/* input[type="range"]::-ms-fill-lower {
   background: #ff0000;
+}
+ */
+.hidden {
+  display: none;
+}
+
+.albumImage {
+  height: 5cm;
+}
+.albumData {
+  /* background-color: black; */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.AlbumTitle {
+  font-size: 30px;
+  width: 9cm;
+}
+.albumArtist {
+  font-size: 20px;
+}
+.albumSongs {
+  background-color: blanchedalmond;
+}
+.currentlyPlayingSongPanel {
+  background-color: rgb(207, 128, 8);
 }

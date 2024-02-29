@@ -9,6 +9,7 @@ export async function fetchData() {
       (res) => res.json()
     );
     storeInfo(fetchData);
+    testLoadAlbum();
     // .then((rest) => createObject(rest));
     // .then((rest) => console.log(rest));
   } catch (error) {
@@ -21,6 +22,7 @@ const storeInfo = function (storedData) {
 };
 
 const createObject = function () {
+  console.log(configurator.data[0]);
   const newSong = new Song(
     configurator.data[0].data[number].title,
     configurator.data[0].data[number].artist.name,
@@ -62,3 +64,8 @@ export function startTimer() {
 export function stopTimer() {
   clearInterval(timeIterval);
 }
+
+const testLoadAlbum = function () {
+  configurator.albumImage.src =
+    configurator.data[0].data[number].album.cover_xl;
+};

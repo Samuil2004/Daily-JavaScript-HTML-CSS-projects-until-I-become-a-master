@@ -7,6 +7,8 @@ export const pausePlaySongBtn = document.querySelector(".pausePlaySongBtn");
 export const songDurationBar = document.querySelector(".songProgressbar");
 export const nextSongBtn = document.querySelector(".nextSongBtn");
 export const prevSongBtn = document.querySelector(".previousSongBtn");
+export const albumImage = document.querySelector(".albumImage");
+export const album
 export const data = [];
 export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
 export const options = {
