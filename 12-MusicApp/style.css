@@ -119,6 +119,19 @@ body {
   display: none;
 }
 
+/* .albumInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(159, 159, 159);
+  height: 16cm;
+  width: 10cm;
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: 60px 20px auto 10px;
+} */
+
 .albumImage {
   margin-top: 5px;
   height: 5cm;
@@ -143,6 +156,24 @@ body {
 .albumSongs {
   background-color: blanchedalmond;
 }
+.songPanel {
+  background-color: rgb(106, 76, 76);
+  height: 2cm;
+  display: flex;
+}
+
+.leftSide {
+  display: flex;
+  background-color: blueviolet;
+  width: 80%;
+  align-items: center;
+}
+.rightSide {
+  display: flex;
+  background-color: brown;
+  width: 20%;
+}
+
 .currentlyPlayingSongPanel {
   background-color: rgb(207, 128, 8);
 }
