@@ -30,6 +30,7 @@ const createObject = function () {
     configurator.data[0].data[number].duration,
     configurator.data[0].data[number].artist.picture_medium
   );
+
   fillInInfo(newSong);
 };
 
@@ -71,10 +72,19 @@ const createAlbum = function (album) {
     album.title,
     album.artist.name,
     formatTime(album.duration),
-    album.cover_xl,
-    album.tracks.data
+    album.cover_xl
   );
+  const allSongs = album.tracks.data;
+  allSongs.forEach((song) => {
+    newAlbum.addSongs(song);
+  });
+
   printAlbum(newAlbum);
+  console.log(newAlbum.songs);
+  const allAlbumSongs = newAlbum.songs;
+  allAlbumSongs.forEach((song) => addSongsToDOM(song));
+  addSongsToDOM(newAlbum.songs);
+
   // configurator.albumImage.src = album.cover_xl;
   // configurator.albumTitle.textContent = album.title;
   // configurator.albumArtist.textContent = album.artist.name;
@@ -92,10 +102,27 @@ const loadAlbum = async function () {
     configurator.options
   )
     .then((res) => res.json())
-    // .then((res) => createAlbum(res));
-    .then((res) => console.log(res));
+    .then((res) => createAlbum(res));
+  // .then((res) => console.log(res));
   // testLoadAlbum()
   // testLoadAlbum();
+};
+
+const addSongsToDOM = function (song) {
+  console.log(song);
+  const html = `<div class="songPanel">
+  <div class="leftSide">
+    <img src="${song.image}"  class="songImg" />
+    <h2 class="songName">${song.title}</h2>
+  </div>
+  <div class="rightSide">
+    <img
+      class="albumSongsPlayBtn"
+      src="./images/playSongBtnImg.png"
+    />
+  </div>
+</div>`;
+  configurator.albumSongs.insertAdjacentHTML("beforeend", html);
 };
 
 //fetch info from the tracklist link from the data in order to load all songs that are in the album - they are not the same as the initial array that we get in the console. We want the songs from the album, not the songs of the artist (an album may cntain more than one artist)

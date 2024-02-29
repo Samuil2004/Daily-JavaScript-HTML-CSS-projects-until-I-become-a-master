@@ -176,6 +176,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.songImg {
+  height: 1cm;
+}
 .songName {
   margin-left: 10px;
 }

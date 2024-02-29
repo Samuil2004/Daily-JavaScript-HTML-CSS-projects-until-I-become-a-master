@@ -1,4 +1,4 @@
-import { formatTime } from "./controlPanel";
+import { formatTime } from "./controlPanel.js";
 
 export class Song {
   constructor(title, artist, duration, image) {
@@ -10,19 +10,22 @@ export class Song {
 }
 
 export class Album {
-  constructor(title, artist, duration, image, songs) {
+  constructor(title, artist, duration, image) {
     this.title = title;
     this.artist = artist;
     this.duration = duration;
     this.image = image;
-    this.songs = songs;
+    this.songs = [];
   }
-  // allSongs(song) {
-  //   const albumSong = new Song(
-  //     song.title,
-  //     song.artist.name
-  //     // formatTime(song.duration)
-  //     // song.artist.picture_medium
-  //   );
-  // }
+  addSongs(song) {
+    const albumSong = new Song(
+      song.title,
+      song.artist.name,
+      formatTime(song.duration),
+      song.album.cover_xl
+    );
+    console.log(albumSong.image);
+
+    this.songs.push(albumSong);
+  }
 }
