@@ -1,3 +1,5 @@
+import { formatTime } from "./controlPanel";
+
 export class Song {
   constructor(title, artist, duration, image) {
     this.title = title;
@@ -15,4 +17,12 @@ export class Album {
     this.image = image;
     this.songs = songs;
   }
+  // allSongs(song) {
+  //   const albumSong = new Song(
+  //     song.title,
+  //     song.artist.name
+  //     // formatTime(song.duration)
+  //     // song.artist.picture_medium
+  //   );
+  // }
 }

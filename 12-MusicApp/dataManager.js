@@ -1,5 +1,5 @@
 import * as configurator from "./configurator.js";
-import { Song } from "./classHolder.js";
+import { Song, Album } from "./classHolder.js";
 import { formatTime, moveSongProgressBar } from "./controlPanel.js";
 let number = 0;
 let timeIterval;
@@ -9,7 +9,8 @@ export async function fetchData() {
       (res) => res.json()
     );
     storeInfo(fetchData);
-    testLoadAlbum();
+    loadAlbum();
+    // testLoadAlbum();
     // .then((rest) => createObject(rest));
     // .then((rest) => console.log(rest));
   } catch (error) {
@@ -65,23 +66,36 @@ export function stopTimer() {
   clearInterval(timeIterval);
 }
 
-const testLoadAlbum = function () {
-  configurator.albumImage.src =
-    configurator.data[0].data[number].album.cover_xl;
-  configurator.albumTitle.textContent =
-    configurator.data[0].data[number].album.title;
-  configurator.albumArtist.textContent =
-    configurator.data[0].data[number].artist.name;
-  llAlbum();
+const createAlbum = function (album) {
+  const newAlbum = new Album(
+    album.title,
+    album.artist.name,
+    formatTime(album.duration),
+    album.cover_xl,
+    album.tracks.data
+  );
+  printAlbum(newAlbum);
+  // configurator.albumImage.src = album.cover_xl;
+  // configurator.albumTitle.textContent = album.title;
+  // configurator.albumArtist.textContent = album.artist.name;
+  // llAlbum();
 };
 
-const llAlbum = async function () {
+const printAlbum = function (album) {
+  configurator.albumImage.src = album.image;
+  configurator.albumTitle.textContent = album.title;
+  configurator.albumArtist.textContent = album.artist;
+};
+const loadAlbum = async function () {
   await fetch(
-    "https://api.deezer.com/album/595243/tracks",
+    `${configurator.urlForAlbum}${configurator.data[0].data[number].album.id}`,
     configurator.options
   )
     .then((res) => res.json())
+    // .then((res) => createAlbum(res));
     .then((res) => console.log(res));
+  // testLoadAlbum()
+  // testLoadAlbum();
 };
 
 //fetch info from the tracklist link from the data in order to load all songs that are in the album - they are not the same as the initial array that we get in the console. We want the songs from the album, not the songs of the artist (an album may cntain more than one artist)
