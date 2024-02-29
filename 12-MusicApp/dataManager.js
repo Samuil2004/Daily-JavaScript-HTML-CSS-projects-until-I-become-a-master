@@ -68,4 +68,8 @@ export function stopTimer() {
 const testLoadAlbum = function () {
   configurator.albumImage.src =
     configurator.data[0].data[number].album.cover_xl;
+  configurator.albumTitle.textContent =
+    configurator.data[0].data[number].album.title;
+  configurator.albumArtist.textContent =
+    configurator.data[0].data[number].artist.name;
 };

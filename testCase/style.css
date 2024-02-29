@@ -1,0 +1,78 @@
+.panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 15cm;
+  width: 13cm;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 2cm auto 0.3cm;
+}
+.titlePanel {
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 300;
+  padding: 0 10px;
+}
+
+.questionsPanel {
+  background-color: bisque;
+  display: grid;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.qpanel,
+.btn {
+  height: 2cm;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.about {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.input {
+  display: flex;
+  width: 11cm;
+  height: 1cm;
+  border: 1px solid black;
+  text-align: center;
+}
+.selectedGender {
+  width: 11cm;
+  height: 1cm;
+}
+.holder {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.file {
+  padding: 8px 10px;
+}
+
+.btn {
+  height: 1cm;
+}
+
+.BTN {
+  height: 1cm;
+  width: 11cm;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(104, 104, 236);
+  font-size: 20px;
+}
+
+.btn :hover {
+  background-color: rgb(255, 255, 255);
+}

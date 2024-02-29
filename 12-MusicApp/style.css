@@ -120,6 +120,7 @@ body {
 }
 
 .albumImage {
+  margin-top: 5px;
   height: 5cm;
 }
 .albumData {
@@ -130,11 +131,14 @@ body {
   text-align: center;
 }
 .AlbumTitle {
-  font-size: 30px;
+  font-size: 35px;
+  color: white;
   width: 9cm;
+  font-style: italic;
 }
 .albumArtist {
-  font-size: 20px;
+  font-size: 25px;
+  color: white;
 }
 .albumSongs {
   background-color: blanchedalmond;
