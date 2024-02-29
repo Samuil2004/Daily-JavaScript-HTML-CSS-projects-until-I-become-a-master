@@ -174,11 +174,14 @@ body {
   background-color: brown;
   width: 20%;
   justify-content: center;
+  align-items: center;
 }
 .songName {
   margin-left: 10px;
 }
-
+.albumSongsPlayBtn {
+  height: 0.8cm;
+}
 .currentlyPlayingSongPanel {
   background-color: rgb(207, 128, 8);
 }
