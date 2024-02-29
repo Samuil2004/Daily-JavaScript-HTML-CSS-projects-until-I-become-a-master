@@ -184,4 +184,12 @@ body {
 }
 .currentlyPlayingSongPanel {
   background-color: rgb(207, 128, 8);
+  display: flex;
+}
+
+.currentlyPlayingSongPanel .leftSide {
+  background-color: orange;
+}
+.currentlyPlayingSongPanel .rightSide {
+  background-color: rgb(0, 255, 94);
 }
