@@ -1,7 +1,7 @@
 import * as configurator from "./configurator.js";
 import { Song, Album } from "./classHolder.js";
 import { formatTime, moveSongProgressBar } from "./controlPanel.js";
-let number = 0;
+let number = 22;
 let timeIterval;
 export async function fetchData() {
   try {
@@ -38,7 +38,10 @@ const fillInInfo = function (song) {
   configurator.songDurationBar.value = 0;
   configurator.timePassed.textContent = "0:00";
   configurator.img.src = song.image;
+  checkSongTitle(song.title);
+
   configurator.songTitle.textContent = song.title;
+
   configurator.songArtist.textContent = song.artist;
   configurator.songTimeLeft.textContent = formatTime(song.duration);
   configurator.songDurationBar.max = song.duration;
@@ -131,5 +134,11 @@ const addSongsToDOM = function (song) {
 const checkAlbumTitle = function (title) {
   if (title.length > 20) {
     configurator.albumTitle.style.animation = "scroll-left 12s linear infinite";
+  }
+};
+
+const checkSongTitle = function (title) {
+  if (title.length > 20) {
+    configurator.songTitle.style.animation = "scroll-left 12s linear infinite";
   }
 };

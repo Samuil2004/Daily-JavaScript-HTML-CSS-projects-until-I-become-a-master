@@ -53,7 +53,10 @@ body {
 }
 .titlePanel {
   width: 9cm;
+  overflow: hidden;
+  max-height: 1cm;
 }
+
 .bottomPanel {
   display: flex;
   justify-content: space-between;
