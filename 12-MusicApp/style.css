@@ -184,7 +184,6 @@ body {
 
 .leftSide {
   display: flex;
-  /* background-color: blueviolet; */
   width: 80%;
   align-items: center;
   padding: 0 5px;
