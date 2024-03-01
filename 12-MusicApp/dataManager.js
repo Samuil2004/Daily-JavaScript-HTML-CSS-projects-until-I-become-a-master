@@ -86,12 +86,6 @@ const createAlbum = function (album) {
   console.log(newAlbum.songs);
   const allAlbumSongs = newAlbum.songs;
   allAlbumSongs.forEach((song) => addSongsToDOM(song));
-  // addSongsToDOM(newAlbum.songs);
-
-  // configurator.albumImage.src = album.cover_xl;
-  // configurator.albumTitle.textContent = album.title;
-  // configurator.albumArtist.textContent = album.artist.name;
-  // llAlbum();
 };
 
 const printAlbum = function (album) {
