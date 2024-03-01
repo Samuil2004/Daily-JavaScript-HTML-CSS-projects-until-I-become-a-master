@@ -142,12 +142,26 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
+
+  /* white-space: nowrap;
+  margin: 0; */
 }
 .AlbumTitle {
   font-size: 35px;
   color: white;
   width: 9cm;
+  max-width: 9cm;
+  /* animation: scroll-left 12s linear infinite; */
   font-style: italic;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(30%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 .albumArtist {
   font-size: 25px;

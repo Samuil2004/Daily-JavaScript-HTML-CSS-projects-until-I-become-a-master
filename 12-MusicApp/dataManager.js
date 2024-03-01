@@ -9,7 +9,7 @@ export async function fetchData() {
       (res) => res.json()
     );
     storeInfo(fetchData);
-    loadAlbum();
+    // loadAlbum();
     // testLoadAlbum();
     // .then((rest) => createObject(rest));
     // .then((rest) => console.log(rest));
@@ -94,9 +94,10 @@ const createAlbum = function (album) {
 const printAlbum = function (album) {
   configurator.albumImage.src = album.image;
   configurator.albumTitle.textContent = album.title;
+  checkAlbumTitle(album.title);
   configurator.albumArtist.textContent = album.artist;
 };
-const loadAlbum = async function () {
+export async function loadAlbum() {
   await fetch(
     `${configurator.urlForAlbum}${configurator.data[0].data[number].album.id}`,
     configurator.options
@@ -106,7 +107,7 @@ const loadAlbum = async function () {
   // .then((res) => console.log(res));
   // testLoadAlbum()
   // testLoadAlbum();
-};
+}
 
 const addSongsToDOM = function (song) {
   console.log(song);
@@ -126,3 +127,9 @@ const addSongsToDOM = function (song) {
 };
 
 //fetch info from the tracklist link from the data in order to load all songs that are in the album - they are not the same as the initial array that we get in the console. We want the songs from the album, not the songs of the artist (an album may cntain more than one artist)
+
+const checkAlbumTitle = function (title) {
+  if (title.length > 20) {
+    configurator.albumTitle.style.animation = "scroll-left 12s linear infinite";
+  }
+};
