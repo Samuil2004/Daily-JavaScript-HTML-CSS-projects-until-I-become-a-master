@@ -5,6 +5,7 @@ import { fetchData, loadNextOrPrevSong } from "./dataManager.js";
 import {
   playPauseBtnFunctionality,
   songTimeStampsChanger,
+  SongToAlbumAndAlbumToSong,
 } from "./controlPanel.js";
 
 fetchData();
@@ -21,6 +22,11 @@ configurator.songDurationBar.addEventListener("input", function () {
 configurator.nextSongBtn.addEventListener("click", function () {
   loadNextOrPrevSong(true);
 });
+
 configurator.prevSongBtn.addEventListener("click", function () {
   loadNextOrPrevSong(false);
+});
+
+configurator.btnGoToAlbum.addEventListener("click", function () {
+  SongToAlbumAndAlbumToSong();
 });

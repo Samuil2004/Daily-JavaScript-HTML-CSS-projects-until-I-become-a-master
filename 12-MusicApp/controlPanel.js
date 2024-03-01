@@ -34,3 +34,8 @@ export function moveSongProgressBar() {
     songTimeStampsChanger();
   }
 }
+
+export function SongToAlbumAndAlbumToSong() {
+  configurator.songTab.classList.toggle("hidden");
+  configurator.albumTab.classList.toggle("hidden");
+}

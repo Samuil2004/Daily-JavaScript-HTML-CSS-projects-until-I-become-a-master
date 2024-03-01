@@ -154,33 +154,34 @@ body {
   color: white;
 }
 .albumSongs {
-  background-color: blanchedalmond;
+  background-color: rgb(110, 110, 110);
   overflow-y: auto;
   display: grid;
   grid-gap: 1px;
 }
 .songPanel {
-  background-color: rgb(106, 76, 76);
+  background-color: rgb(142, 142, 142);
   height: 2cm;
   display: flex;
 }
 
 .leftSide {
   display: flex;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   width: 80%;
   align-items: center;
   padding: 0 5px;
 }
 .rightSide {
   display: flex;
-  background-color: brown;
+  /* background-color: brown; */
   width: 20%;
   justify-content: center;
   align-items: center;
 }
 .songImg {
-  height: 1cm;
+  height: 1.2cm;
+  border-radius: 3px;
 }
 .songName {
   margin-left: 10px;
