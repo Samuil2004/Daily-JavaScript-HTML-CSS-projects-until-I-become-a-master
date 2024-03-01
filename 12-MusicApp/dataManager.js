@@ -108,8 +108,6 @@ export async function loadAlbum() {
     .then((res) => res.json())
     .then((res) => createAlbum(res));
   // .then((res) => console.log(res));
-  // testLoadAlbum()
-  // testLoadAlbum();
 }
 
 const addSongsToDOM = function (song) {
