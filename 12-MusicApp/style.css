@@ -155,6 +155,9 @@ body {
 }
 .albumSongs {
   background-color: blanchedalmond;
+  overflow-y: auto;
+  display: grid;
+  grid-gap: 1px;
 }
 .songPanel {
   background-color: rgb(106, 76, 76);
