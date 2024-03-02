@@ -12,7 +12,7 @@ body {
   width: 11cm;
   border-radius: 10px;
 }
-
+.searchPanel,
 .songInfo,
 .albumInfo {
   position: absolute;
@@ -25,6 +25,28 @@ body {
   border-radius: 20px;
   display: grid;
 }
+
+.searchPanel {
+  display: grid;
+  grid-template-rows: 3cm auto;
+}
+.searchBox {
+  display: grid;
+  background-color: aqua;
+  padding: 0 10px;
+  grid-template-rows: 50% 50%;
+  /* align-items: center; */
+}
+.searchBar {
+  width: 90%;
+  height: 50%;
+  margin-top: 10px;
+}
+
+.resultsBox {
+  background-color: aquamarine;
+}
+
 .songInfo {
   grid-template-rows: 9cm 2cm 2cm 1.5cm auto;
 }
@@ -127,19 +149,6 @@ body {
 .hidden {
   display: none;
 }
-
-/* .albumInfo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(159, 159, 159);
-  height: 16cm;
-  width: 10cm;
-  border-radius: 20px;
-  display: grid;
-  grid-template-rows: 60px 20px auto 10px;
-} */
 
 .albumImage {
   margin-top: 5px;
