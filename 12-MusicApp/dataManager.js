@@ -89,10 +89,15 @@ const createAlbum = function (album) {
   printAlbum(newAlbum);
   console.log(newAlbum.songs);
   const allAlbumSongs = newAlbum.songs;
+  clearSongsFromOldAlbum();
   allAlbumSongs.forEach((song) => addSongsToDOM(song));
   currentSongInfoAlbumPage();
   currentAlbum = newAlbum;
   //attachListenersToSongs();
+};
+const clearSongsFromOldAlbum = function () {
+  const songPanelFromAlbum = document.querySelectorAll(".songPanel");
+  songPanelFromAlbum.forEach((panel) => panel.remove());
 };
 
 const printAlbum = function (album) {

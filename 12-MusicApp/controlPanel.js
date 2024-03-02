@@ -57,7 +57,7 @@ export function attachListenersToSongs() {
   songPanelFromAlbum.forEach((panel) => {
     if (!panel.classList.contains("hasEventListener")) {
       panel.classList.add("hasEventListener");
-      panel.addEventListener("click", function () {
+      panel.addEventListener("click", async function () {
         //console.log(`clckckc`);
         const name = panel.querySelector(".songName").textContent;
         console.log(name);
@@ -65,7 +65,9 @@ export function attachListenersToSongs() {
         const selectedSong = currentAlbum.songs.find(
           (song) => song.title === name
         );
-        const data = openSong(selectedSong.id);
+        console.log(selectedSong);
+        const data = await openSong(selectedSong.id);
+        console.log(data);
         createSong(data);
         SongToAlbumAndAlbumToSong();
         console.log(selectedSong);
