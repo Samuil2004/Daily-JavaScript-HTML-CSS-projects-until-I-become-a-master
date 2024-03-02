@@ -35,7 +35,6 @@ body {
   /* background-color: aqua; */
   padding: 0 10px;
   grid-template-rows: 50% 50%;
-  /* align-items: center; */
 }
 .searchingPanel {
   display: flex;
@@ -46,7 +45,6 @@ body {
 .searchBar {
   width: 80%;
   height: 80%;
-  /* margin-top: 10px; */
   border-radius: 15px;
   padding: 0 15px;
   font-size: 25px;
@@ -54,9 +52,6 @@ body {
 }
 .magnifyingGlass {
   height: 70%;
-  /* margin-top: 10px; */
-
-  /* margin-bottom: -10px; */
 }
 
 .resultsBox {
