@@ -32,15 +32,31 @@ body {
 }
 .searchBox {
   display: grid;
-  background-color: aqua;
+  /* background-color: aqua; */
   padding: 0 10px;
   grid-template-rows: 50% 50%;
   /* align-items: center; */
 }
+.searchingPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
 .searchBar {
-  width: 90%;
-  height: 50%;
-  margin-top: 10px;
+  width: 80%;
+  height: 80%;
+  /* margin-top: 10px; */
+  border-radius: 15px;
+  padding: 0 15px;
+  font-size: 25px;
+  border: none;
+}
+.magnifyingGlass {
+  height: 70%;
+  /* margin-top: 10px; */
+
+  /* margin-bottom: -10px; */
 }
 
 .resultsBox {
