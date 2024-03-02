@@ -165,14 +165,7 @@ body {
   /* animation: scroll-left 12s linear infinite; */
   font-style: italic;
 }
-@keyframes scroll-left {
-  0% {
-    transform: translateX(30%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
+
 .albumArtist {
   font-size: 25px;
   color: white;
@@ -182,6 +175,7 @@ body {
   overflow-y: auto;
   display: grid;
   grid-gap: 1px;
+  max-width: 10cm;
 }
 .songPanel {
   background-color: rgb(142, 142, 142);
@@ -194,6 +188,7 @@ body {
   width: 80%;
   align-items: center;
   padding: 0 5px;
+  /* overflow: hidden; */
 }
 .rightSide {
   display: flex;
@@ -201,25 +196,45 @@ body {
   width: 20%;
   justify-content: center;
   align-items: center;
+  /* overflow: hidden; */
 }
 .songImg {
   height: 1.2cm;
   border-radius: 3px;
 }
-.songName {
-  margin-left: 10px;
+.titleHolder {
+  overflow: hidden;
+  max-width: 7cm;
+  margin-left: 3px;
 }
-.albumSongsPlayBtn {
+
+.curPlayingSongTitle {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.albumSongsPlayBtn,
+.currentSongPlayBtn {
   height: 0.8cm;
 }
 .currentlyPlayingSongPanel {
-  background-color: rgb(207, 128, 8);
+  max-width: 10cm;
+
+  /* background-color: rgb(207, 128, 8); */
   display: flex;
 }
 
 .currentlyPlayingSongPanel .leftSide {
-  background-color: orange;
+  /* background-color: orange; */
 }
 .currentlyPlayingSongPanel .rightSide {
-  background-color: rgb(0, 255, 94);
+  /* background-color: rgb(0, 255, 94); */
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(30%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

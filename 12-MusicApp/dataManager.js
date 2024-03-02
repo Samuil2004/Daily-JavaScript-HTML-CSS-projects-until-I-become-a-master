@@ -88,6 +88,7 @@ const createAlbum = function (album) {
   console.log(newAlbum.songs);
   const allAlbumSongs = newAlbum.songs;
   allAlbumSongs.forEach((song) => addSongsToDOM(song));
+  currentSongInfoAlbumPage();
 };
 
 const printAlbum = function (album) {
@@ -131,6 +132,16 @@ const addSongsToDOM = function (song) {
 //   }
 // };
 
+const currentSongInfoAlbumPage = function () {
+  configurator.currentSongAlbumPageImage.src = currentlyPlayingSong.image;
+  checkTitle(
+    configurator.currentSongAlbumPageTitle,
+    currentlyPlayingSong.title
+  );
+  configurator.currentSongAlbumPageTitle.textContent =
+    currentlyPlayingSong.title;
+};
+
 const checkTitle = function (className, title) {
   if (title.length > 20) {
     className.style.animation = "scroll-left 12s linear infinite";
@@ -138,5 +149,3 @@ const checkTitle = function (className, title) {
     className.style.removeProperty("animation");
   }
 };
-
-const currentSongInfoAlbumPage = function () {};

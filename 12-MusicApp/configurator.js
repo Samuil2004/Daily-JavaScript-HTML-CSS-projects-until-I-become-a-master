@@ -14,7 +14,9 @@ export const albumArtist = document.querySelector(".albumArtist");
 export const albumSongs = document.querySelector(".albumSongs");
 
 export const currentSongAlbumPageImage = document.querySelector(".songImg");
-export const currentSongAlbumPageTitle = document.querySelector(".songName");
+export const currentSongAlbumPageTitle = document.querySelector(
+  ".curPlayingSongTitle"
+);
 export const currentSongPlayPauseBtnAlbumPage = document.querySelector(
   ".currentSongPlayBtn"
 );
