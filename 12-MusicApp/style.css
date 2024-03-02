@@ -161,6 +161,7 @@ body {
   color: white;
   width: 9cm;
   max-width: 9cm;
+  white-space: nowrap;
   /* animation: scroll-left 12s linear infinite; */
   font-style: italic;
 }

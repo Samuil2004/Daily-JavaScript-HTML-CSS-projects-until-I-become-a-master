@@ -11,13 +11,19 @@ export const prevSongBtn = document.querySelector(".previousSongBtn");
 export const albumImage = document.querySelector(".albumImage");
 export const albumTitle = document.querySelector(".AlbumTitle");
 export const albumArtist = document.querySelector(".albumArtist");
-
 export const albumSongs = document.querySelector(".albumSongs");
+
+export const currentSongAlbumPageImage = document.querySelector(".songImg");
+export const currentSongAlbumPageTitle = document.querySelector(".songName");
+export const currentSongPlayPauseBtnAlbumPage = document.querySelector(
+  ".currentSongPlayBtn"
+);
 
 export const songTab = document.querySelector(".songInfo");
 export const albumTab = document.querySelector(".albumInfo");
 
 export const data = [];
+
 export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
 export const options = {
   method: "GET",

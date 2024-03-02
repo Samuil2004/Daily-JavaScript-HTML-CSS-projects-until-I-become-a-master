@@ -3,6 +3,8 @@ import { Song, Album } from "./classHolder.js";
 import { formatTime, moveSongProgressBar } from "./controlPanel.js";
 let number = 0;
 let timeIterval;
+let currentlyPlayingSong;
+
 export async function fetchData() {
   try {
     const fetchData = await fetch(configurator.url, configurator.options).then(
@@ -32,14 +34,14 @@ const createObject = function () {
   );
 
   fillInInfo(newSong);
+  currentlyPlayingSong = newSong;
 };
 
 const fillInInfo = function (song) {
   configurator.songDurationBar.value = 0;
   configurator.timePassed.textContent = "0:00";
   configurator.img.src = song.image;
-  checkSongTitle(song.title);
-
+  checkTitle(configurator.songTitle, song.title);
   configurator.songTitle.textContent = song.title;
 
   configurator.songArtist.textContent = song.artist;
@@ -91,7 +93,7 @@ const createAlbum = function (album) {
 const printAlbum = function (album) {
   configurator.albumImage.src = album.image;
   configurator.albumTitle.textContent = album.title;
-  checkAlbumTitle(album.title);
+  checkTitle(configurator.albumTitle, album.title);
   configurator.albumArtist.textContent = album.artist;
 };
 export async function loadAlbum() {
@@ -121,16 +123,20 @@ const addSongsToDOM = function (song) {
   configurator.albumSongs.insertAdjacentHTML("beforeend", html);
 };
 
-const checkAlbumTitle = function (title) {
+// const checkAlbumTitle = function (title) {
+//   if (title.length > 20) {
+//     configurator.albumTitle.style.animation = "scroll-left 12s linear infinite";
+//   } else {
+//     configurator.albumTitle.style.removeProperty("animation");
+//   }
+// };
+
+const checkTitle = function (className, title) {
   if (title.length > 20) {
-    configurator.albumTitle.style.animation = "scroll-left 12s linear infinite";
+    className.style.animation = "scroll-left 12s linear infinite";
+  } else {
+    className.style.removeProperty("animation");
   }
 };
 
-const checkSongTitle = function (title) {
-  if (title.length > 20) {
-    configurator.songTitle.style.animation = "scroll-left 12s linear infinite";
-  } else {
-    configurator.songTitle.style.removeProperty("animation");
-  }
-};
+const currentSongInfoAlbumPage = function () {};
