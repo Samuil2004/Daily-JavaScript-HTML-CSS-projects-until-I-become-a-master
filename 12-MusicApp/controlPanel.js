@@ -12,7 +12,6 @@ export function playPauseBtnFunctionality() {
     configurator.pausePlaySongBtn.src = "./images/playSongBtnImg.png";
     configurator.currentSongPlayPauseBtnAlbumPage.src =
       "./images/playSongBtnImg.png";
-
     stopTimer();
   } else {
     configurator.pausePlaySongBtn.src = "./images/pauseSongBtnImg.png";
@@ -59,6 +58,7 @@ export function attachListenersToSongs() {
       panel.classList.add("hasEventListener");
       panel.addEventListener("click", async function () {
         //console.log(`clckckc`);
+
         const name = panel.querySelector(".songName").textContent;
         console.log(name);
         console.log(currentAlbum);

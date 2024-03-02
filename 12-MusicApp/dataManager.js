@@ -170,13 +170,4 @@ export async function openSong(songID) {
   ).then((res) => res.json());
   console.log(result);
   return await result;
-  // .then(
-  //   (res) => res.json()
-  // );
-  //return result;
-  // .then((res) => createSong(res));
-  // console.log(song.json());
-  // console.log(`${configurator.urlForSong}${songID}`);
-  // .then((res) => res.json())
-  // .then((res) => console.log(res));
 }
