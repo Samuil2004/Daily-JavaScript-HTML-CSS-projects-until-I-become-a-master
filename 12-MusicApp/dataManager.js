@@ -25,19 +25,19 @@ const storeInfo = function (storedData) {
   createSong(configurator.data[0].data[number]);
 };
 
-const createSong = function (storedData) {
+export function createSong(storedData) {
   console.log(configurator.data[0]);
   const newSong = new Song(
     storedData.title,
     storedData.artist.name,
     storedData.duration,
-    storedData.artist.picture_medium,
+    storedData.album.cover_xl,
     storedData.id
   );
   console.log(newSong);
   fillInInfo(newSong);
   currentlyPlayingSong = newSong;
-};
+}
 
 const fillInInfo = function (song) {
   configurator.songDurationBar.value = 0;
@@ -102,8 +102,12 @@ const printAlbum = function (album) {
   configurator.albumArtist.textContent = album.artist;
 };
 export async function loadAlbum() {
+  console.log(currentlyPlayingSong);
+  const songData = await openSong(currentlyPlayingSong.id);
+  //const ne = songData.json();
+  console.log(songData);
   await fetch(
-    `${configurator.urlForAlbum}${configurator.data[0].data[number].album.id}`,
+    `${configurator.urlForAlbum}${songData.album.id}`,
     configurator.options
   )
     .then((res) => res.json())
@@ -155,11 +159,19 @@ const checkTitle = function (className, title) {
 };
 
 export async function openSong(songID) {
-  await fetch(`${configurator.urlForSong}${songID}`, configurator.options)
-    .then((res) => res.json())
-    .then((res) => createSong(res));
+  const result = await fetch(
+    `${configurator.urlForSong}${songID}`,
+    configurator.options
+  ).then((res) => res.json());
+  console.log(result);
+  return await result;
+  // .then(
+  //   (res) => res.json()
+  // );
+  //return result;
+  // .then((res) => createSong(res));
   // console.log(song.json());
-  console.log(`${configurator.urlForSong}${songID}`);
+  // console.log(`${configurator.urlForSong}${songID}`);
   // .then((res) => res.json())
   // .then((res) => console.log(res));
 }

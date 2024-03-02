@@ -4,6 +4,7 @@ import {
   startTimer,
   loadNextOrPrevSong,
   openSong,
+  createSong,
 } from "./dataManager.js";
 import { currentAlbum } from "./dataManager.js";
 export function playPauseBtnFunctionality() {
@@ -64,7 +65,8 @@ export function attachListenersToSongs() {
         const selectedSong = currentAlbum.songs.find(
           (song) => song.title === name
         );
-        openSong(selectedSong.id);
+        const data = openSong(selectedSong.id);
+        createSong(data);
         SongToAlbumAndAlbumToSong();
         console.log(selectedSong);
       });

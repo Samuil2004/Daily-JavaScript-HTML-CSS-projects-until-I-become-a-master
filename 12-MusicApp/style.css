@@ -226,13 +226,6 @@ body {
   display: flex;
 }
 
-.currentlyPlayingSongPanel .leftSide {
-  /* background-color: orange; */
-}
-.currentlyPlayingSongPanel .rightSide {
-  /* background-color: rgb(0, 255, 94); */
-  /* width: 20%; */
-}
 @keyframes scroll-left {
   0% {
     transform: translateX(30%);
