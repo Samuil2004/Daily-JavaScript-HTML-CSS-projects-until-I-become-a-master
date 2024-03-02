@@ -204,10 +204,12 @@ body {
 }
 .titleHolder {
   overflow: hidden;
-  max-width: 7cm;
+  width: 6.5cm;
   margin-left: 3px;
 }
-
+.songName {
+  margin-left: 3px;
+}
 .curPlayingSongTitle {
   margin-left: 10px;
   white-space: nowrap;
@@ -218,7 +220,7 @@ body {
   height: 0.8cm;
 }
 .currentlyPlayingSongPanel {
-  max-width: 10cm;
+  /* max-width: 8cm; */
 
   /* background-color: rgb(207, 128, 8); */
   display: flex;
@@ -229,6 +231,7 @@ body {
 }
 .currentlyPlayingSongPanel .rightSide {
   /* background-color: rgb(0, 255, 94); */
+  /* width: 20%; */
 }
 @keyframes scroll-left {
   0% {
