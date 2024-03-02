@@ -30,12 +30,13 @@ body {
   display: grid;
   grid-template-rows: 3cm auto;
 }
+
 .searchBox {
   display: grid;
-  /* background-color: aqua; */
   padding: 0 10px;
   grid-template-rows: 50% 50%;
 }
+
 .searchingPanel {
   display: flex;
   justify-content: space-between;
