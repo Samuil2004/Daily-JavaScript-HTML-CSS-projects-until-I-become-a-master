@@ -1,11 +1,12 @@
 import { formatTime } from "./controlPanel.js";
 
 export class Song {
-  constructor(title, artist, duration, image) {
+  constructor(title, artist, duration, image, id) {
     this.title = title;
     this.artist = artist;
     this.duration = duration;
     this.image = image;
+    this.id = id;
   }
 }
 
@@ -22,9 +23,10 @@ export class Album {
       song.title,
       song.artist.name,
       formatTime(song.duration),
-      song.album.cover_xl
+      song.album.cover_xl,
+      song.id
     );
-    console.log(albumSong.image);
+    //console.log(albumSong.image);
 
     this.songs.push(albumSong);
   }

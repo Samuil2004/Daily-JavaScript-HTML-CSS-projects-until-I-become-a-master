@@ -1,10 +1,11 @@
 import * as configurator from "./configurator.js";
 import { Song, Album } from "./classHolder.js";
 import { formatTime, moveSongProgressBar } from "./controlPanel.js";
+//import { attachListenersToSongs } from "./main.js";
 let number = 0;
 let timeIterval;
 let currentlyPlayingSong;
-
+export let currentAlbum;
 export async function fetchData() {
   try {
     const fetchData = await fetch(configurator.url, configurator.options).then(
@@ -21,18 +22,19 @@ export async function fetchData() {
 }
 const storeInfo = function (storedData) {
   configurator.data.push(storedData);
-  createObject();
+  createSong(configurator.data[0].data[number]);
 };
 
-const createObject = function () {
+const createSong = function (storedData) {
   console.log(configurator.data[0]);
   const newSong = new Song(
-    configurator.data[0].data[number].title,
-    configurator.data[0].data[number].artist.name,
-    configurator.data[0].data[number].duration,
-    configurator.data[0].data[number].artist.picture_medium
+    storedData.title,
+    storedData.artist.name,
+    storedData.duration,
+    storedData.artist.picture_medium,
+    storedData.id
   );
-
+  console.log(newSong);
   fillInInfo(newSong);
   currentlyPlayingSong = newSong;
 };
@@ -61,7 +63,7 @@ export function loadNextOrPrevSong(nextSong) {
       }
     }
   }
-  createObject();
+  createSong(configurator.data[0].data[number]);
 }
 
 export function startTimer() {
@@ -89,6 +91,8 @@ const createAlbum = function (album) {
   const allAlbumSongs = newAlbum.songs;
   allAlbumSongs.forEach((song) => addSongsToDOM(song));
   currentSongInfoAlbumPage();
+  currentAlbum = newAlbum;
+  //attachListenersToSongs();
 };
 
 const printAlbum = function (album) {
@@ -108,7 +112,7 @@ export async function loadAlbum() {
 }
 
 const addSongsToDOM = function (song) {
-  console.log(song);
+  //console.log(song);
   const html = `<div class="songPanel">
   <div class="leftSide">
     <img src="${song.image}"  class="songImg" />
@@ -149,3 +153,13 @@ const checkTitle = function (className, title) {
     className.style.removeProperty("animation");
   }
 };
+
+export async function openSong(songID) {
+  await fetch(`${configurator.urlForSong}${songID}`, configurator.options)
+    .then((res) => res.json())
+    .then((res) => createSong(res));
+  // console.log(song.json());
+  console.log(`${configurator.urlForSong}${songID}`);
+  // .then((res) => res.json())
+  // .then((res) => console.log(res));
+}

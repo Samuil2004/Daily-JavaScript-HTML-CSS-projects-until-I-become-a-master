@@ -6,6 +6,7 @@ import {
   playPauseBtnFunctionality,
   songTimeStampsChanger,
   SongToAlbumAndAlbumToSong,
+  attachListenersToSongs,
 } from "./controlPanel.js";
 
 fetchData();
@@ -32,9 +33,10 @@ configurator.prevSongBtn.addEventListener("click", function () {
   loadNextOrPrevSong(false);
 });
 
-configurator.btnGoToAlbum.addEventListener("click", function () {
+configurator.btnGoToAlbum.addEventListener("click", async function () {
   SongToAlbumAndAlbumToSong();
-  loadAlbum();
+  await loadAlbum();
+  attachListenersToSongs();
 });
 
 configurator.leftSideOfTheCurrentlyPlayingSong.addEventListener(
