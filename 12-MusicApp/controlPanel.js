@@ -1,11 +1,16 @@
 import * as configurator from "./configurator.js";
 import { stopTimer, startTimer, loadNextOrPrevSong } from "./dataManager.js";
-export function playPauseBtnFunctionality(e) {
+export function playPauseBtnFunctionality() {
   if (configurator.pausePlaySongBtn.src.includes("pause")) {
     configurator.pausePlaySongBtn.src = "./images/playSongBtnImg.png";
+    configurator.currentSongPlayPauseBtnAlbumPage.src =
+      "./images/playSongBtnImg.png";
+
     stopTimer();
   } else {
     configurator.pausePlaySongBtn.src = "./images/pauseSongBtnImg.png";
+    configurator.currentSongPlayPauseBtnAlbumPage.src =
+      "./images/pauseSongBtnImg.png";
     startTimer();
   }
 }

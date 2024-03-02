@@ -11,8 +11,14 @@ import {
 fetchData();
 
 configurator.pausePlaySongBtn.addEventListener("click", function () {
-  playPauseBtnFunctionality(this);
+  playPauseBtnFunctionality();
 });
+configurator.currentSongPlayPauseBtnAlbumPage.addEventListener(
+  "click",
+  function () {
+    playPauseBtnFunctionality();
+  }
+);
 
 configurator.songDurationBar.addEventListener("input", function () {
   songTimeStampsChanger();
@@ -30,3 +36,10 @@ configurator.btnGoToAlbum.addEventListener("click", function () {
   SongToAlbumAndAlbumToSong();
   loadAlbum();
 });
+
+configurator.leftSideOfTheCurrentlyPlayingSong.addEventListener(
+  "click",
+  function () {
+    SongToAlbumAndAlbumToSong();
+  }
+);

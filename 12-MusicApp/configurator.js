@@ -20,6 +20,9 @@ export const currentSongAlbumPageTitle = document.querySelector(
 export const currentSongPlayPauseBtnAlbumPage = document.querySelector(
   ".currentSongPlayBtn"
 );
+export const leftSideOfTheCurrentlyPlayingSong = document.querySelector(
+  ".curPlayingSongLeftSide"
+);
 
 export const songTab = document.querySelector(".songInfo");
 export const albumTab = document.querySelector(".albumInfo");
