@@ -61,9 +61,15 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .songTitle {
   font-size: 35px;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis;  */
+  /* display: inline-block; */
 }
+
 .songArtist {
   font-size: 25px;
 }

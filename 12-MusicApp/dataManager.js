@@ -1,7 +1,7 @@
 import * as configurator from "./configurator.js";
 import { Song, Album } from "./classHolder.js";
 import { formatTime, moveSongProgressBar } from "./controlPanel.js";
-let number = 22;
+let number = 0;
 let timeIterval;
 export async function fetchData() {
   try {
@@ -130,5 +130,7 @@ const checkAlbumTitle = function (title) {
 const checkSongTitle = function (title) {
   if (title.length > 20) {
     configurator.songTitle.style.animation = "scroll-left 12s linear infinite";
+  } else {
+    configurator.songTitle.style.removeProperty("animation");
   }
 };
