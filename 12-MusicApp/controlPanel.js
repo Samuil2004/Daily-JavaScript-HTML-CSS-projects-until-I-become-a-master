@@ -5,7 +5,6 @@ import {
   loadNextOrPrevSong,
   openSong,
   createSong,
-  fillInfoForSongSongPage,
 } from "./dataManager.js";
 import { currentAlbum } from "./dataManager.js";
 export function playPauseBtnFunctionality() {

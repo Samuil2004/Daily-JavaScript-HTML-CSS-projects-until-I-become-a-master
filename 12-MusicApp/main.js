@@ -45,7 +45,7 @@ configurator.btnGoToAlbum.addEventListener("click", async function () {
 configurator.leftSideOfTheCurrentlyPlayingSong.addEventListener(
   "click",
   function () {
-    SongToAlbumAndAlbumToSong();
+    changeTabs(configurator.albumTab, configurator.songTab);
   }
 );
 
