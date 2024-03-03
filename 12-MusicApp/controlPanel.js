@@ -65,12 +65,23 @@ export function attachListenersToSongs() {
         console.log(songID);
         console.log(name);
         console.log(currentAlbum);
-        if (!configurator.albumTab.classList.contains("hidden")) {
-          findAlbumSong(songID);
-        } else if (!configurator.searchTab.classList.contains("hidden")) {
-          findSongSeachPanel(songID);
-        }
+        // if (!configurator.albumTab.classList.contains("hidden")) {
+        //   findAlbumSong(songID);
+        // } else if (!configurator.searchTab.classList.contains("hidden")) {
+        //   findSongSeachPanel(songID);
+        // }
+        const data = await openSong(songID);
+        createSong(data);
+        !configurator.albumTab.classList.contains("hidden")
+          ? changeTabs(configurator.albumTab, configurator.songTab)
+          : changeTabs(configurator.searchTab, configurator.songTab);
 
+        // ) {
+        //   findAlbumSong(songID);
+        // } else if (!configurator.searchTab.classList.contains("hidden")) {
+        //   findSongSeachPanel(songID);
+        // }
+        // changeTabs(configurator.albumTab, configurator.songTab);
         // const selectedSong = currentAlbum.songs.find(
         //   (song) => song.title === name
         // );
