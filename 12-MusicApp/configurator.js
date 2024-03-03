@@ -27,11 +27,17 @@ export const playBtnSongFromAlbum =
 
 export const songPanelFromAlbum = document.querySelectorAll(".songPanel");
 
+export const resultBoxSearchPage = document.querySelector(".resultsBox");
+export const searchBoxInputSearchPage = document.querySelector(".searchBar");
+export const searchButtonSearchPage =
+  document.querySelector(".magnifyingGlass");
+
 export const songTab = document.querySelector(".songInfo");
 export const albumTab = document.querySelector(".albumInfo");
 export const searchTab = document.querySelector(".searchPanel");
 
 export const data = [];
+export const results = [];
 export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
 export const options = {
   method: "GET",
@@ -43,3 +49,5 @@ export const options = {
 
 export const urlForAlbum = "https://deezerdevs-deezer.p.rapidapi.com/album/";
 export const urlForSong = "https://deezerdevs-deezer.p.rapidapi.com/track/";
+export const urlForSearch =
+  "https://deezerdevs-deezer.p.rapidapi.com/search?q=";

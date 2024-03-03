@@ -1,7 +1,12 @@
 "use strict";
 
 import * as configurator from "./configurator.js";
-import { fetchData, loadNextOrPrevSong, loadAlbum } from "./dataManager.js";
+import {
+  fetchData,
+  loadNextOrPrevSong,
+  loadAlbum,
+  fetchSearchedData,
+} from "./dataManager.js";
 import {
   playPauseBtnFunctionality,
   songTimeStampsChanger,
@@ -45,3 +50,7 @@ configurator.leftSideOfTheCurrentlyPlayingSong.addEventListener(
     SongToAlbumAndAlbumToSong();
   }
 );
+
+configurator.searchButtonSearchPage.addEventListener("click", function () {
+  fetchSearchedData();
+});

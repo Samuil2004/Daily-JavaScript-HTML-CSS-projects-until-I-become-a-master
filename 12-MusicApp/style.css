@@ -205,7 +205,10 @@ body {
   height: 2cm;
   display: flex;
 }
-
+.songImgSearchPanel {
+  height: 1.2cm;
+  border-radius: 3px;
+}
 .leftSide {
   display: flex;
   width: 80%;

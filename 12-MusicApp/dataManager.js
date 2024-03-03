@@ -171,3 +171,50 @@ export async function openSong(songID) {
   console.log(result);
   return await result;
 }
+
+export async function fetchSearchedData() {
+  const searchResults = await fetch(
+    `${configurator.urlForSearch}${configurator.searchBoxInputSearchPage.value}`,
+    configurator.options
+  ).then((res) => res.json());
+  console.log(searchResults);
+  printSearchedData(searchResults);
+  //.then((res) => console.log(res));
+}
+const printSearchedData = function (searchResults) {
+  searchResults.data.forEach((song) => {
+    addToDomFoundData(song);
+  });
+};
+
+const addToDomFoundData = function (song) {
+  const html = `<div class="resultsBox">
+  <div class="songPanel">
+    <div class="leftSide">
+      <img  class="songImgSearchPanel" src="${song.album.cover_xl}" />
+      <h2 class="songName">${song.title}</h2>
+    </div>
+    <div class="rightSide">
+      <img
+        class="albumSongsPlayBtn"
+        src="./images/playSongBtnImg.png"
+      />
+    </div>
+  </div>`;
+
+  configurator.resultBoxSearchPage.insertAdjacentHTML("beforeend", html);
+};
+
+export function createSong2(storedData) {
+  console.log(configurator.data[0]);
+  const newSong = new Song(
+    storedData.title,
+    storedData.artist.name,
+    storedData.duration,
+    storedData.album.cover_xl,
+    storedData.id
+  );
+  console.log(newSong);
+  fillInInfo(newSong);
+  currentlyPlayingSong = newSong;
+}
