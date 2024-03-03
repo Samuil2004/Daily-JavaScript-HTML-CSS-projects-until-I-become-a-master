@@ -2,7 +2,6 @@
 
 import * as configurator from "./configurator.js";
 import {
-  fetchData,
   loadNextOrPrevSong,
   loadAlbum,
   fetchSearchedData,
@@ -14,8 +13,6 @@ import {
   SongToAlbumAndAlbumToSong,
   attachListenersToSongs,
 } from "./controlPanel.js";
-
-fetchData();
 
 configurator.pausePlaySongBtn.addEventListener("click", function () {
   playPauseBtnFunctionality();

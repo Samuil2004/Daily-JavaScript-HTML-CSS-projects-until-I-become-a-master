@@ -1,12 +1,12 @@
 import { formatTime } from "./controlPanel.js";
 
 export class Song {
-  constructor(title, artist, duration, image, id) {
+  constructor(title, duration, image, id) {
     this.title = title;
-    this.artist = artist;
     this.duration = duration;
     this.image = image;
     this.id = id;
+    this.artist = [];
   }
 }
 

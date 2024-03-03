@@ -5,6 +5,7 @@ import {
   loadNextOrPrevSong,
   openSong,
   createSong,
+  fillInfoForSongSongPage,
 } from "./dataManager.js";
 import { currentAlbum } from "./dataManager.js";
 export function playPauseBtnFunctionality() {
@@ -96,7 +97,9 @@ const findAlbumSong = async function (name) {
 
 const findSongSeachPanel = async function (id) {
   const data = await openSong(id);
-
+  createSong(data);
+  // const artists = data.contributors.map((artist) => artist.name).join(",");
+  // console.log(artists);
   console.log(data);
   SongToAlbumAndAlbumToSong(configurator.searchTab, configurator.songTab);
 

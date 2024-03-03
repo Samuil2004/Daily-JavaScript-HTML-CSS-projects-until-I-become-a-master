@@ -38,7 +38,7 @@ export const searchTab = document.querySelector(".searchPanel");
 
 export const data = [];
 export const results = [];
-export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
+// export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
 export const options = {
   method: "GET",
   headers: {

@@ -6,36 +6,40 @@ let number = 0;
 let timeIterval;
 let currentlyPlayingSong;
 export let currentAlbum;
-export async function fetchData() {
-  try {
-    const fetchData = await fetch(configurator.url, configurator.options).then(
-      (res) => res.json()
-    );
-    storeInfo(fetchData);
-    // loadAlbum();
-    // testLoadAlbum();
-    // .then((rest) => createObject(rest));
-    // .then((rest) => console.log(rest));
-  } catch (error) {
-    console.error(error);
-  }
-}
-const storeInfo = function (storedData) {
-  configurator.data.push(storedData);
-  createSong(configurator.data[0].data[number]);
-};
+// export async function fetchData() {
+//   try {
+//     const fetchData = await fetch(configurator.url, configurator.options).then(
+//       (res) => res.json()
+//     );
+//     storeInfo(fetchData);
+//     // loadAlbum();
+//     // testLoadAlbum();
+//     // .then((rest) => createObject(rest));
+//     // .then((rest) => console.log(rest));
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+// const storeInfo = function (storedData) {
+//   configurator.data.push(storedData);
+//   createSong(configurator.data[0].data[number]);
+// };
 
 export function createSong(storedData) {
-  console.log(configurator.data[0]);
   const newSong = new Song(
     storedData.title,
-    storedData.artist.name,
     storedData.duration,
     storedData.album.cover_xl,
     storedData.id
   );
-  console.log(newSong);
-  fillInInfo(newSong);
+  storedData.contributors.forEach((artist) => newSong.artist.push(artist.name));
+  fillInfoForSongSongPage(newSong);
+
+  //console.log(newSong.artist);
+
+  //console.log();
+  //console.log(newSong);
+  //fillInInfo(newSong);
   currentlyPlayingSong = newSong;
 }
 
@@ -205,6 +209,19 @@ const addSongToDOM = function (placeToBeAdded, song) {
 
   placeToBeAdded.insertAdjacentHTML("beforeend", html);
 };
+
+export function fillInfoForSongSongPage(song) {
+  configurator.songDurationBar.value = 0;
+  configurator.timePassed.textContent = "0:00";
+  configurator.img.src = song.image;
+  checkTitle(configurator.songTitle, song.title);
+  configurator.songTitle.textContent = song.title;
+  // const artists = song.contributors.map((artist) => artist.name).join(",");
+  //console.log(artists);
+  configurator.songArtist.textContent = song.artist.join(", ");
+  configurator.songTimeLeft.textContent = formatTime(song.duration);
+  configurator.songDurationBar.max = song.duration;
+}
 
 // export function createSong2(storedData) {
 //   console.log(configurator.data[0]);
