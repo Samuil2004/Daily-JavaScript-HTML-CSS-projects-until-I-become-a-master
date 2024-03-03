@@ -90,15 +90,15 @@ const createAlbum = function (album) {
   console.log(newAlbum.songs);
   const allAlbumSongs = newAlbum.songs;
   clearSongsFromOldAlbum();
-  allAlbumSongs.forEach((song) => addSongsToDOM(song));
+  allAlbumSongs.forEach((song) => addSongToDOM(configurator.albumSongs, song));
   currentSongInfoAlbumPage();
   currentAlbum = newAlbum;
   //attachListenersToSongs();
 };
-const clearSongsFromOldAlbum = function () {
+export function clearSongsFromOldAlbum() {
   const songPanelFromAlbum = document.querySelectorAll(".songPanel");
   songPanelFromAlbum.forEach((panel) => panel.remove());
-};
+}
 
 const printAlbum = function (album) {
   configurator.albumImage.src = album.image;
@@ -120,22 +120,22 @@ export async function loadAlbum() {
   // .then((res) => console.log(res));
 }
 
-const addSongsToDOM = function (song) {
-  //console.log(song);
-  const html = `<div class="songPanel">
-  <div class="leftSide">
-    <img src="${song.image}"  class="songImg" />
-    <h2 class="songName">${song.title}</h2>
-  </div>
-  <div class="rightSide">
-    <img
-      class="albumSongsPlayBtn"
-      src="./images/playSongBtnImg.png"
-    />
-  </div>
-</div>`;
-  configurator.albumSongs.insertAdjacentHTML("beforeend", html);
-};
+// const addSongsToDOM = function (song) {
+//   //console.log(song);
+//   const html = `<div class="songPanel">
+//   <div class="leftSide">
+//     <img src="${song.image}"  class="songImg" />
+//     <h2 class="songName">${song.title}</h2>
+//   </div>
+//   <div class="rightSide">
+//     <img
+//       class="albumSongsPlayBtn"
+//       src="./images/playSongBtnImg.png"
+//     />
+//   </div>
+// </div>`;
+//   configurator.albumSongs.insertAdjacentHTML("beforeend", html);
+// };
 
 // const checkAlbumTitle = function (title) {
 //   if (title.length > 20) {
@@ -183,15 +183,16 @@ export async function fetchSearchedData() {
 }
 const printSearchedData = function (searchResults) {
   searchResults.data.forEach((song) => {
-    addToDomFoundData(song);
+    addSongToDOM(configurator.resultBoxSearchPage, song);
   });
 };
 
-const addToDomFoundData = function (song) {
-  const html = `<div class="resultsBox">
+const addSongToDOM = function (placeToBeAdded, song) {
+  const html = `
   <div class="songPanel">
     <div class="leftSide">
-      <img  class="songImgSearchPanel" src="${song.album.cover_xl}" />
+      <img  class="songImg" src="${song.album.cover_xl}" />
+      <h2 class="id hidden">${song.id}</h2>
       <h2 class="songName">${song.title}</h2>
     </div>
     <div class="rightSide">
@@ -202,19 +203,19 @@ const addToDomFoundData = function (song) {
     </div>
   </div>`;
 
-  configurator.resultBoxSearchPage.insertAdjacentHTML("beforeend", html);
+  placeToBeAdded.insertAdjacentHTML("beforeend", html);
 };
 
-export function createSong2(storedData) {
-  console.log(configurator.data[0]);
-  const newSong = new Song(
-    storedData.title,
-    storedData.artist.name,
-    storedData.duration,
-    storedData.album.cover_xl,
-    storedData.id
-  );
-  console.log(newSong);
-  fillInInfo(newSong);
-  currentlyPlayingSong = newSong;
-}
+// export function createSong2(storedData) {
+//   console.log(configurator.data[0]);
+//   const newSong = new Song(
+//     storedData.title,
+//     storedData.artist.name,
+//     storedData.duration,
+//     storedData.album.cover_xl,
+//     storedData.id
+//   );
+//   console.log(newSong);
+//   fillInInfo(newSong);
+//   currentlyPlayingSong = newSong;
+// }

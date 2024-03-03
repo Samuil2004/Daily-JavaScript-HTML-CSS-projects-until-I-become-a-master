@@ -6,6 +6,7 @@ import {
   loadNextOrPrevSong,
   loadAlbum,
   fetchSearchedData,
+  clearSongsFromOldAlbum,
 } from "./dataManager.js";
 import {
   playPauseBtnFunctionality,
@@ -52,5 +53,6 @@ configurator.leftSideOfTheCurrentlyPlayingSong.addEventListener(
 );
 
 configurator.searchButtonSearchPage.addEventListener("click", function () {
+  clearSongsFromOldAlbum();
   fetchSearchedData();
 });
