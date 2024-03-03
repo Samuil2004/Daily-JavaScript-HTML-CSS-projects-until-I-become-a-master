@@ -29,6 +29,7 @@ export const songPanelFromAlbum = document.querySelectorAll(".songPanel");
 
 export const songTab = document.querySelector(".songInfo");
 export const albumTab = document.querySelector(".albumInfo");
+export const searchTab = document.querySelector(".searchPanel");
 
 export const data = [];
 export const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";

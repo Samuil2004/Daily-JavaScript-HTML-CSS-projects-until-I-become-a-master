@@ -62,16 +62,36 @@ export function attachListenersToSongs() {
         const name = panel.querySelector(".songName").textContent;
         console.log(name);
         console.log(currentAlbum);
-        const selectedSong = currentAlbum.songs.find(
-          (song) => song.title === name
-        );
-        console.log(selectedSong);
-        const data = await openSong(selectedSong.id);
-        console.log(data);
-        createSong(data);
-        SongToAlbumAndAlbumToSong();
-        console.log(selectedSong);
+        if (!configurator.albumTab.classList.contains("hidden")) {
+          findAlbumSong(name);
+        } else if (!configurator.searchTab.classList.contains("hidden")) {
+        }
+
+        // const selectedSong = currentAlbum.songs.find(
+        //   (song) => song.title === name
+        // );
+        // console.log(selectedSong);
+        // const data = await openSong(selectedSong.id);
+        // console.log(data);
+        // createSong(data);
+        // SongToAlbumAndAlbumToSong();
+        // console.log(selectedSong);
       });
     }
   });
 }
+
+const findAlbumSong = async function (name) {
+  const selectedSong = currentAlbum.songs.find((song) => song.title === name);
+  console.log(selectedSong);
+  const data = await openSong(selectedSong.id);
+  console.log(data);
+  createSong(data);
+  SongToAlbumAndAlbumToSong();
+  console.log(selectedSong);
+};
+
+const findSongSeachPanel = function () {
+  //store all search result songs in an array
+  //find the id of the object of which the name from the function above equals song of the array
+};
