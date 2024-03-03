@@ -94,7 +94,10 @@ const createAlbum = function (album) {
   console.log(newAlbum.songs);
   const allAlbumSongs = newAlbum.songs;
   clearSongsFromOldAlbum();
-  allAlbumSongs.forEach((song) => addSongToDOM(configurator.albumSongs, song));
+  allAlbumSongs.forEach((song) => {
+    console.log(song);
+    addSongToDOM(configurator.albumSongs, song);
+  });
   currentSongInfoAlbumPage();
   currentAlbum = newAlbum;
   //attachListenersToSongs();
@@ -111,10 +114,10 @@ const printAlbum = function (album) {
   configurator.albumArtist.textContent = album.artist;
 };
 export async function loadAlbum() {
-  console.log(currentlyPlayingSong);
+  //console.log(currentlyPlayingSong);
   const songData = await openSong(currentlyPlayingSong.id);
   //const ne = songData.json();
-  console.log(songData);
+  //console.log(songData);
   await fetch(
     `${configurator.urlForAlbum}${songData.album.id}`,
     configurator.options
@@ -216,8 +219,6 @@ export function fillInfoForSongSongPage(song) {
   configurator.img.src = song.image;
   checkTitle(configurator.songTitle, song.title);
   configurator.songTitle.textContent = song.title;
-  // const artists = song.contributors.map((artist) => artist.name).join(",");
-  //console.log(artists);
   configurator.songArtist.textContent = song.artist.join(", ");
   configurator.songTimeLeft.textContent = formatTime(song.duration);
   configurator.songDurationBar.max = song.duration;

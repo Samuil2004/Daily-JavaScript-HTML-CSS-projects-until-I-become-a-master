@@ -13,10 +13,10 @@ export class Song {
 export class Album {
   constructor(title, artist, duration, image) {
     this.title = title;
-    this.artist = artist;
     this.duration = duration;
     this.image = image;
     this.songs = [];
+    this.artist = artist;
   }
   addSongs(song) {
     const albumSong = new Song(

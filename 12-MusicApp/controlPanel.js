@@ -46,7 +46,7 @@ export function moveSongProgressBar() {
   }
 }
 
-export function SongToAlbumAndAlbumToSong(panel1ToToggle, panel2ToToggle) {
+export function changeTabs(panel1ToToggle, panel2ToToggle) {
   panel1ToToggle.classList.toggle("hidden");
   panel2ToToggle.classList.toggle("hidden");
 }
@@ -91,7 +91,7 @@ const findAlbumSong = async function (name) {
   const data = await openSong(selectedSong.id);
   console.log(data);
   createSong(data);
-  SongToAlbumAndAlbumToSong();
+  changeTabs();
   console.log(selectedSong);
 };
 
@@ -101,7 +101,7 @@ const findSongSeachPanel = async function (id) {
   // const artists = data.contributors.map((artist) => artist.name).join(",");
   // console.log(artists);
   console.log(data);
-  SongToAlbumAndAlbumToSong(configurator.searchTab, configurator.songTab);
+  changeTabs(configurator.searchTab, configurator.songTab);
 
   // const allSongs = document.querySelectorAll(".songPanel");
   // const selectedSong = allSongs.find(

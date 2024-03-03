@@ -10,7 +10,7 @@ import {
 import {
   playPauseBtnFunctionality,
   songTimeStampsChanger,
-  SongToAlbumAndAlbumToSong,
+  changeTabs,
   attachListenersToSongs,
 } from "./controlPanel.js";
 
@@ -37,7 +37,7 @@ configurator.prevSongBtn.addEventListener("click", function () {
 });
 
 configurator.btnGoToAlbum.addEventListener("click", async function () {
-  SongToAlbumAndAlbumToSong();
+  changeTabs(configurator.songTab, configurator.albumTab);
   await loadAlbum();
   attachListenersToSongs();
 });
