@@ -12,7 +12,7 @@ export const albumImage = document.querySelector(".albumImage");
 export const albumTitle = document.querySelector(".AlbumTitle");
 export const albumArtist = document.querySelector(".albumArtist");
 export const albumSongs = document.querySelector(".albumSongs");
-export const currentSongAlbumPageImage = document.querySelector(".songImg");
+export const currentSongAlbumPageImage = document.querySelector(".curSong");
 export const currentSongAlbumPageTitle = document.querySelector(
   ".curPlayingSongTitle"
 );

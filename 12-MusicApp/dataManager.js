@@ -43,17 +43,17 @@ export function createSong(storedData) {
   currentlyPlayingSong = newSong;
 }
 
-const fillInInfo = function (song) {
-  configurator.songDurationBar.value = 0;
-  configurator.timePassed.textContent = "0:00";
-  configurator.img.src = song.image;
-  checkTitle(configurator.songTitle, song.title);
-  configurator.songTitle.textContent = song.title;
+// const fillInInfo = function (song) {
+//   configurator.songDurationBar.value = 0;
+//   configurator.timePassed.textContent = "0:00";
+//   configurator.img.src = song.image;
+//   checkTitle(configurator.songTitle, song.title);
+//   configurator.songTitle.textContent = song.title;
 
-  configurator.songArtist.textContent = song.artist;
-  configurator.songTimeLeft.textContent = formatTime(song.duration);
-  configurator.songDurationBar.max = song.duration;
-};
+//   configurator.songArtist.textContent = song.artist;
+//   configurator.songTimeLeft.textContent = formatTime(song.duration);
+//   configurator.songDurationBar.max = song.duration;
+// };
 
 export function loadNextOrPrevSong(nextSong) {
   if (nextSong) {
@@ -79,7 +79,7 @@ export function stopTimer() {
 }
 
 const createAlbum = function (album) {
-  console.log(album);
+  //console.log(album);
   const newAlbum = new Album(
     album.title,
     formatTime(album.duration),
@@ -98,17 +98,18 @@ const createAlbum = function (album) {
   });
   //console.log(newAlbum);
   printAlbum(newAlbum);
-  console.log(newAlbum.songs);
+  //console.log(newAlbum.songs);
   const allAlbumSongs = newAlbum.songs;
   clearSongsFromOldAlbum();
   allAlbumSongs.forEach((song) => {
-    console.log(song);
+    //console.log(song);
     addSongToDOM(configurator.albumSongs, song);
   });
   currentSongInfoAlbumPage();
   currentAlbum = newAlbum;
   //attachListenersToSongs();
 };
+
 export function clearSongsFromOldAlbum() {
   const songPanelFromAlbum = document.querySelectorAll(".songPanel");
   songPanelFromAlbum.forEach((panel) => panel.remove());
@@ -123,10 +124,10 @@ const printAlbum = function (album) {
 export async function loadAlbum() {
   //console.log(currentlyPlayingSong);
   const songData = await openSong(currentlyPlayingSong.id);
-  console.log(songData);
+  //console.log(songData);
   //const ne = songData.json();
   //console.log(songData);
-  console.log(`${configurator.urlForAlbum}${songData.album.id}`);
+  //console.log(`${configurator.urlForAlbum}${songData.album.id}`);
   await fetch(
     `${configurator.urlForAlbum}${songData.album.id}`,
     configurator.options
@@ -184,7 +185,7 @@ export async function openSong(songID) {
     `${configurator.urlForSong}${songID}`,
     configurator.options
   ).then((res) => res.json());
-  console.log(result);
+  //console.log(result);
   return await result;
 }
 
@@ -193,7 +194,7 @@ export async function fetchSearchedData() {
     `${configurator.urlForSearch}${configurator.searchBoxInputSearchPage.value}`,
     configurator.options
   ).then((res) => res.json());
-  console.log(searchResults);
+  //console.log(searchResults);
   printSearchedData(searchResults);
   //.then((res) => console.log(res));
 }

@@ -62,10 +62,11 @@ export function attachListenersToSongs() {
         const name = panel.querySelector(".songName").textContent;
 
         const songID = panel.querySelector(".id").textContent;
+        console.log(songID);
         console.log(name);
         console.log(currentAlbum);
         if (!configurator.albumTab.classList.contains("hidden")) {
-          findAlbumSong(name);
+          findAlbumSong(songID);
         } else if (!configurator.searchTab.classList.contains("hidden")) {
           findSongSeachPanel(songID);
         }
@@ -84,14 +85,14 @@ export function attachListenersToSongs() {
   });
 }
 
-const findAlbumSong = async function (name) {
-  const selectedSong = currentAlbum.songs.find((song) => song.title === name);
-  console.log(selectedSong);
-  const data = await openSong(selectedSong.id);
-  console.log(data);
+const findAlbumSong = async function (id) {
+  //const selectedSong = currentAlbum.songs.find((song) => song.title === name);
+  //console.log(selectedSong);
+  const data = await openSong(id);
+  //console.log(data);
   createSong(data);
-  changeTabs();
-  console.log(selectedSong);
+  changeTabs(configurator.albumTab, configurator.songTab);
+  //console.log(selectedSong);
 };
 
 const findSongSeachPanel = async function (id) {
@@ -99,7 +100,7 @@ const findSongSeachPanel = async function (id) {
   createSong(data);
   // const artists = data.contributors.map((artist) => artist.name).join(",");
   // console.log(artists);
-  console.log(data);
+  //console.log(data);
   changeTabs(configurator.searchTab, configurator.songTab);
 
   // const allSongs = document.querySelectorAll(".songPanel");
