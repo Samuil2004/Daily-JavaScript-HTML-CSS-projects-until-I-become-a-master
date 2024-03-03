@@ -52,7 +52,11 @@ configurator.leftSideOfTheCurrentlyPlayingSong.addEventListener(
   }
 );
 
-configurator.searchButtonSearchPage.addEventListener("click", function () {
-  clearSongsFromOldAlbum();
-  fetchSearchedData();
-});
+configurator.searchButtonSearchPage.addEventListener(
+  "click",
+  async function () {
+    clearSongsFromOldAlbum();
+    await fetchSearchedData();
+    attachListenersToSongs();
+  }
+);

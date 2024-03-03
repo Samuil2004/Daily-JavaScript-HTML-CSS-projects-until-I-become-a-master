@@ -45,9 +45,9 @@ export function moveSongProgressBar() {
   }
 }
 
-export function SongToAlbumAndAlbumToSong() {
-  configurator.songTab.classList.toggle("hidden");
-  configurator.albumTab.classList.toggle("hidden");
+export function SongToAlbumAndAlbumToSong(panel1ToToggle, panel2ToToggle) {
+  panel1ToToggle.classList.toggle("hidden");
+  panel2ToToggle.classList.toggle("hidden");
 }
 
 export function attachListenersToSongs() {
@@ -60,11 +60,14 @@ export function attachListenersToSongs() {
         //console.log(`clckckc`);
 
         const name = panel.querySelector(".songName").textContent;
+
+        const songID = panel.querySelector(".id").textContent;
         console.log(name);
         console.log(currentAlbum);
         if (!configurator.albumTab.classList.contains("hidden")) {
           findAlbumSong(name);
         } else if (!configurator.searchTab.classList.contains("hidden")) {
+          findSongSeachPanel(songID);
         }
 
         // const selectedSong = currentAlbum.songs.find(
@@ -91,7 +94,17 @@ const findAlbumSong = async function (name) {
   console.log(selectedSong);
 };
 
-const findSongSeachPanel = function () {
+const findSongSeachPanel = async function (id) {
+  const data = await openSong(id);
+
+  console.log(data);
+  SongToAlbumAndAlbumToSong(configurator.searchTab, configurator.songTab);
+
+  // const allSongs = document.querySelectorAll(".songPanel");
+  // const selectedSong = allSongs.find(
+  //   (panel) => panel.querySelector(".id").textContent === id
+  // );
+  // console.log(selectedSong);
   //store all search result songs in an array
   //find the id of the object of which the name from the function above equals song of the array
 };
