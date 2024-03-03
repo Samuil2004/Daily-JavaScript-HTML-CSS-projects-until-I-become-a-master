@@ -57,3 +57,13 @@ configurator.searchButtonSearchPage.addEventListener(
     attachListenersToSongs();
   }
 );
+configurator.searchBoxInputSearchPage.addEventListener(
+  "keypress",
+  async function (e) {
+    if (e.key === "Enter") {
+      clearSongsFromOldAlbum();
+      await fetchSearchedData();
+      attachListenersToSongs();
+    }
+  }
+);
