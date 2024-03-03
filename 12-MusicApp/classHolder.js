@@ -11,23 +11,28 @@ export class Song {
 }
 
 export class Album {
-  constructor(title, artist, duration, image) {
+  constructor(title, duration, image, artist) {
     this.title = title;
     this.duration = duration;
     this.image = image;
-    this.songs = [];
     this.artist = artist;
+    this.songs = [];
   }
+
   addSongs(song) {
     const albumSong = new Song(
       song.title,
-      song.artist.name,
       formatTime(song.duration),
       song.album.cover_xl,
       song.id
+      //song.artist
     );
+    albumSong.artist.push(song.artist.name);
     //console.log(albumSong.image);
 
     this.songs.push(albumSong);
   }
+  // addArtists(artist) {
+  //   attachListenersToSongs.push(artist);
+  // }
 }

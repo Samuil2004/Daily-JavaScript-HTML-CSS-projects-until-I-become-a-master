@@ -79,17 +79,24 @@ export function stopTimer() {
 }
 
 const createAlbum = function (album) {
+  console.log(album);
   const newAlbum = new Album(
     album.title,
-    album.artist.name,
     formatTime(album.duration),
-    album.cover_xl
+    album.cover_xl,
+    album.artist.name
   );
+  //console.log(album.title);
+  //console.log(album.duration);
+  //console.log(album.cover_xl);
+  //console.log(album.artist.name);
+
   const allSongs = album.tracks.data;
   allSongs.forEach((song) => {
+    //console.log(song);
     newAlbum.addSongs(song);
   });
-
+  //console.log(newAlbum);
   printAlbum(newAlbum);
   console.log(newAlbum.songs);
   const allAlbumSongs = newAlbum.songs;
@@ -116,15 +123,17 @@ const printAlbum = function (album) {
 export async function loadAlbum() {
   //console.log(currentlyPlayingSong);
   const songData = await openSong(currentlyPlayingSong.id);
+  console.log(songData);
   //const ne = songData.json();
   //console.log(songData);
+  console.log(`${configurator.urlForAlbum}${songData.album.id}`);
   await fetch(
     `${configurator.urlForAlbum}${songData.album.id}`,
     configurator.options
   )
     .then((res) => res.json())
     .then((res) => createAlbum(res));
-  // .then((res) => console.log(res));
+  //.then((res) => console.log(res));
 }
 
 // const addSongsToDOM = function (song) {
@@ -198,7 +207,9 @@ const addSongToDOM = function (placeToBeAdded, song) {
   const html = `
   <div class="songPanel">
     <div class="leftSide">
-      <img  class="songImg" src="${song.album.cover_xl}" />
+      <img  class="songImg" src="${
+        song.album ? song.album.cover_xl : song.image
+      }" />
       <h2 class="id hidden">${song.id}</h2>
       <h2 class="songName">${song.title}</h2>
     </div>
