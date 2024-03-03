@@ -96,29 +96,29 @@ export function attachListenersToSongs() {
   });
 }
 
-const findAlbumSong = async function (id) {
-  //const selectedSong = currentAlbum.songs.find((song) => song.title === name);
-  //console.log(selectedSong);
-  const data = await openSong(id);
-  //console.log(data);
-  createSong(data);
-  changeTabs(configurator.albumTab, configurator.songTab);
-  //console.log(selectedSong);
-};
+// const findAlbumSong = async function (id) {
+//   //const selectedSong = currentAlbum.songs.find((song) => song.title === name);
+//   //console.log(selectedSong);
+//   const data = await openSong(id);
+//   //console.log(data);
+//   createSong(data);
+//   changeTabs(configurator.albumTab, configurator.songTab);
+//   //console.log(selectedSong);
+// };
 
-const findSongSeachPanel = async function (id) {
-  const data = await openSong(id);
-  createSong(data);
-  // const artists = data.contributors.map((artist) => artist.name).join(",");
-  // console.log(artists);
-  //console.log(data);
-  changeTabs(configurator.searchTab, configurator.songTab);
+// const findSongSeachPanel = async function (id) {
+//   const data = await openSong(id);
+//   createSong(data);
+//   // const artists = data.contributors.map((artist) => artist.name).join(",");
+//   // console.log(artists);
+//   //console.log(data);
+//   changeTabs(configurator.searchTab, configurator.songTab);
 
-  // const allSongs = document.querySelectorAll(".songPanel");
-  // const selectedSong = allSongs.find(
-  //   (panel) => panel.querySelector(".id").textContent === id
-  // );
-  // console.log(selectedSong);
-  //store all search result songs in an array
-  //find the id of the object of which the name from the function above equals song of the array
-};
+// const allSongs = document.querySelectorAll(".songPanel");
+// const selectedSong = allSongs.find(
+//   (panel) => panel.querySelector(".id").textContent === id
+// );
+// console.log(selectedSong);
+//store all search result songs in an array
+//find the id of the object of which the name from the function above equals song of the array
+//};
