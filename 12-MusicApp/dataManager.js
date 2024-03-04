@@ -66,27 +66,19 @@ export function loadNextOrPrevSong(nextSong) {
   const currentSong = currentAlbum.songs.find(
     (song) => song.title === currentlyPlayingSong.title
   );
-
-  const index = currentAlbum.songs.indexOf(currentSong);
-
+  let index = currentAlbum.songs.indexOf(currentSong);
   if (nextSong) {
-    // console.log(
-    //   currentAlbum.songs.find(
-    //     (song) => song.title === currentlyPlayingSong.title
-    //   )
-    // );
     if (index < currentAlbum.songs.length - 1) {
-      //   number++;
-      createSong(currentAlbum.songs[index + 1]);
+      index++;
     }
   } else {
     if (index > 0) {
       {
-        createSong(currentAlbum.songs[index - 1]);
+        index--;
       }
     }
   }
-  // createSong(configurator.data[0].data[number]);
+  createSong(currentAlbum.songs[index]);
 }
 
 export function startTimer() {
