@@ -28,9 +28,13 @@ export function songTimeStampsChanger() {
 }
 
 export function formatTime(time) {
-  return `${Math.floor(time / 60)}:${
-    time % 60 > 9 ? time % 60 : "0" + (time % 60)
-  }`;
+  if (typeof time !== "string") {
+    return `${Math.floor(time / 60)}:${
+      time % 60 > 9 ? time % 60 : "0" + (time % 60)
+    }`;
+  } else {
+    return time;
+  }
 }
 
 export function moveSongProgressBar() {

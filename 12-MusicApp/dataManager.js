@@ -26,15 +26,22 @@ export let currentAlbum;
 // };
 
 export function createSong(storedData) {
+  console.log(storedData);
   const newSong = new Song(
     storedData.title,
     storedData.duration,
-    storedData.album.cover_xl,
+    storedData.album ? storedData.album.cover_xl : storedData.image,
     storedData.id
   );
-  storedData.contributors.forEach((artist) => newSong.artist.push(artist.name));
-  fillInfoForSongSongPage(newSong);
-
+  if (storedData.contributors) {
+    storedData.contributors.forEach((artist) =>
+      newSong.artist.push(artist.name)
+    );
+    fillInfoForSongSongPage(newSong);
+  } else {
+    storedData.artist.forEach((artist) => newSong.artist.push(artist.name));
+    fillInfoForSongSongPage(newSong);
+  }
   //console.log(newSong.artist);
 
   //console.log();
@@ -91,7 +98,7 @@ export function stopTimer() {
 }
 
 const createAlbum = function (album) {
-  //console.log(album);
+  console.log(album);
   const newAlbum = new Album(
     album.title,
     formatTime(album.duration),
