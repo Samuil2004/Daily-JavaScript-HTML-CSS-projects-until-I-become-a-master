@@ -49,6 +49,7 @@ configurator.leftSideOfTheCurrentlyPlayingSong.addEventListener(
   }
 );
 
+console.log(`asdsa`);
 configurator.searchButtonSearchPage.addEventListener(
   "click",
   async function () {
