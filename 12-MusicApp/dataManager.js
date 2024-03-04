@@ -56,18 +56,30 @@ export function createSong(storedData) {
 // };
 
 export function loadNextOrPrevSong(nextSong) {
+  const currentSong = currentAlbum.songs.find(
+    (song) => song.title === currentlyPlayingSong.title
+  );
+
+  const index = currentAlbum.songs.indexOf(currentSong);
+
   if (nextSong) {
-    if (number < configurator.data[0].data.length - 1) {
-      number++;
+    // console.log(
+    //   currentAlbum.songs.find(
+    //     (song) => song.title === currentlyPlayingSong.title
+    //   )
+    // );
+    if (index < currentAlbum.songs.length - 1) {
+      //   number++;
+      createSong(currentAlbum.songs[index + 1]);
     }
   } else {
-    if (number > 0) {
+    if (index > 0) {
       {
-        number--;
+        createSong(currentAlbum.songs[index - 1]);
       }
     }
   }
-  createSong(configurator.data[0].data[number]);
+  // createSong(configurator.data[0].data[number]);
 }
 
 export function startTimer() {
@@ -107,6 +119,7 @@ const createAlbum = function (album) {
   });
   currentSongInfoAlbumPage();
   currentAlbum = newAlbum;
+  console.log(currentAlbum);
   //attachListenersToSongs();
 };
 
@@ -248,4 +261,10 @@ export function fillInfoForSongSongPage(song) {
 //   console.log(newSong);
 //   fillInInfo(newSong);
 //   currentlyPlayingSong = newSong;
+// }
+
+// export function findSong() {
+//   console.log(
+//     currentAlbum.songs.find((song) => song.title === currentlyPlayingSong.title)
+//   );
 // }
