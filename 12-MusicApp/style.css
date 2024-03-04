@@ -199,6 +199,7 @@ body {
   grid-gap: 1px;
   max-width: 10cm;
   grid-auto-rows: 2cm;
+  border: 1px solid black;
 }
 .songPanel {
   background-color: rgb(142, 142, 142);
