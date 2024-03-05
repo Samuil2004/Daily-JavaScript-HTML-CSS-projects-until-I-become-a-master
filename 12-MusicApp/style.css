@@ -8,9 +8,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgb(110, 110, 110);
-  height: 17cm;
+  height: 18cm;
   width: 11cm;
   border-radius: 10px;
+}
+.backButton {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 25px;
+  color: white;
 }
 .searchPanel,
 .songInfo,
@@ -247,9 +253,6 @@ body {
   height: 0.8cm;
 }
 .currentlyPlayingSongPanel {
-  /* max-width: 8cm; */
-
-  /* background-color: rgb(207, 128, 8); */
   display: flex;
 }
 
