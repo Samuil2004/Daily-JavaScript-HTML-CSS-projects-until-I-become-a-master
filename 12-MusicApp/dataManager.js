@@ -159,10 +159,7 @@ const printAlbum = function (album) {
 export async function loadAlbum() {
   //console.log(currentlyPlayingSong);
   const songData = await openSong(currentlyPlayingSong.id);
-  //console.log(songData);
-  //const ne = songData.json();
-  //console.log(songData);
-  //console.log(`${configurator.urlForAlbum}${songData.album.id}`);
+
   await fetch(
     `${configurator.urlForAlbum}${songData.album.id}`,
     configurator.options
