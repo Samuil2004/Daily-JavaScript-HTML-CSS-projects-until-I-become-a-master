@@ -6,6 +6,8 @@ let number = 0;
 let timeIterval;
 let currentlyPlayingSong;
 export let currentAlbum;
+let currentSearchResults;
+let songOpenedFromSearchTab;
 // export async function fetchData() {
 //   try {
 //     const fetchData = await fetch(configurator.url, configurator.options).then(
@@ -91,6 +93,7 @@ export function stopTimer() {
 
 const createAlbum = function (album) {
   console.log(album);
+
   const newAlbum = new Album(
     album.title,
     formatTime(album.duration),
@@ -214,6 +217,9 @@ const printSearchedData = function (searchResults) {
   searchResults.data.forEach((song) => {
     addSongToDOM(configurator.resultBoxSearchPage, song);
   });
+  currentSearchResults = searchResults;
+  console.log(searchResults);
+  //createAlbum(searchResults.data);
 };
 
 const addSongToDOM = function (placeToBeAdded, song) {
