@@ -72,6 +72,7 @@ configurator.searchBoxInputSearchPage.addEventListener(
 configurator.goBackButton.addEventListener("click", function () {
   if (!configurator.albumTab.classList.contains("hidden")) {
     changeTabs(configurator.albumTab, configurator.songTab);
+    configurator.searchBoxInputSearchPage.value = "";
   } else if (!configurator.songTab.classList.contains("hidden")) {
     changeTabs(configurator.songTab, configurator.searchTab);
   }
