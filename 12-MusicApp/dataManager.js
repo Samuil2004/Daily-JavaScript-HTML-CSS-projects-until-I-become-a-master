@@ -157,7 +157,6 @@ const printAlbum = function (album) {
   configurator.albumArtist.textContent = album.artist;
 };
 export async function loadAlbum() {
-  //console.log(currentlyPlayingSong);
   const songData = await openSong(currentlyPlayingSong.id);
 
   await fetch(
