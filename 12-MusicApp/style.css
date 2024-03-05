@@ -193,7 +193,7 @@ body {
 }
 .albumSongs,
 .resultsBox {
-  background-color: rgb(110, 110, 110);
+  background-color: rgb(201, 201, 201);
   overflow-y: auto;
   display: grid;
   grid-gap: 1px;
