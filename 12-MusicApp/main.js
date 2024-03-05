@@ -68,3 +68,11 @@ configurator.searchBoxInputSearchPage.addEventListener(
     }
   }
 );
+
+configurator.goBackButton.addEventListener("click", function () {
+  if (!configurator.albumTab.classList.contains("hidden")) {
+    changeTabs(configurator.albumTab, configurator.songTab);
+  } else if (!configurator.songTab.classList.contains("hidden")) {
+    changeTabs(configurator.songTab, configurator.searchTab);
+  }
+});

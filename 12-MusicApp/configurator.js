@@ -26,6 +26,7 @@ export const playBtnSongFromAlbum =
   document.querySelector(".albumSongsPlayBtn");
 
 export const songPanelFromAlbum = document.querySelectorAll(".songPanel");
+export const goBackButton = document.querySelector(".backButton");
 
 export const resultBoxSearchPage = document.querySelector(".resultsBox");
 export const searchBoxInputSearchPage = document.querySelector(".searchBar");
