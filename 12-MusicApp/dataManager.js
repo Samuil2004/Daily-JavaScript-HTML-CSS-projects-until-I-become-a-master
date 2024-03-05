@@ -137,7 +137,6 @@ const createAlbum = function (album) {
   });
   //console.log(newAlbum);
   printAlbum(newAlbum);
-  //console.log(newAlbum.songs);
   const allAlbumSongs = newAlbum.songs;
   clearSongsFromOldAlbum();
   allAlbumSongs.forEach((song) => {
