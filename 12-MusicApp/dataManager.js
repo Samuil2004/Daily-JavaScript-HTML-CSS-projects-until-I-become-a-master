@@ -146,7 +146,6 @@ const createAlbum = function (album) {
   currentSongInfoAlbumPage();
   currentAlbum = newAlbum;
   console.log(currentAlbum);
-  //attachListenersToSongs();
 };
 
 export function clearSongsFromOldAlbum() {
