@@ -141,7 +141,6 @@ const createAlbum = function (album) {
   const allAlbumSongs = newAlbum.songs;
   clearSongsFromOldAlbum();
   allAlbumSongs.forEach((song) => {
-    //console.log(song);
     addSongToDOM(configurator.albumSongs, song);
   });
   currentSongInfoAlbumPage();
