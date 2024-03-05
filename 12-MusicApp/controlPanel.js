@@ -5,6 +5,7 @@ import {
   loadNextOrPrevSong,
   openSong,
   createSong,
+  changeSongSource,
 } from "./dataManager.js";
 import { currentAlbum } from "./dataManager.js";
 export function playPauseBtnFunctionality() {
@@ -82,6 +83,9 @@ export function attachListenersToSongs() {
 
         const parentDiv = panel.parentElement;
         if (parentDiv.classList.contains("search")) {
+          changeSongSource(true);
+        } else {
+          changeSongSource(false);
         }
         // ) {
         //   findAlbumSong(songID);

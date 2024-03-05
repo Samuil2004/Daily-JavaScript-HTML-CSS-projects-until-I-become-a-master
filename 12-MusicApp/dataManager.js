@@ -7,6 +7,11 @@ let timeIterval;
 let currentlyPlayingSong;
 export let currentAlbum;
 let currentSearchResults;
+let currentSongOpenedFromSearch;
+
+export function changeSongSource(setToWhat) {
+  currentSongOpenedFromSearch = setToWhat;
+}
 // export async function fetchData() {
 //   try {
 //     const fetchData = await fetch(configurator.url, configurator.options).then(
@@ -64,22 +69,41 @@ export function createSong(storedData) {
 // };
 
 export function loadNextOrPrevSong(nextSong) {
-  const currentSong = currentAlbum.songs.find(
-    (song) => song.title === currentlyPlayingSong.title
-  );
-  let index = currentAlbum.songs.indexOf(currentSong);
-  if (nextSong) {
-    if (index < currentAlbum.songs.length - 1) {
-      index++;
-    }
-  } else {
-    if (index > 0) {
-      {
-        index--;
+  if (!currentSongOpenedFromSearch) {
+    const currentSong = currentAlbum.songs.find(
+      (song) => song.title === currentlyPlayingSong.title
+    );
+    let index = currentAlbum.songs.indexOf(currentSong);
+    if (nextSong) {
+      if (index < currentAlbum.songs.length - 1) {
+        index++;
+      }
+    } else {
+      if (index > 0) {
+        {
+          index--;
+        }
       }
     }
+    createSong(currentAlbum.songs[index]);
+  } else {
+    const currentSong = currentSearchResults.find(
+      (song) => song.title === currentlyPlayingSong.title
+    );
+    let index = currentSearchResults.indexOf(currentSong);
+    if (nextSong) {
+      if (index < currentSearchResults.length - 1) {
+        index++;
+      }
+    } else {
+      if (index > 0) {
+        {
+          index--;
+        }
+      }
+    }
+    createSong(currentSearchResults[index]);
   }
-  createSong(currentAlbum.songs[index]);
 }
 
 export function startTimer() {
@@ -216,8 +240,9 @@ const printSearchedData = function (searchResults) {
   searchResults.data.forEach((song) => {
     addSongToDOM(configurator.resultBoxSearchPage, song);
   });
-  currentSearchResults = searchResults;
+  currentSearchResults = searchResults.data;
   console.log(searchResults);
+  console.log(currentSearchResults);
   //createAlbum(searchResults.data);
 };
 
