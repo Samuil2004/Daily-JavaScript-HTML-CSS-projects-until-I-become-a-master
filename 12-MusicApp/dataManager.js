@@ -135,7 +135,6 @@ const createAlbum = function (album) {
     //console.log(song);
     newAlbum.addSongs(song);
   });
-  //console.log(newAlbum);
   printAlbum(newAlbum);
   const allAlbumSongs = newAlbum.songs;
   clearSongsFromOldAlbum();
