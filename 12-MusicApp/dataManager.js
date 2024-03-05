@@ -45,7 +45,9 @@ export function createSong(storedData) {
     );
     fillInfoForSongSongPage(newSong);
   } else {
-    storedData.artist.forEach((artist) => newSong.artist.push(artist.name));
+    console.log(storedData);
+    // storedData.artist.forEach((artist) => newSong.artist.push(artist.name));
+    newSong.artist.push(storedData.artist.name);
     fillInfoForSongSongPage(newSong);
   }
   //console.log(newSong.artist);
