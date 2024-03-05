@@ -7,7 +7,6 @@ let timeIterval;
 let currentlyPlayingSong;
 export let currentAlbum;
 let currentSearchResults;
-let songOpenedFromSearchTab;
 // export async function fetchData() {
 //   try {
 //     const fetchData = await fetch(configurator.url, configurator.options).then(

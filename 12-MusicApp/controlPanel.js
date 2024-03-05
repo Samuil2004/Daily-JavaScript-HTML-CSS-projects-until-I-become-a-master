@@ -80,6 +80,9 @@ export function attachListenersToSongs() {
           ? changeTabs(configurator.albumTab, configurator.songTab)
           : changeTabs(configurator.searchTab, configurator.songTab);
 
+        const parentDiv = panel.parentElement;
+        if (parentDiv.classList.contains("search")) {
+        }
         // ) {
         //   findAlbumSong(songID);
         // } else if (!configurator.searchTab.classList.contains("hidden")) {
