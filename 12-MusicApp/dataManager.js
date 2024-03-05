@@ -132,7 +132,6 @@ const createAlbum = function (album) {
 
   const allSongs = album.tracks.data;
   allSongs.forEach((song) => {
-    //console.log(song);
     newAlbum.addSongs(song);
   });
   printAlbum(newAlbum);
