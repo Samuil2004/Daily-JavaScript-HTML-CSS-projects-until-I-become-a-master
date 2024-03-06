@@ -49,7 +49,6 @@ export function createSong(storedData) {
     fillInfoForSongSongPage(newSong);
   }
 
-  //console.log(newSong);
   //fillInInfo(newSong);
   currentlyPlayingSong = newSong;
 }
