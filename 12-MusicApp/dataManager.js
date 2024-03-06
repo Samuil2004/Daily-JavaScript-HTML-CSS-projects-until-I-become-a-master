@@ -52,9 +52,6 @@ export function createSong(storedData) {
   currentlyPlayingSong = newSong;
 }
 
-//   configurator.songDurationBar.max = song.duration;
-// };
-
 export function loadNextOrPrevSong(nextSong) {
   if (!currentSongOpenedFromSearch) {
     const currentSong = currentAlbum.songs.find(
