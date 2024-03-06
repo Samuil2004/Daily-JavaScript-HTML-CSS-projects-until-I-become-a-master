@@ -52,7 +52,6 @@ export function createSong(storedData) {
   currentlyPlayingSong = newSong;
 }
 
-//   configurator.songArtist.textContent = song.artist;
 //   configurator.songTimeLeft.textContent = formatTime(song.duration);
 //   configurator.songDurationBar.max = song.duration;
 // };
