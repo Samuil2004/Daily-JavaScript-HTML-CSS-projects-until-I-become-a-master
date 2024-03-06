@@ -1,7 +1,6 @@
 import * as configurator from "./configurator.js";
 import { Song, Album } from "./classHolder.js";
 import { formatTime, moveSongProgressBar } from "./controlPanel.js";
-//import { attachListenersToSongs } from "./main.js";
 let number = 0;
 let timeIterval;
 let currentlyPlayingSong;
