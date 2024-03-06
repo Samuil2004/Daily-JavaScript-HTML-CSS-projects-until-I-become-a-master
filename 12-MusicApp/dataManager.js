@@ -48,7 +48,6 @@ export function createSong(storedData) {
     newSong.artist.push(storedData.artist.name);
     fillInfoForSongSongPage(newSong);
   }
-  //console.log(newSong.artist);
 
   //console.log();
   //console.log(newSong);
