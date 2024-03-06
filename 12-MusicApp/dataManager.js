@@ -52,7 +52,6 @@ export function createSong(storedData) {
   currentlyPlayingSong = newSong;
 }
 
-//   configurator.timePassed.textContent = "0:00";
 //   configurator.img.src = song.image;
 //   checkTitle(configurator.songTitle, song.title);
 //   configurator.songTitle.textContent = song.title;
