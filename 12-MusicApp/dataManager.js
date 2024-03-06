@@ -52,7 +52,6 @@ export function createSong(storedData) {
   currentlyPlayingSong = newSong;
 }
 
-// const fillInInfo = function (song) {
 //   configurator.songDurationBar.value = 0;
 //   configurator.timePassed.textContent = "0:00";
 //   configurator.img.src = song.image;
