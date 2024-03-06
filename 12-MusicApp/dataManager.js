@@ -45,7 +45,6 @@ export function createSong(storedData) {
     fillInfoForSongSongPage(newSong);
   } else {
     console.log(storedData);
-    // storedData.artist.forEach((artist) => newSong.artist.push(artist.name));
     newSong.artist.push(storedData.artist.name);
     fillInfoForSongSongPage(newSong);
   }
