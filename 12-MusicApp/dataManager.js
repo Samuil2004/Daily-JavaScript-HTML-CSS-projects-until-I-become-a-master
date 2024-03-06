@@ -52,7 +52,6 @@ export function createSong(storedData) {
   currentlyPlayingSong = newSong;
 }
 
-//   checkTitle(configurator.songTitle, song.title);
 //   configurator.songTitle.textContent = song.title;
 
 //   configurator.songArtist.textContent = song.artist;
