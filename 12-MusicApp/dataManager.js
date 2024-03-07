@@ -11,7 +11,6 @@ let currentSongOpenedFromSearch;
 export function changeSongSource(setToWhat) {
   currentSongOpenedFromSearch = setToWhat;
 }
-//   } catch (error) {
 //     console.error(error);
 //   }
 // }
