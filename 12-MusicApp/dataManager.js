@@ -11,7 +11,6 @@ let currentSongOpenedFromSearch;
 export function changeSongSource(setToWhat) {
   currentSongOpenedFromSearch = setToWhat;
 }
-//       (res) => res.json()
 //     );
 //     storeInfo(fetchData);
 //     // loadAlbum();
