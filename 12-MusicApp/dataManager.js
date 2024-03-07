@@ -11,7 +11,6 @@ let currentSongOpenedFromSearch;
 export function changeSongSource(setToWhat) {
   currentSongOpenedFromSearch = setToWhat;
 }
-//     const fetchData = await fetch(configurator.url, configurator.options).then(
 //       (res) => res.json()
 //     );
 //     storeInfo(fetchData);
