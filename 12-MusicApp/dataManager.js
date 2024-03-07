@@ -11,8 +11,7 @@ let currentSongOpenedFromSearch;
 export function changeSongSource(setToWhat) {
   currentSongOpenedFromSearch = setToWhat;
 }
-//     console.error(error);
-//   }
+
 // }
 // const storeInfo = function (storedData) {
 //   configurator.data.push(storedData);
