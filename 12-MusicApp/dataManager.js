@@ -11,7 +11,6 @@ let currentSongOpenedFromSearch;
 export function changeSongSource(setToWhat) {
   currentSongOpenedFromSearch = setToWhat;
 }
-//     // .then((rest) => createObject(rest));
 //     // .then((rest) => console.log(rest));
 //   } catch (error) {
 //     console.error(error);
