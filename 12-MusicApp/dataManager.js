@@ -89,7 +89,6 @@ const createAlbum = function (album) {
     album.cover_xl,
     album.artist.name
   );
-  //console.log(album.duration);
   //console.log(album.cover_xl);
   //console.log(album.artist.name);
 
