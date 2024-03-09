@@ -12,7 +12,6 @@ export function changeSongSource(setToWhat) {
   currentSongOpenedFromSearch = setToWhat;
 }
 
-//   configurator.data.push(storedData);
 //   createSong(configurator.data[0].data[number]);
 // };
 
