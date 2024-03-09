@@ -12,8 +12,6 @@ export function changeSongSource(setToWhat) {
   currentSongOpenedFromSearch = setToWhat;
 }
 
-// };
-
 export function createSong(storedData) {
   console.log(storedData);
   const newSong = new Song(
