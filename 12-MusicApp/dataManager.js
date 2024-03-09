@@ -127,7 +127,6 @@ export async function loadAlbum() {
     .then((res) => createAlbum(res));
 }
 
-// const addSongsToDOM = function (song) {
 //   //console.log(song);
 //   const html = `<div class="songPanel">
 //   <div class="leftSide">
