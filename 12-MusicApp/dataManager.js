@@ -225,7 +225,6 @@ export function fillInfoForSongSongPage(song) {
   configurator.songDurationBar.max = song.duration;
 }
 
-//     storedData.id
 //   );
 //   console.log(newSong);
 //   fillInInfo(newSong);
