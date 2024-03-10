@@ -225,7 +225,6 @@ export function fillInfoForSongSongPage(song) {
   configurator.songDurationBar.max = song.duration;
 }
 
-//   );
 //   console.log(newSong);
 //   fillInInfo(newSong);
 //   currentlyPlayingSong = newSong;
