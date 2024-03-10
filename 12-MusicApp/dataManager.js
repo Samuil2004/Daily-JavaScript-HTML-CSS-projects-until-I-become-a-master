@@ -225,8 +225,6 @@ export function fillInfoForSongSongPage(song) {
   configurator.songDurationBar.max = song.duration;
 }
 
-// }
-
 // export function findSong() {
 //   console.log(
 //     currentAlbum.songs.find((song) => song.title === currentlyPlayingSong.title)
