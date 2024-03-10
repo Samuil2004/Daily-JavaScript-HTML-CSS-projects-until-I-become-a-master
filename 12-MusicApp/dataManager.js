@@ -225,7 +225,6 @@ export function fillInfoForSongSongPage(song) {
   configurator.songDurationBar.max = song.duration;
 }
 
-//   const newSong = new Song(
 //     storedData.title,
 //     storedData.artist.name,
 //     storedData.duration,
