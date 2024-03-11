@@ -170,7 +170,6 @@ export async function openSong(songID) {
     `${configurator.urlForSong}${songID}`,
     configurator.options
   ).then((res) => res.json());
-  //console.log(result);
   return await result;
 }
 
