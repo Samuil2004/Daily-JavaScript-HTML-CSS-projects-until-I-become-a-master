@@ -127,7 +127,6 @@ export async function loadAlbum() {
     .then((res) => createAlbum(res));
 }
 
-//     <h2 class="songName">${song.title}</h2>
 //   </div>
 //   <div class="rightSide">
 //     <img
