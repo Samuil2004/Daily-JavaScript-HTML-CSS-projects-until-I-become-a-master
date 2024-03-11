@@ -181,7 +181,6 @@ export async function fetchSearchedData() {
   ).then((res) => res.json());
   //console.log(searchResults);
   printSearchedData(searchResults);
-  //.then((res) => console.log(res));
 }
 const printSearchedData = function (searchResults) {
   searchResults.data.forEach((song) => {
