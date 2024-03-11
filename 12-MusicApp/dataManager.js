@@ -127,7 +127,6 @@ export async function loadAlbum() {
     .then((res) => createAlbum(res));
 }
 
-//     />
 //   </div>
 // </div>`;
 //   configurator.albumSongs.insertAdjacentHTML("beforeend", html);
