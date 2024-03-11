@@ -224,5 +224,3 @@ export function fillInfoForSongSongPage(song) {
   configurator.songTimeLeft.textContent = formatTime(song.duration);
   configurator.songDurationBar.max = song.duration;
 }
-
-// }
