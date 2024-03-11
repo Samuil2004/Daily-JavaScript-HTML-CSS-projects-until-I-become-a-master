@@ -190,7 +190,6 @@ const printSearchedData = function (searchResults) {
   currentSearchResults = searchResults.data;
   console.log(searchResults);
   console.log(currentSearchResults);
-  //createAlbum(searchResults.data);
 };
 
 const addSongToDOM = function (placeToBeAdded, song) {
