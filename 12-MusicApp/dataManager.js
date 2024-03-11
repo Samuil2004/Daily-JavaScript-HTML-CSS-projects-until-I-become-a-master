@@ -127,7 +127,6 @@ export async function loadAlbum() {
     .then((res) => createAlbum(res));
 }
 
-//     <img
 //       class="albumSongsPlayBtn"
 //       src="./images/playSongBtnImg.png"
 //     />
