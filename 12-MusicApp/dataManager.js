@@ -127,7 +127,6 @@ export async function loadAlbum() {
 }
 
 //   }
-// };
 
 const currentSongInfoAlbumPage = function () {
   configurator.currentSongAlbumPageImage.src = currentlyPlayingSong.image;
