@@ -126,8 +126,6 @@ export async function loadAlbum() {
     .then((res) => createAlbum(res));
 }
 
-//   }
-
 const currentSongInfoAlbumPage = function () {
   configurator.currentSongAlbumPageImage.src = currentlyPlayingSong.image;
   checkTitle(
