@@ -126,8 +126,6 @@ export async function loadAlbum() {
     .then((res) => createAlbum(res));
 }
 
-//   configurator.albumSongs.insertAdjacentHTML("beforeend",
-
 // const checkAlbumTitle = function (title) {
 //   if (title.length > 20) {
 //     configurator.albumTitle.style.animation = "scroll-left 12s linear infinite";
