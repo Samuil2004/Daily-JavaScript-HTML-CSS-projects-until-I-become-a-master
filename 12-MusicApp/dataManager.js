@@ -126,7 +126,6 @@ export async function loadAlbum() {
     .then((res) => createAlbum(res));
 }
 
-//     configurator.albumTitle.style.removeProperty("animation");
 //   }
 // };
 
