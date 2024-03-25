@@ -181,7 +181,7 @@ input[type="checkbox"] {
 
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 50px;
   user-select: none;
 }
 .nav-links {
@@ -240,8 +240,8 @@ input[type="checkbox"] {
 }
 
 .layoutMiddleLayer {
-  padding: 20px;
-  max-width: 800px;
+  /* padding: 20px; */
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
   grid-template-rows: 50px auto;
@@ -262,6 +262,9 @@ input[type="checkbox"] {
   font-size: 25px;
   background-color: #5e5e5e;
   border: none;
+}
+.orderBar button:active {
+  background-color: #2f3992;
 }
 
 .contentHolder {
