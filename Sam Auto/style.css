@@ -1,17 +1,10 @@
-body {
+/* body {
   margin: 0;
-  height: 100%;
   min-height: 100vh;
   background-color: #303030;
-  /* display: flex; */
-  /* flex-direction: column; */
-}
-#grid_container {
-  display: grid;
-  height: 100%;
-  width: 100%;
-  grid-template-columns: 100%;
-  grid-template-rows: 5cm auto 2cm;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
 .layoutHeader {
   height: 5cm;
@@ -35,7 +28,6 @@ input[type="checkbox"] {
   color: #fff;
 }
 
-/* HAMBURGER MENU */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -49,10 +41,10 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: space-between;
   padding: 0;
-  list-style-type: none; /* Remove bullet points */
+  list-style-type: none; 
 }
 
-/* in case the width of the website is changes to a mobile version or smaller*/
+
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -64,19 +56,18 @@ input[type="checkbox"] {
     padding: 16px 0;
   }
 
-  /*When item is hovered it changes its color*/
+
   .menu li:hover {
     display: inline-block;
     background-color: #4c9e9e;
     transition: 0.3s ease;
   }
 
-  /*The space between all listed items in the burger menu is 12px, except for the first one*/
+
   .menu li + li {
     margin-top: 12px;
   }
 
-  /*When the hamburger is checked it makes the menu class a block*/
   input[type="checkbox"]:checked ~ .menu {
     display: block;
   }
@@ -87,14 +78,13 @@ input[type="checkbox"] {
 }
 
 .layoutMiddleLayer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 4cm auto 0;
-  transform: translate(-50%, -50%);
+  flex: 1; 
   width: 900px;
+  max-width: 100%;
+  margin: 0 auto; 
   background-color: rgb(161, 162, 162);
-  /* height: auto; */
+  overflow: auto; 
+  padding-bottom: 100px;
 }
 
 .orderBar {
@@ -112,7 +102,7 @@ input[type="checkbox"] {
   background-color: #5e5e5e;
   border: none;
 }
-/*when c# code is attached - remove this propeerty and do it with active button using c#*/
+
 .orderBar button:active {
   background-color: #2f3992;
 }
@@ -123,36 +113,178 @@ input[type="checkbox"] {
   margin-bottom: 10px;
 }
 .car {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 18cm;
-  width: 11cm; */
   background-color: aquamarine;
   height: 4cm;
 }
 
-footer {
-  /* background-color: bisque;
-  margin-top: auto;
-  height: 5cm; */
-  /* padding-bottom: 1px;
-  position: fixed;
-  width: 100%;
-  background-color: bisque;
-  height: 5cm; */
-  /* position: relative;
-  margin: 5cm auto 0;
 
-  width: 900px;
+#footer {
+  display: block;
   background-color: bisque;
-  height: 150px; */
-  width: 900px;
-  background-color: bisque;
-  height: 150px;
-  position: absolute; /* Add absolute positioning */
-  bottom: 0; /* Position at the bottom */
-  left: 50%; /* Center horizontally */
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
   transform: translateX(-50%);
+}
+
+body {
+  overflow: auto;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 100px;
+} */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #303030;
+}
+
+.layoutHeader {
+  height: 5cm;
+  color: #fff;
+  /* padding: 20px; */
+  text-align: center;
+}
+
+.headerAndLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: antiquewhite;
+  background: linear-gradient(to top, #303030, #2d42ff);
+  color: white;
+  width: 100%;
+  height: 50%;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.navigationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  background-color: teal;
+  color: #fff;
+  height: 40%;
+  /* width: 100%; */
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+.nav-links {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+  background-color: teal;
+}
+
+.menu a {
+  font-size: 25px;
+  text-decoration: none;
+}
+/* .hamburger {
+  display: none; 
+  font-size: 24px;
+  user-select: none;
+} */
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: teal;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #4c9e9e;
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+.layoutMiddleLayer {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 50px auto;
+  gap: 60px;
+}
+
+.orderBar {
+  background-color: rgb(32, 59, 59);
+  height: 3cm;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.orderBar button {
+  height: 1.5cm;
+  width: 7cm;
+  font-size: 25px;
+  background-color: #5e5e5e;
+  border: none;
+}
+
+.contentHolder {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+.car {
+  background-color: aquamarine;
+  height: 4cm;
+}
+
+.contentHolder div {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #920000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
