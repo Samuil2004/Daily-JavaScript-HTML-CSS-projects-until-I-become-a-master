@@ -1,4 +1,4 @@
-body,
+/* body,
 html {
   margin: 0;
   padding: 0;
@@ -8,7 +8,6 @@ html {
 .layoutHeader {
   height: 5cm;
   color: #fff;
-  /* padding: 20px; */
   text-align: center;
 }
 
@@ -34,11 +33,9 @@ input[type="checkbox"] {
   justify-content: space-between;
   padding: 0 50px;
   margin: 0 30px;
-  /* background-color: teal; */
   color: #fff;
   height: 40%;
   border: 2px solid white;
-  /* width: 100%; */
 }
 
 .hamburger {
@@ -57,10 +54,7 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  /* padding: 0 100px; */
-
   list-style-type: none;
-  /* background-color: teal; */
 }
 
 .menu a {
@@ -104,9 +98,187 @@ input[type="checkbox"] {
   }
   .orderBar button {
     width: 6cm !important;
-    /* padding: 0 20px; */
     margin: 0 20px;
   }
+  .orderBar {
+    justify-content: space-between;
+  }
+}
+
+.layoutMiddleLayer {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 50px auto;
+  gap: 60px;
+}
+
+.orderBar {
+  height: 3cm;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.orderBar button {
+  height: 1.5cm;
+  width: 7cm;
+  font-size: 25px;
+  background-color: #5e5e5e;
+  border: none;
+  border-radius: 10px;
+}
+.orderBar button:active {
+  background-color: #2f3992;
+}
+
+.contentHolder {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+.car {
+  height: 5cm;
+}
+
+.contentHolder div {
+  border: 3px solid white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #920000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+} */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #303030;
+}
+
+.layoutHeader {
+  height: 5cm;
+  color: #fff;
+  /* padding: 20px; */
+  text-align: center;
+}
+
+.headerAndLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: antiquewhite;
+  background: linear-gradient(to top, #303030, #2d42ff);
+  color: white;
+  width: 100%;
+  height: 50%;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.navigationBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin: 0 30px;
+  color: #fff;
+  height: 40%;
+  border: 2px solid white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 50px;
+  user-select: none;
+}
+
+.nav-links {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* padding: 0 100px; */
+
+  list-style-type: none;
+  /* background-color: teal; */
+}
+
+.menu a {
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 915px) {
+  .menu {
+    display: none;
+    position: absolute;
+    /* background-color: #2d42ff; */
+    background-color: #85c7f2;
+    opacity: 0.9;
+    right: 0;
+    left: 0;
+    margin-top: 2px;
+    top: 100%;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .menu a {
+    color: black;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #4c9e9e;
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .car {
+    height: 10cm !important;
+    width: 440px;
+    margin: 0 auto;
+  }
+
+  .orderBar button {
+    width: 5cm !important;
+    height: 2cm !important;
+    /* padding: 0 20px; */
+
+    margin: 0 20px;
+  }
+
   .orderBar {
     justify-content: space-between;
   }
@@ -138,6 +310,7 @@ input[type="checkbox"] {
   border: none;
   border-radius: 10px;
 }
+
 .orderBar button:active {
   background-color: #2f3992;
 }
@@ -148,6 +321,7 @@ input[type="checkbox"] {
   grid-gap: 10px;
   margin-bottom: 10px;
 }
+
 .car {
   /* background-color: aquamarine; */
   height: 5cm;
@@ -161,7 +335,7 @@ input[type="checkbox"] {
 }
 
 .footer {
-  background-color: #920000;
+  background-color: #2ec4b6;
   color: #fff;
   padding: 20px;
   text-align: center;
