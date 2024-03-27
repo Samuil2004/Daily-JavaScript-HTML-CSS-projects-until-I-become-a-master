@@ -230,6 +230,44 @@ input[type="checkbox"] {
 }
 .imageHolder img {
   width: 95%;
+}
+.imgShadow {
   color: white;
   box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px white;
+}
+
+.layoutMiddleLayerSignUp {
+  max-width: 900px;
+  margin: 0 auto;
+  height: auto;
+  /* background-color: #2d42ff; */
+  display: grid;
+  grid-template:
+    "b b a" auto
+    "b b c" auto
+    "b b c" auto / 1fr 0.5fr 2fr;
+  gap: 10px;
+}
+
+.headingHolder {
+  grid-area: a;
+  /* background-color: #965757; */
+  font-size: 23px;
+  color: white;
+  /* text-align: center; */
+}
+.formHolder {
+  grid-area: c;
+  background-color: wheat;
+  height: 5cm;
+  height: auto;
+}
+.image {
+  grid-area: b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image img {
+  width: 60%;
 }
