@@ -1,0 +1,65 @@
+.layoutMiddleLayerHomePage {
+  max-width: 900px;
+  margin: 0 auto;
+  height: auto;
+  /* background-color: #2d42ff; */
+  display: grid;
+  grid-template:
+    "a a a" 100px
+    "b c c" auto
+    "b c c" auto / 3fr 1fr 1fr;
+  gap: 10px;
+}
+
+.contentHolder div {
+  border: 3px solid white;
+  /* border-radius: 5px; */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.titleHolder {
+  grid-area: a;
+  /* background-color: #2ec4b6; */
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.textHolder {
+  grid-area: b;
+  /* background-color: #965757; */
+  font-size: 23px;
+  color: white;
+}
+.textHolder p {
+  padding: 0 20px;
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+.imageHolder {
+  grid-area: c;
+  /* background-color: #ee4c4c; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageHolder img {
+  width: 95%;
+}
+.imgShadow {
+  color: white;
+  box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px white;
+}
+
+@media (max-width: 915px) {
+  .layoutMiddleLayerHomePage {
+    grid-template:
+      "a a a" 100px
+      "b b b" auto
+      "c c c" auto / 3fr 1fr 1fr !important;
+  }
+  .imageHolder img {
+    width: 50% !important;
+  }
+}

@@ -1,0 +1,57 @@
+.layoutMiddleLayerAllVehicles {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 70px auto;
+  gap: 60px;
+}
+
+.orderBar {
+  height: 3cm;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.orderBar button {
+  height: 1.5cm;
+  width: 7cm;
+  font-size: 25px;
+  background-color: #5e5e5e;
+  border: none;
+  border-radius: 10px;
+}
+
+.orderBar button:active {
+  background-color: #2f3992;
+}
+
+.contentHolder {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.car {
+  height: 5cm;
+}
+
+@media (max-width: 915px) {
+  .car {
+    height: 10cm !important;
+    width: 440px;
+    margin: 0 auto;
+  }
+
+  .orderBar button {
+    width: 5cm !important;
+    height: 2cm !important;
+
+    margin: 0 20px;
+  }
+
+  .orderBar {
+    justify-content: space-around;
+  }
+}
