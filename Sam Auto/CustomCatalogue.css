@@ -37,6 +37,13 @@
   height: 5cm;
 }
 
+.contentHolder div {
+  border: 3px solid white;
+  /* border-radius: 5px; */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 915px) {
   .car {
     height: 10cm !important;

@@ -53,10 +53,6 @@
   align-items: center;
 }
 
-.inputBoxPhone {
-  display: flex;
-  align-items: center;
-}
 .input {
   max-width: 9.5cm;
   width: 90%;
@@ -66,23 +62,20 @@
   border-width: 2px;
   font-size: 20px;
 }
-
-.selectedCountryCode {
-  width: 3.3cm;
-  height: 1cm;
-  border-radius: 10px;
-  z-index: 1;
-  font-size: 16px;
+.ForgotPasswordPanel {
+  display: flex;
+  justify-content: right;
+  max-width: 8.5cm;
+  width: 85%;
+}
+.ForgotPasswordPanel li {
+  list-style-type: none;
 }
 
-.inputPhone {
-  max-width: 6cm;
-  width: 90%;
-  height: 1cm;
-  border-radius: 10px;
-  border-color: rgb(68, 68, 68);
-  border-width: 2px;
+.ForgotPasswordPanel a {
   font-size: 20px;
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
 }
 
 .submitBtn {

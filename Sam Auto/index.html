@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="CustomAboutUs.css"/>
     <link rel="stylesheet" href="CustomCatalogue.css"/>
     <link rel="stylesheet" href="CustomSignUp.css"/>
+    <link rel="stylesheet" href="CustomLogIn.css"/>
 
     <script type="module" src="main.js"></script>
   </head>
@@ -27,7 +28,7 @@
     </header>
 
   <!-- Sign Up -->
-  <div 
+  <!-- <div 
     class="layoutMiddleLayerSignUp">
       <div class="headingHolder">
         <h2>Sign Up</h2>
@@ -116,7 +117,47 @@
       <div class="image">
         <img class = "imgShadow"src="images/SamAuto Logo.png">
       </div>
-  </div>  
+  </div>   -->
+
+
+<!-- LogIn -->
+<form class="layoutMiddleLayerSignUp" asp-action="POST">
+  <div class="headingHolder">
+      <h2>Sign Up</h2>
+  </div>
+  <div class="formHolder">
+      <div class="top">
+          <h2 class="email name" asp-for="SignUpDTO.Email">Email:</h2>
+          <span class="text-danger">@Html.ValidationMessageFor(model => model.SignUpDTO.Email)</span>
+      </div>
+      <div class="inputBox">
+          <input class="inputEmail input"
+                 type="text"
+                 placeholder="Input email" asp-for="SignUpDTO.Email" />
+       </div>
+      
+      <div class="top">
+          <h2 class="password name" asp-for="SignUpDTO.Password">Password:</h2>
+          <span class="text-danger">@Html.ValidationMessageFor(model => model.SignUpDTO.Password)</span>
+      </div>
+      <div class="inputBox">
+          <input class="inputPassword input"
+                 type="password"
+                 placeholder="Input password" asp-for="SignUpDTO.Password"/>
+       </div>
+       <ul class="ForgotPasswordPanel">
+        
+        <li><a asp-area="" asp-page="">Forgot password?</a></li>
+       </ul>
+      <div class="buttonHolder">
+          <button class="submitBtn">Submit</button>
+      </div>
+  </div>
+
+  <div class="image">
+      <img class="imgShadow" src="~/images/SamAutoLogo.png">
+  </div>
+</form>
 
   <!-- Home Page -->
     <!-- <div 
