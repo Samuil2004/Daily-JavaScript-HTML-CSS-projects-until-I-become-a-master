@@ -22,3 +22,13 @@ const uploadCountryCodes = function () {
 };
 
 uploadCountryCodes();
+
+const emailInput = document.querySelector(".inputEmail");
+const errorMesssage = document.querySelector(".error-email");
+
+emailInput.addEventListener("input", function () {
+  if (errorMesssage.classList.contains("hidden")) {
+    errorMesssage.classList.remove("hidden");
+    errorMesssage.textContent = "test error";
+  }
+});
