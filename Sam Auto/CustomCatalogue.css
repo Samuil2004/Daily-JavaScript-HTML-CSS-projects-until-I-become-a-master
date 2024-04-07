@@ -27,6 +27,7 @@
 }
 
 .contentHolder {
+  /* background-color: beige; */
   margin-top: 20px;
   display: grid;
   grid-gap: 10px;
@@ -35,13 +36,6 @@
 
 .car {
   height: 5cm;
-}
-
-.contentHolder div {
-  border: 3px solid white;
-  /* border-radius: 5px; */
-  padding: 20px;
-  margin-bottom: 20px;
 }
 
 @media (max-width: 915px) {
@@ -61,4 +55,142 @@
   .orderBar {
     justify-content: space-around;
   }
+}
+
+/* changes */
+.contentHolder .car {
+  border: 3px solid white;
+  /* border-radius: 5px; */
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.car {
+  /* background-color: #2f3992; */
+  display: grid;
+  grid-template:
+    "a a a" 15%
+    "b c c" 42.5%
+    "b c c" 42.5% / 1fr 1fr 1fr;
+}
+
+.topLayer {
+  grid-area: a;
+  /* background-color: #5e5e5e; */
+  /* margin-top: -15px; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* color: #b1b1b1; */
+}
+.topLayer h4 {
+  padding: 0 5px;
+  /* width: 95px;
+  height: 21px; */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #b1b1b1;
+}
+
+.leftLayer {
+  grid-area: b;
+  /* background-color: aliceblue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftLayer .carImage {
+  height: 100%;
+}
+.rightLayer {
+  grid-area: c;
+  /* background-color: aqua; */
+  display: grid;
+  grid-template:
+    "a a a" 20%
+    "b c c" 16%
+    "b c c" 16%
+    "b c c" 16%
+    "b c c" 16%
+    "d d d" 16% / 2fr 1fr 1fr;
+}
+.rightLayer .header {
+  grid-area: a;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  /* background-color: red; */
+  align-items: center;
+  color: #ffffff;
+}
+.brandModel {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 30px;
+}
+.price {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.rightLayer .characteristicsCategory {
+  grid-area: b;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  align-items: center;
+  padding: 0 10px;
+  font-size: 20px;
+}
+.rightLayer .characteristicsVehicle {
+  grid-area: c;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  align-items: center;
+  padding: 0 10px;
+  /* font-size: 18px; */
+}
+.rightLayer .carFooter {
+  grid-area: d;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: right;
+}
+.carFooter a {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
+  /* identical to box height */
+  text-decoration-line: underline;
+
+  color: #ffffff;
+}
+/* Year of production */
+.characteristicsVehicle h4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  /* line-height: 21px; */
+
+  color: #ffffff;
+}
+.characteristicsCategory h4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  /* line-height: 21px; */
+
+  color: #ffffff;
 }
