@@ -58,9 +58,9 @@
 }
 
 /* changes */
+
 .contentHolder .car {
   border: 3px solid white;
-  /* border-radius: 5px; */
   padding: 5px;
   margin-bottom: 20px;
 }
@@ -76,17 +76,13 @@
 .topLayer {
   grid-area: a;
   /* background-color: #5e5e5e; */
-  /* margin-top: -15px; */
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* color: #b1b1b1; */
 }
 .topLayer h4 {
   padding: 0 5px;
-  /* width: 95px;
-  height: 21px; */
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -155,7 +151,6 @@
   grid-template-rows: repeat(4, 25%);
   align-items: center;
   padding: 0 10px;
-  /* font-size: 18px; */
 }
 .rightLayer .carFooter {
   grid-area: d;
@@ -170,19 +165,15 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 21px;
-  /* identical to box height */
   text-decoration-line: underline;
 
   color: #ffffff;
 }
-/* Year of production */
 .characteristicsVehicle h4 {
   font-family: "Inter";
   font-style: normal;
   font-weight: 200;
   font-size: 20px;
-  /* line-height: 21px; */
-
   color: #ffffff;
 }
 .characteristicsCategory h4 {
@@ -190,7 +181,58 @@
   font-style: normal;
   font-weight: 200;
   font-size: 20px;
-  /* line-height: 21px; */
-
   color: #ffffff;
+}
+/* Option 1 */
+/* @media (max-width: 915px) {
+  .car {
+    display: grid;
+    grid-template:
+      "a a a" 15%
+      "b c c" 40%
+      "b c c" 45% / 1.5fr 1fr 1fr !important;
+  }
+  .leftLayer {
+    align-items: start;
+  }
+  .leftLayer .carImage {
+    width: 100%;
+    height: auto;
+  }
+  .brandModel {
+    font-size: 20px;
+  }
+} */
+
+/* Option 2 */
+@media (max-width: 915px) {
+  .car {
+    display: grid;
+    grid-template:
+      "a a a" 60%
+      "b b b" 10%
+      "c c c" 30% / 1.5fr 1fr 1fr !important;
+  }
+  .leftLayer {
+    grid-area: a;
+  }
+  .leftLayer .carImage {
+    width: auto;
+    height: 100%;
+  }
+  .topLayer {
+    grid-area: b;
+  }
+  .rightLayer {
+    grid-area: c;
+  }
+  .characteristicsVehicle h4 {
+    font-size: 18px;
+  }
+  .characteristicsCategory h4 {
+    font-size: 18px;
+  }
+  .topLayer h4 {
+    padding: 0 10px;
+  }
 }
