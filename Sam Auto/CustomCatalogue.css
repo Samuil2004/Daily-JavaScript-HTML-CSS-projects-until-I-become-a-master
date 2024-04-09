@@ -183,28 +183,7 @@
   font-size: 20px;
   color: #ffffff;
 }
-/* Option 1 */
-/* @media (max-width: 915px) {
-  .car {
-    display: grid;
-    grid-template:
-      "a a a" 15%
-      "b c c" 40%
-      "b c c" 45% / 1.5fr 1fr 1fr !important;
-  }
-  .leftLayer {
-    align-items: start;
-  }
-  .leftLayer .carImage {
-    width: 100%;
-    height: auto;
-  }
-  .brandModel {
-    font-size: 20px;
-  }
-} */
 
-/* Option 2 */
 @media (max-width: 915px) {
   .car {
     display: grid;
