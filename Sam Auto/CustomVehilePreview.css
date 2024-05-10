@@ -1,0 +1,291 @@
+.layoutMiddleLayerAllVehicles {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 70px auto;
+  gap: 60px;
+}
+
+.orderBar {
+  height: 3cm;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.orderBar button {
+  height: 1.5cm;
+  width: 7cm;
+  font-size: 25px;
+  background-color: #5e5e5e;
+  border: none;
+  border-radius: 10px;
+}
+
+.orderBar button:active {
+  background-color: #2f3992;
+}
+
+.contentHolder {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+  height: 100%;
+}
+
+.car {
+  height: 20cm;
+}
+/*
+.contentHolder div {
+  border: 3px solid white;
+  padding: 20px;
+  margin-bottom: 20px;
+}*/
+/* 
+@media (max-width: 915px) {
+  .car {
+    height: 10cm !important;
+    width: 420px;
+    margin: 0 auto;
+  }
+
+  .orderBar button {
+    width: 5cm !important;
+    height: 2cm !important;
+    margin: 0 20px;
+  }
+
+  .orderBar {
+    justify-content: space-around;
+  }
+  .layoutMiddleLayerAllVehicles {
+    justify-items: center;
+  }
+} */
+
+.orderBar {
+  height: 3cm;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.orderBar button {
+  height: 1.5cm;
+  width: 7cm;
+  font-size: 25px;
+  background-color: #5e5e5e;
+  border: none;
+  border-radius: 10px;
+}
+
+.orderBar button:active {
+  background-color: #2f3992;
+}
+
+.contentHolder {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.contentHolder .car {
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.car {
+  border: 3px solid white;
+  display: grid;
+  grid-template:
+    "a a a" 15%
+    "b b c" 42.5%
+    "b b c" 42.5% / 1fr 1fr 1fr;
+}
+
+.topLayer {
+  grid-area: a;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topLayer h4 {
+  padding: 0 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #b1b1b1;
+}
+
+.leftLayer {
+  grid-area: b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -40px;
+}
+
+.leftLayer .carImage {
+  height: 100%;
+  width: 80%;
+}
+
+.rightLayer {
+  grid-area: c;
+  display: grid;
+  grid-template:
+    "a a a" 20%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "b b c" 6%
+    "d d d" 14% / 2fr 1fr 1fr;
+}
+
+.rightLayer .header {
+  grid-area: a;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+  color: #ffffff;
+}
+
+.brandModel {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.price {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.rightLayer .characteristicsCategory {
+  grid-area: b;
+  display: grid;
+  grid-template-rows: repeat(11, 9%);
+  align-items: center;
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+.rightLayer .characteristicsVehicle {
+  grid-area: c;
+  display: grid;
+  grid-template-rows: repeat(11, 9%);
+  align-items: center;
+  padding: 0 10px;
+}
+
+.rightLayer .carFooter {
+  grid-area: d;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: right;
+}
+.SaveForBuyingButton {
+  height: 1cm;
+  background-color: green;
+  font-size: large;
+}
+
+.characteristicsCategory h4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.characteristicsVehicle h4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.text-danger {
+  color: red !important;
+}
+
+@media (max-width: 915px) {
+  .car {
+    height: 20cm !important;
+    width: 430px !important;
+    margin: 0 auto;
+    display: grid;
+    grid-template:
+      "a a a" 40%
+      "b b b" 10%
+      "c c c" 50% / 1.5fr 1fr 1fr !important;
+  }
+  .orderBar button {
+    width: 5cm !important;
+    height: 2cm !important;
+    margin: 0 20px;
+  }
+  .layoutMiddleLayerAllVehicles {
+    justify-content: center;
+  }
+  .orderBar {
+    justify-content: space-around;
+    justify-content: center;
+    width: 90%;
+  }
+  .contentHolder {
+    width: 90%;
+  }
+
+  .leftLayer .carImage {
+    margin-right: 0px;
+    width: 90% !important;
+    height: auto;
+  }
+  .leftLayer {
+    grid-area: a;
+    margin-right: 0px;
+  }
+
+  .topLayer {
+    grid-area: b;
+  }
+
+  .rightLayer {
+    grid-area: c;
+  }
+
+  .characteristicsVehicle h4 {
+    font-size: 18px;
+  }
+
+  .characteristicsCategory h4 {
+    font-size: 18px;
+  }
+
+  .topLayer h4 {
+    padding: 0 10px;
+  }
+}
